@@ -50,6 +50,62 @@ function Shell() {
     };
   }, []);
 
+  // Wheel → one gesture per snap target. The browser keeps native scrollbar
+  // drag, keyboard, and touch scrolling; only the mouse wheel / trackpad is
+  // intercepted so every flick moves exactly one section or slide.
+  useEffect(() => {
+    let lock = false;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) return;
+
+    const handler = (e: WheelEvent) => {
+      // Ignore ctrl+wheel (browser zoom) and horizontal gestures.
+      if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      // Ignore tiny residual wheel events (trackpad inertia tail).
+      if (Math.abs(e.deltaY) < 8) return;
+
+      if (lock) {
+        e.preventDefault();
+        return;
+      }
+
+      const targets = Array.from(
+        document.querySelectorAll<HTMLElement>('.chapter, .project-slide')
+      );
+      if (targets.length === 0) return;
+
+      const offset = 64; // top nav height
+      const probe = window.scrollY + offset + 4;
+      const tops = targets.map(
+        (el) => el.getBoundingClientRect().top + window.scrollY
+      );
+
+      let currentIdx = 0;
+      for (let i = 0; i < tops.length; i++) {
+        if (tops[i] <= probe) currentIdx = i;
+        else break;
+      }
+
+      const nextIdx =
+        e.deltaY > 0
+          ? Math.min(currentIdx + 1, targets.length - 1)
+          : Math.max(currentIdx - 1, 0);
+
+      if (nextIdx === currentIdx) return; // at boundary, let the browser bounce
+
+      e.preventDefault();
+      lock = true;
+      targets[nextIdx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Hold the lock long enough to swallow trackpad inertia tails.
+      window.setTimeout(() => {
+        lock = false;
+      }, 750);
+    };
+
+    window.addEventListener('wheel', handler, { passive: false });
+    return () => window.removeEventListener('wheel', handler);
+  }, []);
+
   const navItems: { id: SectionId; label: string }[] = [
     { id: 'hero', label: t.nav.hero },
     { id: 'about', label: t.nav.about },
