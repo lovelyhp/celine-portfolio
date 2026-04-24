@@ -49,7 +49,7 @@ export const en = {
     slides: [
       {
         kind: 'cover',
-        heading: 'OIA Automation Office',
+        heading: 'OIA Rush',
         sub: 'A virtual 6-floor building with 15 AI secretaries',
         body:
           'An integrated automation system that links 15 scattered work folders via file-system events, where 15 AI personas — one planted in each folder — carry out their own work. A one-year record of moving from executor to conductor.',
@@ -63,7 +63,7 @@ export const en = {
         heading: '100 emails a day. An infinite mail loop.',
         body: [
           'Every morning at 9 AM, at least 100 new emails waited in my inbox. Inquiries from 105+ partner universities and hundreds of students at home and abroad, mixing Korean, English, and French. A single day of delay, and unread mail climbed past 200.',
-          '200+ ECTS grade conversions per semester. Exchange selection and university placement every term. FAQ responses that looked alike but differed subtly case by case. Partner data, student records, and past cases lived in scattered spreadsheets, documents, and emails — every single item made me cycle through dozens of windows.',
+          'Administrative inquiries — similar on the surface, subtly different case by case. Partner data, student records, and past cases lived in scattered spreadsheets, documents, and emails — every single item made me cycle through dozens of windows.',
           'Most of my day vanished into repetition. The planning and strategy the company actually needed from me had nowhere to land.',
         ],
         imageSrc: null,
@@ -100,7 +100,7 @@ export const en = {
         heading: 'Crown me Honorary Landlord of OIA.',
         body: [
           'With Claude Code\'s sub-agents and the CLAUDE.md persona system, I raised a virtual 6-floor building. 15 department folders mapped to floors and rooms, each with a dedicated secretary. Léa on 1F (agreements), Mail on 2F (email), Nomi on 3F (nominations), Céline on 5F (chief-of-staff). On 6F, me and Uboo, my cat.',
-          'This isn\'t decoration — it\'s a designed game. Folder = department. File-change event = a secretary\'s state change. Total activity = Uboo\'s patrol speed. I translated abstract system events into something you can see, and something cute.',
+          'This isn\'t decoration — it\'s a designed game. Folder = department. File-change event = a secretary\'s state change. Total activity = Uboo\'s patrol speed. I translated abstract events into something you can see, and something cute.',
           'Through these details I wanted to treat AI not as a tool but as a colleague.',
         ],
         imageSrc: null,
@@ -124,7 +124,7 @@ export const en = {
         tag: 'APPROACH · V',
         heading: 'How an ordinary university staffer works with AI.',
         body: [
-          'I\'m an administrative staffer at a university, yet through pair-play with AI I\'ve acquired a cycle: spot the problem in context → define the problem → build the system that solves it → iterate. I don\'t memorize code or skills. What I do have is the eye to name exactly "what the problem is," "how it should work," "what feels off right now."',
+          'I\'m an administrative office worker, yet through pair-play with AI I\'ve acquired a cycle: spot the problem → build the system that solves it → iterate. I don\'t memorize code or skills. What I do have is the eye to name exactly "what the problem is," "how it should work," "what feels off right now."',
           'Being non-CS, a humanities major, is no longer a weakness. It turned into a weapon: proof that the planner who knows the field\'s real pain points can build the tools herself.',
         ],
         imageSrc: null,
@@ -162,7 +162,7 @@ export const en = {
         tag: 'SCENES',
         heading: 'A new everyday.',
         scenes: [
-          'On the day of President Macron\'s visit, I could focus on the protocol floor. That morning, my AI secretary had already sorted over 90 emails in my place.',
+          'On the day of President Macron\'s visit, I could focus on the protocol floor. My AI secretary had already sorted over 90 emails in my place.',
           'The day I left on time, Uboo greeted me earlier than usual when I got home.',
           'The first time I arrived at my graduate class without being late, I took a seat in the front row.',
         ],
