@@ -31,7 +31,7 @@ export const ko = {
       { value: '15', label: 'AI 페르소나 오케스트레이션' },
       { value: '200+', label: '학기당 자동화된 ECTS 환산' },
     ],
-    hint: '방향키 ← → 또는 스크롤로 탐색',
+    hint: '스크롤해서 이어 읽기',
   },
   about: {
     number: 'I',
@@ -47,7 +47,7 @@ export const ko = {
   featured: {
     number: 'II',
     title: 'Featured Work',
-    intro: '주요 작업 두 가지를 서사로 풀어놓았습니다. ← → 키로 챕터를 넘기며 읽어주세요.',
+    intro: '주요 작업 두 가지를 서사로 풀어놓았습니다.',
   },
 
   // ── Project 1 — OIA Building ──────────────────────
@@ -254,7 +254,7 @@ export const ko = {
   selected: {
     number: 'III',
     title: 'Selected Works',
-    intro: '그 외 작업들. 프로젝트 카드를 클릭하면 상세 설명이 펼쳐집니다.',
+    intro: '그 외 작업들. 카드를 클릭하면 상세 설명이 펼쳐집니다.',
     projects: [
       {
         title: 'ECTS 성적 환산 자동화',

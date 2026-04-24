@@ -20,7 +20,7 @@ export const en = {
       { value: '15', label: 'AI Personas Orchestrated' },
       { value: '200+', label: 'ECTS Conversions / Semester, Automated' },
     ],
-    hint: 'Use ← → arrows or scroll to explore',
+    hint: 'Scroll to continue',
   },
   about: {
     number: 'I',
@@ -36,7 +36,7 @@ export const en = {
   featured: {
     number: 'II',
     title: 'Featured Work',
-    intro: 'Two main works, told as stories. Use ← → to advance through each chapter.',
+    intro: 'Two main works, told as stories.',
   },
 
   oiaBuilding: {

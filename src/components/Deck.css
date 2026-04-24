@@ -10,9 +10,10 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem var(--pad-x);
-  background: linear-gradient(to bottom, rgba(20, 16, 42, 0.95) 0%, rgba(20, 16, 42, 0.7) 80%, transparent 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(20, 16, 42, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
 }
 .deck-brand {
   font-size: 1rem;
@@ -61,88 +62,26 @@
 .deck-lang .active { color: var(--iris); font-weight: 600; }
 .deck-lang .sep { color: var(--cream-faint); }
 
-/* ── Bottom bar ─────────────────────────────────────── */
-.deck-bottom {
-  position: fixed;
-  bottom: 0;
+/* Thin scroll progress line anchored to the bottom edge of the top bar */
+.deck-progress-line {
+  position: absolute;
   left: 0;
   right: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1rem var(--pad-x);
-  background: linear-gradient(to top, rgba(20, 16, 42, 0.95) 0%, rgba(20, 16, 42, 0.7) 80%, transparent 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-.deck-progress {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: var(--fs-small);
-  color: var(--cream-faint);
-  flex: 1;
-  max-width: 520px;
-}
-.deck-progress-now { color: var(--cream); }
-.deck-progress-label {
-  color: var(--cream-muted);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  flex-shrink: 0;
-  padding-right: 0.25rem;
-}
-.deck-progress-total {
-  color: var(--cream-faint);
-  white-space: nowrap;
-  min-width: 5.5ch;
-  text-align: right;
-}
-.deck-progress-bar-track {
-  flex: 1;
-  height: 1px;
-  background: var(--line-strong);
-  position: relative;
+  bottom: -1px;
+  height: 2px;
+  background: transparent;
   overflow: hidden;
+  pointer-events: none;
 }
-.deck-progress-bar-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
+.deck-progress-line-fill {
+  display: block;
   height: 100%;
   background: var(--iris);
-  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.deck-controls {
-  display: flex;
-  gap: 0.5rem;
-}
-.deck-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid var(--line-strong);
-  color: var(--cream);
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
-}
-.deck-btn:hover:not(:disabled) {
-  border-color: var(--iris);
-  color: var(--iris);
-  background: rgba(196, 169, 255, 0.06);
-}
-.deck-btn:disabled {
-  opacity: 0.25;
-  cursor: not-allowed;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.15s linear;
 }
 
 @media (max-width: 720px) {
   .deck-nav { display: none; }
-  .deck-progress-now, .deck-progress-total { font-size: 0.8rem; }
-  .deck-progress-label { display: none; }
 }
