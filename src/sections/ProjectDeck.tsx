@@ -51,9 +51,21 @@ interface ProjectDeckProps {
   slides: Slide[];
   isActive: boolean; // reset inner index when chapter becomes active
   onSlideProgress?: (current: number, total: number) => void;
+  onRequestNextChapter?: () => void;
+  onRequestPrevChapter?: () => void;
 }
 
-export function ProjectDeck({ index, year, title, stack, slides, isActive, onSlideProgress }: ProjectDeckProps) {
+export function ProjectDeck({
+  index,
+  year,
+  title,
+  stack,
+  slides,
+  isActive,
+  onSlideProgress,
+  onRequestNextChapter,
+  onRequestPrevChapter,
+}: ProjectDeckProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const total = slides.length;
 
@@ -68,21 +80,68 @@ export function ProjectDeck({ index, year, title, stack, slides, isActive, onSli
   const next = useCallback(() => setSlideIndex((i) => Math.min(i + 1, total - 1)), [total]);
   const prev = useCallback(() => setSlideIndex((i) => Math.max(i - 1, 0)), []);
 
-  // keyboard arrows are captured at deck level, but consumed here for inner nav
-  // we use Shift+Arrow for inner if deck uses plain arrow
-  // simpler: let deck handle top-level, give in-slide buttons for inner
-  // but to feel natural, also support keyboard when slide focus
+  // While active, arrows advance inner slides first; only cross to the outer
+  // chapter when the user hits an inner boundary.
   useEffect(() => {
+    if (!isActive) return;
     const handler = (e: KeyboardEvent) => {
-      if (!isActive) return;
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-      // Only intercept arrows if a modifier is held, otherwise let deck handle page-level
-      // Actually, since we want the user to navigate inside-first, inside-last goes to next chapter,
-      // we will NOT bind arrows here. Instead we provide in-component controls.
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+        e.preventDefault();
+        if (slideIndex < total - 1) setSlideIndex((i) => i + 1);
+        else onRequestNextChapter?.();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        if (slideIndex > 0) setSlideIndex((i) => i - 1);
+        else onRequestPrevChapter?.();
+      }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [isActive]);
+  }, [isActive, slideIndex, total, onRequestNextChapter, onRequestPrevChapter]);
+
+  // Wheel: advance inner slides; cross to the outer chapter only after a
+  // short dwell at the inner boundary (to avoid trackpad inertia overshoot).
+  useEffect(() => {
+    if (!isActive) return;
+    let lock = false;
+    let boundaryReachedAt: number | null = null;
+    const handler = (e: WheelEvent) => {
+      if (lock) return;
+      const now = Date.now();
+      if (e.deltaY > 40) {
+        if (slideIndex < total - 1) {
+          lock = true;
+          setSlideIndex((i) => Math.min(i + 1, total - 1));
+          boundaryReachedAt = null;
+          setTimeout(() => (lock = false), 650);
+        } else {
+          if (boundaryReachedAt === null) boundaryReachedAt = now;
+          else if (now - boundaryReachedAt > 350) {
+            lock = true;
+            onRequestNextChapter?.();
+            setTimeout(() => (lock = false), 900);
+          }
+        }
+      } else if (e.deltaY < -40) {
+        if (slideIndex > 0) {
+          lock = true;
+          setSlideIndex((i) => Math.max(i - 1, 0));
+          boundaryReachedAt = null;
+          setTimeout(() => (lock = false), 650);
+        } else {
+          if (boundaryReachedAt === null) boundaryReachedAt = now;
+          else if (now - boundaryReachedAt > 350) {
+            lock = true;
+            onRequestPrevChapter?.();
+            setTimeout(() => (lock = false), 900);
+          }
+        }
+      }
+    };
+    window.addEventListener('wheel', handler, { passive: true });
+    return () => window.removeEventListener('wheel', handler);
+  }, [isActive, slideIndex, total, onRequestNextChapter, onRequestPrevChapter]);
 
   const slide = slides[slideIndex];
   const hasImage = slide.imageSrc !== null;

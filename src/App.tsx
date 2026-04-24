@@ -58,6 +58,8 @@ function Shell() {
       slides={t.oiaBuilding.slides as any}
       isActive={active === 3}
       onSlideProgress={handleSlideProgress}
+      onRequestNextChapter={() => goto(4)}
+      onRequestPrevChapter={() => goto(2)}
     />,
     <ProjectDeck
       index={t.univFinder.index}
@@ -68,6 +70,8 @@ function Shell() {
       slides={t.univFinder.slides as any}
       isActive={active === 4}
       onSlideProgress={handleSlideProgress}
+      onRequestNextChapter={() => goto(5)}
+      onRequestPrevChapter={() => goto(3)}
     />,
     <SelectedChapter />,
     <ExperienceChapter />,
@@ -97,10 +101,16 @@ function Shell() {
     if (active !== 3 && active !== 4) setInnerSlide(null);
   }, [active]);
 
-  // Keyboard
+  // Keyboard. ProjectDeck chapters (3, 4) handle their own arrows/PageUp-Down
+  // and call back into goto() when the inner slide reaches a boundary.
   useEffect(() => {
+    const isProjectChapter = active === 3 || active === 4;
     const handler = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      const isArrowOrPage =
+        e.key === 'ArrowRight' || e.key === 'ArrowLeft' ||
+        e.key === 'PageDown' || e.key === 'PageUp';
+      if (isProjectChapter && isArrowOrPage) return; // delegate to ProjectDeck
       if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); next(); }
       if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
       if (e.key === 'Home') { e.preventDefault(); goto(0); }
@@ -108,23 +118,40 @@ function Shell() {
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [next, prev, goto, total]);
+  }, [next, prev, goto, total, active]);
 
-  // Wheel (after reaching bounds)
+  // Wheel (after reaching bounds). ProjectDeck chapters handle their own
+  // wheel, so we bail out for them. On other chapters we require a short
+  // dwell at the boundary before advancing, so trackpad inertia does not
+  // overshoot a whole chapter.
   useEffect(() => {
+    const isProjectChapter = active === 3 || active === 4;
+    if (isProjectChapter) return;
     let lock = false;
+    let boundaryReachedAt: number | null = null;
     const handler = (e: WheelEvent) => {
       if (lock) return;
       const el = document.querySelectorAll<HTMLElement>('.chapter')[active];
       if (!el) return;
+      const now = Date.now();
       const atTop = el.scrollTop <= 2;
       const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
-      if (e.deltaY > 30 && atBottom && active < total - 1) {
-        lock = true; next();
-        setTimeout(() => (lock = false), 900);
-      } else if (e.deltaY < -30 && atTop && active > 0) {
-        lock = true; prev();
-        setTimeout(() => (lock = false), 900);
+      if (e.deltaY > 40 && atBottom && active < total - 1) {
+        if (boundaryReachedAt === null) boundaryReachedAt = now;
+        else if (now - boundaryReachedAt > 350) {
+          lock = true; next();
+          boundaryReachedAt = null;
+          setTimeout(() => (lock = false), 900);
+        }
+      } else if (e.deltaY < -40 && atTop && active > 0) {
+        if (boundaryReachedAt === null) boundaryReachedAt = now;
+        else if (now - boundaryReachedAt > 350) {
+          lock = true; prev();
+          boundaryReachedAt = null;
+          setTimeout(() => (lock = false), 900);
+        }
+      } else {
+        boundaryReachedAt = null;
       }
     };
     window.addEventListener('wheel', handler, { passive: true });
