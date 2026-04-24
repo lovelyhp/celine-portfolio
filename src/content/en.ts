@@ -239,7 +239,7 @@ export const en = {
   selected: {
     number: 'III',
     title: 'Selected Works',
-    intro: 'Other projects. Click a card to expand.',
+    intro: 'Other projects.',
     projects: [
       {
         title: 'ECTS Credit Conversion Automation',

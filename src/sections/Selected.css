@@ -27,17 +27,11 @@
 
 .selected-card {
   background: rgba(255, 255, 255, 0.02);
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 1.5rem 1.5rem 1.75rem;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  transition: background 0.25s ease;
-  cursor: pointer;
-}
-.selected-card:hover { background: rgba(196, 169, 255, 0.05); }
-.selected-card.is-open {
-  background: rgba(196, 169, 255, 0.08);
 }
 .selected-card-head {
   display: flex;
@@ -70,23 +64,11 @@
   font-size: 0.68rem;
 }
 
-.selected-card-expand {
-  margin-top: 1rem;
+.selected-card-body {
+  margin-top: 0.75rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  animation: fadein 0.35s ease;
-}
-.selected-card-body {
   font-size: 0.92rem;
   line-height: 1.75;
   color: var(--cream-muted);
-}
-.selected-card-hint {
-  font-size: 0.75rem;
-  color: var(--iris);
-  margin-top: 0.5rem;
-  opacity: 0.8;
 }
