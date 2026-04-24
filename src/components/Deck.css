@@ -80,14 +80,28 @@
 .deck-progress {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   font-size: var(--fs-small);
   color: var(--cream-faint);
   flex: 1;
-  max-width: 420px;
+  max-width: 520px;
 }
 .deck-progress-now { color: var(--cream); }
-.deck-progress-total { color: var(--cream-faint); }
+.deck-progress-label {
+  color: var(--cream-muted);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-right: 0.25rem;
+}
+.deck-progress-total {
+  color: var(--cream-faint);
+  white-space: nowrap;
+  min-width: 5.5ch;
+  text-align: right;
+}
 .deck-progress-bar-track {
   flex: 1;
   height: 1px;
@@ -130,4 +144,5 @@
 @media (max-width: 720px) {
   .deck-nav { display: none; }
   .deck-progress-now, .deck-progress-total { font-size: 0.8rem; }
+  .deck-progress-label { display: none; }
 }

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useLang } from '../context/LangContext';
-import { ImageSlot } from '../components/ImageSlot';
 import './Selected.css';
 
 export function SelectedChapter() {
@@ -40,14 +39,6 @@ export function SelectedChapter() {
             {open === i && (
               <div className="selected-card-expand">
                 <p className="selected-card-body">{p.body}</p>
-                <div className="selected-card-image">
-                  <ImageSlot
-                    src={null}
-                    caption={p.imageCaption}
-                    hint={p.imageHint}
-                    variant="landscape"
-                  />
-                </div>
               </div>
             )}
             <div className="selected-card-hint font-italic-serif">

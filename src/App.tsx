@@ -13,6 +13,7 @@ import './components/Deck.css';
 function Shell() {
   const { t, toggle, lang } = useLang();
   const [active, setActive] = useState(0);
+  const [innerSlide, setInnerSlide] = useState<{ current: number; total: number } | null>(null);
 
   // navChapters = user-facing nav (compact)
   // target points into the full chapter list (which has 3 sub-chapters inside "Work")
@@ -26,6 +27,24 @@ function Shell() {
     { label: t.nav.contact, target: 8 },
   ];
 
+  // chapterLabels = one label per deck index (chapters.length)
+  const chapterLabels = [
+    t.nav.hero,
+    t.nav.about,
+    t.nav.work,
+    t.nav.work,
+    t.nav.work,
+    'Selected',
+    t.nav.experience,
+    t.nav.skills,
+    t.nav.contact,
+  ];
+
+  const handleSlideProgress = useCallback(
+    (current: number, total: number) => setInnerSlide({ current, total }),
+    []
+  );
+
   const chapters: ReactNode[] = [
     <HeroChapter />,
     <AboutChapter />,
@@ -38,6 +57,7 @@ function Shell() {
       stack={t.oiaBuilding.stack}
       slides={t.oiaBuilding.slides as any}
       isActive={active === 3}
+      onSlideProgress={handleSlideProgress}
     />,
     <ProjectDeck
       index={t.univFinder.index}
@@ -47,6 +67,7 @@ function Shell() {
       stack={t.univFinder.stack}
       slides={t.univFinder.slides as any}
       isActive={active === 4}
+      onSlideProgress={handleSlideProgress}
     />,
     <SelectedChapter />,
     <ExperienceChapter />,
@@ -70,6 +91,11 @@ function Shell() {
 
   const next = useCallback(() => goto(Math.min(active + 1, total - 1)), [active, total, goto]);
   const prev = useCallback(() => goto(Math.max(active - 1, 0)), [active, goto]);
+
+  // Reset inner slide tracking when leaving a ProjectDeck chapter
+  useEffect(() => {
+    if (active !== 3 && active !== 4) setInnerSlide(null);
+  }, [active]);
 
   // Keyboard
   useEffect(() => {
@@ -177,6 +203,7 @@ function Shell() {
           <span className="deck-progress-now font-mono-num">
             {String(active + 1).padStart(2, '0')}
           </span>
+          <span className="deck-progress-label">{chapterLabels[active]}</span>
           <span className="deck-progress-bar-track">
             <span
               className="deck-progress-bar-fill"
@@ -184,7 +211,9 @@ function Shell() {
             />
           </span>
           <span className="deck-progress-total font-mono-num">
-            {String(total).padStart(2, '0')}
+            {innerSlide
+              ? `${String(innerSlide.current).padStart(2, '0')} / ${String(innerSlide.total).padStart(2, '0')}`
+              : String(total).padStart(2, '0')}
           </span>
         </div>
         <div className="deck-controls">

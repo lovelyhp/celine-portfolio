@@ -50,15 +50,20 @@ interface ProjectDeckProps {
   stack: string[];
   slides: Slide[];
   isActive: boolean; // reset inner index when chapter becomes active
+  onSlideProgress?: (current: number, total: number) => void;
 }
 
-export function ProjectDeck({ index, year, title, stack, slides, isActive }: ProjectDeckProps) {
+export function ProjectDeck({ index, year, title, stack, slides, isActive, onSlideProgress }: ProjectDeckProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const total = slides.length;
 
   useEffect(() => {
     if (isActive) setSlideIndex(0);
   }, [isActive]);
+
+  useEffect(() => {
+    if (isActive && onSlideProgress) onSlideProgress(slideIndex + 1, total);
+  }, [isActive, slideIndex, total, onSlideProgress]);
 
   const next = useCallback(() => setSlideIndex((i) => Math.min(i + 1, total - 1)), [total]);
   const prev = useCallback(() => setSlideIndex((i) => Math.max(i - 1, 0)), []);
@@ -80,6 +85,7 @@ export function ProjectDeck({ index, year, title, stack, slides, isActive }: Pro
   }, [isActive]);
 
   const slide = slides[slideIndex];
+  const hasImage = slide.imageSrc !== null;
 
   return (
     <div className="chapter-inner project-inner">
@@ -101,7 +107,10 @@ export function ProjectDeck({ index, year, title, stack, slides, isActive }: Pro
 
       {/* Slide body */}
       <div className="project-slide-wrap">
-        <article key={slideIndex} className="project-slide">
+        <article
+          key={slideIndex}
+          className={`project-slide ${hasImage ? '' : 'project-slide--textonly'}`}
+        >
           <div className="project-slide-text">
             {'tag' in slide && slide.tag && (
               <div className="slide-tag font-mono-num">{slide.tag}</div>
@@ -180,14 +189,16 @@ export function ProjectDeck({ index, year, title, stack, slides, isActive }: Pro
             )}
           </div>
 
-          <div className="project-slide-image">
-            <ImageSlot
-              src={slide.imageSrc}
-              caption={slide.imageCaption}
-              hint={slide.imageHint}
-              variant="portrait"
-            />
-          </div>
+          {hasImage && (
+            <div className="project-slide-image">
+              <ImageSlot
+                src={slide.imageSrc}
+                caption={slide.imageCaption}
+                hint={slide.imageHint}
+                variant="portrait"
+              />
+            </div>
+          )}
         </article>
       </div>
 

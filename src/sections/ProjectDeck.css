@@ -62,6 +62,10 @@
   width: 100%;
   align-items: start;
 }
+.project-slide--textonly {
+  grid-template-columns: minmax(0, 720px);
+  justify-content: start;
+}
 .project-slide-text { min-width: 0; }
 .project-slide-image {
   position: sticky;

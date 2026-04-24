@@ -9,8 +9,8 @@
   --lilac: #E9D8FF;
   --aurora: #8C6CFF;
   --cream: #F5F0E8;
-  --cream-muted: rgba(245, 240, 232, 0.7);
-  --cream-faint: rgba(245, 240, 232, 0.45);
+  --cream-muted: rgba(245, 240, 232, 0.86);
+  --cream-faint: rgba(245, 240, 232, 0.52);
   --cream-whisper: rgba(245, 240, 232, 0.15);
   --line: rgba(245, 240, 232, 0.12);
   --line-strong: rgba(245, 240, 232, 0.25);
@@ -20,10 +20,10 @@
   --fs-h1: clamp(1.5rem, 3vw, 2.375rem);
   --fs-h2: clamp(1.25rem, 2.25vw, 1.75rem);
   --fs-h3: clamp(1rem, 1.6vw, 1.3rem);
-  --fs-body: 0.9375rem;
-  --fs-body-lg: 1rem;
-  --fs-small: 0.8125rem;
-  --fs-xs: 0.7rem;
+  --fs-body: 1rem;
+  --fs-body-lg: 1.0625rem;
+  --fs-small: 0.85rem;
+  --fs-xs: 0.72rem;
 
   --max-w: 1280px;
   --pad-x: clamp(1.25rem, 4vw, 3rem);
