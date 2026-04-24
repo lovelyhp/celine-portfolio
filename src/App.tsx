@@ -1,22 +1,36 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { LangProvider, useLang } from './context/LangContext';
 import { HeroChapter } from './sections/Hero';
 import { AboutChapter } from './sections/About';
 import { FeaturedIntroChapter } from './sections/FeaturedIntro';
-import { ProjectDeck } from './sections/ProjectDeck';
+import { ProjectDeck, ProjectDeckHandle } from './sections/ProjectDeck';
 import { SelectedChapter } from './sections/Selected';
 import { ExperienceChapter } from './sections/Experience';
 import { SkillsChapter } from './sections/Skills';
 import { ContactChapter } from './sections/Contact';
 import './components/Deck.css';
 
-const SECTION_IDS = ['hero', 'about', 'work', 'selected', 'experience', 'skills', 'contact'] as const;
+const SECTION_IDS = [
+  'hero',
+  'about',
+  'work-intro',
+  'oia',
+  'univ',
+  'selected',
+  'experience',
+  'skills',
+  'contact',
+] as const;
 type SectionId = (typeof SECTION_IDS)[number];
+
+const WORK_IDS: SectionId[] = ['work-intro', 'oia', 'univ'];
 
 function Shell() {
   const { t, toggle, lang } = useLang();
   const [activeId, setActiveId] = useState<SectionId>('hero');
   const [progress, setProgress] = useState(0);
+  const oiaRef = useRef<ProjectDeckHandle>(null);
+  const univRef = useRef<ProjectDeckHandle>(null);
 
   // Track which top-level section is currently in the middle of the viewport.
   useEffect(() => {
@@ -50,18 +64,16 @@ function Shell() {
     };
   }, []);
 
-  // Wheel → one gesture per snap target. The browser keeps native scrollbar
-  // drag, keyboard, and touch scrolling; only the mouse wheel / trackpad is
-  // intercepted so every flick moves exactly one section or slide.
+  // Wheel: inside a ProjectDeck chapter, the wheel advances its inner slides
+  // first. When the inner deck hits a boundary, it falls through to vertical
+  // section navigation. Keyboard, scrollbar drag, and touch are unaffected.
   useEffect(() => {
     let lock = false;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reducedMotion) return;
 
     const handler = (e: WheelEvent) => {
-      // Ignore ctrl+wheel (browser zoom) and horizontal gestures.
       if (e.ctrlKey || Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-      // Ignore tiny residual wheel events (trackpad inertia tail).
       if (Math.abs(e.deltaY) < 8) return;
 
       if (lock) {
@@ -69,12 +81,35 @@ function Shell() {
         return;
       }
 
+      // 1) If we're currently on a ProjectDeck chapter, let it consume the
+      //    wheel gesture first — one flick moves one inner slide.
+      const deckRef =
+        activeId === 'oia' ? oiaRef.current : activeId === 'univ' ? univRef.current : null;
+      if (deckRef) {
+        const atEdge = e.deltaY > 0 ? deckRef.isAtEnd() : deckRef.isAtStart();
+        if (!atEdge) {
+          const moved = e.deltaY > 0 ? deckRef.next() : deckRef.prev();
+          if (moved) {
+            e.preventDefault();
+            lock = true;
+            window.setTimeout(() => {
+              lock = false;
+            }, 600);
+            return;
+          }
+        }
+        // At inner boundary — fall through to cross chapters, and reset the
+        // deck so returning later starts at the first slide.
+        if (e.deltaY < 0) deckRef.reset();
+      }
+
+      // 2) Section-level wheel navigation.
       const targets = Array.from(
-        document.querySelectorAll<HTMLElement>('.chapter, .project-slide')
+        document.querySelectorAll<HTMLElement>('.chapter')
       );
       if (targets.length === 0) return;
 
-      const offset = 64; // top nav height
+      const offset = 64;
       const probe = window.scrollY + offset + 4;
       const tops = targets.map(
         (el) => el.getBoundingClientRect().top + window.scrollY
@@ -91,12 +126,21 @@ function Shell() {
           ? Math.min(currentIdx + 1, targets.length - 1)
           : Math.max(currentIdx - 1, 0);
 
-      if (nextIdx === currentIdx) return; // at boundary, let the browser bounce
+      if (nextIdx === currentIdx) return;
 
       e.preventDefault();
       lock = true;
       targets[nextIdx].scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Hold the lock long enough to swallow trackpad inertia tails.
+
+      // If we're landing on a project chapter from above, start its deck at
+      // slide 0; if we're landing from below, show its last slide.
+      const landingId = targets[nextIdx].id as SectionId;
+      const landingDeck =
+        landingId === 'oia' ? oiaRef.current : landingId === 'univ' ? univRef.current : null;
+      if (landingDeck) {
+        if (e.deltaY > 0) landingDeck.reset();
+      }
+
       window.setTimeout(() => {
         lock = false;
       }, 750);
@@ -104,16 +148,16 @@ function Shell() {
 
     window.addEventListener('wheel', handler, { passive: false });
     return () => window.removeEventListener('wheel', handler);
-  }, []);
+  }, [activeId]);
 
-  const navItems: { id: SectionId; label: string }[] = [
-    { id: 'hero', label: t.nav.hero },
-    { id: 'about', label: t.nav.about },
-    { id: 'work', label: t.nav.work },
-    { id: 'selected', label: 'Selected' },
-    { id: 'experience', label: t.nav.experience },
-    { id: 'skills', label: t.nav.skills },
-    { id: 'contact', label: t.nav.contact },
+  const navItems: { id: SectionId; label: string; matches: SectionId[] }[] = [
+    { id: 'hero', label: t.nav.hero, matches: ['hero'] },
+    { id: 'about', label: t.nav.about, matches: ['about'] },
+    { id: 'work-intro', label: t.nav.work, matches: WORK_IDS },
+    { id: 'selected', label: 'Selected', matches: ['selected'] },
+    { id: 'experience', label: t.nav.experience, matches: ['experience'] },
+    { id: 'skills', label: t.nav.skills, matches: ['skills'] },
+    { id: 'contact', label: t.nav.contact, matches: ['contact'] },
   ];
 
   const scrollTo = (id: SectionId) => {
@@ -137,7 +181,7 @@ function Shell() {
               key={n.id}
               href={`#${n.id}`}
               onClick={(e) => { e.preventDefault(); scrollTo(n.id); }}
-              className={`deck-nav-item ${activeId === n.id ? 'is-active' : ''}`}
+              className={`deck-nav-item ${n.matches.includes(activeId) ? 'is-active' : ''}`}
             >
               {n.label}
             </a>
@@ -160,9 +204,12 @@ function Shell() {
         <section id="about" className="chapter">
           <AboutChapter />
         </section>
-        <section id="work" className="chapter chapter--flow">
+        <section id="work-intro" className="chapter">
           <FeaturedIntroChapter />
+        </section>
+        <section id="oia" className="chapter chapter--project">
           <ProjectDeck
+            ref={oiaRef}
             index={t.oiaBuilding.index}
             year={t.oiaBuilding.year}
             title={t.oiaBuilding.title}
@@ -170,7 +217,10 @@ function Shell() {
             stack={t.oiaBuilding.stack}
             slides={t.oiaBuilding.slides as any}
           />
+        </section>
+        <section id="univ" className="chapter chapter--project">
           <ProjectDeck
+            ref={univRef}
             index={t.univFinder.index}
             year={t.univFinder.year}
             title={t.univFinder.title}

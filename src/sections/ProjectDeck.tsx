@@ -1,3 +1,4 @@
+import { forwardRef, useImperativeHandle, useState } from 'react';
 import { ImageSlot } from '../components/ImageSlot';
 import './ProjectDeck.css';
 
@@ -50,29 +51,68 @@ interface ProjectDeckProps {
   slides: Slide[];
 }
 
-export function ProjectDeck({ index, year, title, stack, slides }: ProjectDeckProps) {
-  return (
-    <div className="chapter-inner project-inner">
-      {/* Meta header */}
-      <header className="project-head">
-        <div className="project-head-left">
-          <span className="project-index font-mono-num">№{index}</span>
-          <span className="project-year font-italic-serif">{year}</span>
-        </div>
-        <h2 className="project-title font-display">{title}</h2>
-        <div className="project-stack">
-          {stack.map((s) => (
-            <span key={s} className="chip">{s}</span>
-          ))}
-        </div>
-      </header>
+export interface ProjectDeckHandle {
+  next: () => boolean;
+  prev: () => boolean;
+  isAtStart: () => boolean;
+  isAtEnd: () => boolean;
+  reset: () => void;
+  current: () => number;
+  total: () => number;
+}
 
-      {/* Slides stacked vertically */}
-      {slides.map((slide, i) => {
-        const hasImage = slide.imageSrc !== null;
-        return (
+export const ProjectDeck = forwardRef<ProjectDeckHandle, ProjectDeckProps>(
+  function ProjectDeck({ index, year, title, stack, slides }, ref) {
+    const [slideIndex, setSlideIndex] = useState(0);
+    const total = slides.length;
+
+    useImperativeHandle(
+      ref,
+      () => ({
+        next: () => {
+          if (slideIndex >= total - 1) return false;
+          setSlideIndex(slideIndex + 1);
+          return true;
+        },
+        prev: () => {
+          if (slideIndex <= 0) return false;
+          setSlideIndex(slideIndex - 1);
+          return true;
+        },
+        isAtStart: () => slideIndex <= 0,
+        isAtEnd: () => slideIndex >= total - 1,
+        reset: () => setSlideIndex(0),
+        current: () => slideIndex,
+        total: () => total,
+      }),
+      [slideIndex, total]
+    );
+
+    const slide = slides[slideIndex];
+    const hasImage = slide.imageSrc !== null;
+
+    return (
+      <div className="project-inner">
+        {/* Meta header */}
+        <header className="project-head">
+          <div className="project-head-left">
+            <span className="project-index font-mono-num">№{index}</span>
+            <span className="project-year font-italic-serif">{year}</span>
+          </div>
+          <h2 className="project-title font-display">{title}</h2>
+          <div className="project-stack">
+            {stack.map((s) => (
+              <span key={s} className="chip">
+                {s}
+              </span>
+            ))}
+          </div>
+        </header>
+
+        {/* Current slide */}
+        <div className="project-slide-wrap">
           <article
-            key={i}
+            key={slideIndex}
             className={`project-slide ${hasImage ? '' : 'project-slide--textonly'}`}
           >
             <div className="project-slide-text">
@@ -94,8 +134,8 @@ export function ProjectDeck({ index, year, title, stack, slides }: ProjectDeckPr
 
               {slide.kind === 'section' && (
                 <div className="slide-paras">
-                  {slide.body.map((p, j) => (
-                    <p key={j}>{p}</p>
+                  {slide.body.map((p, i) => (
+                    <p key={i}>{p}</p>
                   ))}
                 </div>
               )}
@@ -113,8 +153,8 @@ export function ProjectDeck({ index, year, title, stack, slides }: ProjectDeckPr
                           </tr>
                         </thead>
                         <tbody>
-                          {slide.table.map((row, j) => (
-                            <tr key={j}>
+                          {slide.table.map((row, i) => (
+                            <tr key={i}>
                               <td>{row.label}</td>
                               <td className="td-before">{row.before}</td>
                               <td className="td-after">{row.after}</td>
@@ -124,8 +164,8 @@ export function ProjectDeck({ index, year, title, stack, slides }: ProjectDeckPr
                       </table>
                     </div>
                   )}
-                  {slide.body.map((b, j) => (
-                    <div key={j} className="slide-sub">
+                  {slide.body.map((b, i) => (
+                    <div key={i} className="slide-sub">
                       {b.h && <h4 className="slide-subhead font-italic-serif">{b.h}</h4>}
                       <p>{b.p}</p>
                     </div>
@@ -136,8 +176,8 @@ export function ProjectDeck({ index, year, title, stack, slides }: ProjectDeckPr
               {slide.kind === 'scenes' && (
                 <div className="slide-scenes-wrap">
                   <ul className="slide-scenes">
-                    {slide.scenes.map((s, j) => (
-                      <li key={j}>
+                    {slide.scenes.map((s, i) => (
+                      <li key={i}>
                         <span className="scene-bullet">◆</span>
                         <span>{s}</span>
                       </li>
@@ -164,8 +204,43 @@ export function ProjectDeck({ index, year, title, stack, slides }: ProjectDeckPr
               </div>
             )}
           </article>
-        );
-      })}
-    </div>
-  );
-}
+        </div>
+
+        {/* Inner controls */}
+        <div className="project-ctl">
+          <div className="project-ctl-dots">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`project-dot ${i === slideIndex ? 'is-active' : ''}`}
+                aria-label={`Slide ${i + 1}`}
+              />
+            ))}
+          </div>
+          <div className="project-ctl-info">
+            <span className="project-ctl-count font-mono-num">
+              {String(slideIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+            </span>
+            <button
+              className="project-ctl-btn"
+              onClick={() => setSlideIndex((i) => Math.max(0, i - 1))}
+              disabled={slideIndex === 0}
+              aria-label="Previous slide"
+            >
+              ←
+            </button>
+            <button
+              className="project-ctl-btn"
+              onClick={() => setSlideIndex((i) => Math.min(total - 1, i + 1))}
+              disabled={slideIndex === total - 1}
+              aria-label="Next slide"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+);
