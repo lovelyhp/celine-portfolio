@@ -74,22 +74,37 @@
   max-width: 400px;
 }
 .project-slide-video {
+  max-width: none;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 0;
 }
 .project-video {
-  width: 100%;
+  max-width: 100%;
+  max-height: 50vh;
+  max-height: 50dvh;
+  width: auto;
   height: auto;
   display: block;
   background: rgba(245, 240, 232, 0.04);
   border: 1px solid var(--line);
   border-radius: 2px;
+  object-fit: contain;
 }
 .project-slide-video .img-caption {
   font-size: var(--fs-small);
   color: var(--cream-faint);
   line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .project-video {
+    max-height: 45vh;
+    max-height: 45dvh;
+  }
 }
 
 @keyframes slideFadeIn {
