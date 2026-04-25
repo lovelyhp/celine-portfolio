@@ -334,24 +334,16 @@ export const ko = {
     title: 'Skills',
     groups: [
       {
-        heading: 'AI & Development',
-        items: 'Python · Flask · Google Apps Script · Claude API · Claude Code · React · TypeScript · D3.js · Chart.js · HTML/CSS/JS · Git · Netlify',
+        heading: 'Technical',
+        items: 'Python · Flask · React · TypeScript · Google Apps Script · Claude API · D3.js · Chart.js · HTML/CSS/JS · Git · Netlify',
       },
       {
-        heading: 'Product & Planning',
-        items: 'Service Design · User Research · KPI Design · Cross-functional Coordination · Technical Documentation · AI PoC Ideation & Delivery',
+        heading: 'Operations & Product',
+        items: 'Service Design · User Research · KPI Design · Workflow Automation · API Integration · Data Visualization · Cross-functional Coordination · Technical Documentation · AI PoC Ideation & Delivery',
       },
       {
-        heading: 'Data & Automation',
-        items: 'Google Sheets · Excel · Data Visualization (D3.js, Chart.js, Tableau) · Workflow Automation · API Integration',
-      },
-      {
-        heading: 'Domain',
-        items: 'International Education · European University Partnerships · Government Liaison · Event Management · Multilingual Communication',
-      },
-      {
-        heading: 'Languages',
-        items: 'Korean (Native) · English (Professional) · French (Intermediate)',
+        heading: 'International Affairs',
+        items: 'International Education · European University Partnerships · Event Management · Multilingual Communication · Korean (Native) · English (Professional) · French (Intermediate)',
       },
     ],
   },
@@ -360,7 +352,7 @@ export const ko = {
     number: 'VI',
     title: 'Contact',
     heading: '새로운 무대를 찾습니다.',
-    email: 'sachoi@yonsei.ac.kr',
+    email: 'choy4130@yonsei.ac.kr',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',
   },

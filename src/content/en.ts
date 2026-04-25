@@ -111,7 +111,7 @@ export const en = {
         heading: 'One afternoon. D-2 before a deadline.',
         body: [
           '3 PM. Léa on 1F reviews an MoU draft from a French university, Mail on 2F sorts 154 emails, Nomi on 3F processes 8 nominations, and Solène on 4F updates the exchange balance. Honorary Chairman Uboo finishes his patrol and heads up to ride the cat wheel.',
-          'I simply ask my chief-of-staff Céline: "What are today\'s negotiation points with our partners?" In the past I would have opened every email, dug through the agreements folder, recomputed the balances by hand. Now my secretaries each tend their own posts, and I only decide `what, to whom, in what order` to ask.',
+          'I simply ask my chief-of-staff Céline: "What are today\'s negotiation points with our partners?" In the past I would have opened every email, dug through folders, recomputed the balances by hand. Now my secretaries each tend their own posts, and I only decide `what, to whom, in what order` to ask.',
         ],
         imageSrc: null,
         imageCaption: 'OIA Building at peak activity',
@@ -155,13 +155,13 @@ export const en = {
         heading: 'A new everyday.',
         scenes: [
           'On the day President Macron visited Yonsei, my secretaries gave me the room to focus on the on-site work.',
-          'The day I left on time, Uboo greeted me earlier than usual when I got home.',
-          'The first time I arrived at my graduate class without being late, I took a seat in the front row.',
+          'When I came home from leaving the office on time, Uboo greeted me earlier than usual.',
+          'Arriving at my graduate class on time, I took a seat in the front row.',
         ],
         closing: {
           h: 'The story isn\'t over.',
           p:
-            'I\'ve seen, firsthand, what a small but meaningful first step can do to a whole organization. Now I\'m looking for a stage where I can design that change directly.',
+            'Now I\'m looking for a stage where I can design that change directly.',
         },
         imageSrc: null,
         imageCaption: 'Uboo, the real cheese cat',
@@ -247,7 +247,7 @@ export const en = {
         year: '2026',
         stack: ['React', 'TypeScript', 'Netlify'],
         body:
-          'In a legacy-dominated development environment, I — as a planner — built a React mockup and delivered it alongside a development requirements document. Restructured UX/UI and unfolded the main page into scroll interactions. The work set the baseline for Yonsei University\'s official website renewal project.',
+          'In a legacy-dominated development environment, I — as a planner — built a React mockup and drove the planning. Restructured UX/UI, and the work set the baseline for Yonsei University\'s official website renewal project.',
         imageCaption: 'Hero of yonsei-oia.netlify.app',
         imageHint: 'Screenshot of the mockup site\'s Hero + 3-stat section',
       },
@@ -256,7 +256,7 @@ export const en = {
         year: '2026',
         stack: ['Google Sheets', 'openpyxl', 'Claude Code'],
         body:
-          'Standardized agreement data for 740+ partner universities into a 27-column schema. 8 public columns vs. 19 internal-management columns, color-coded. Dropdown validation on key fields. Designed to extend to admin-panel embedding and an internal-network dashboard.',
+          'Standardized worldwide partner-university agreement data into a 27-column schema, with dropdown validation on key fields. Designed to extend to admin-panel embedding and an internal-network dashboard.',
         imageCaption: '27-column DB schema',
         imageHint: 'Color-coded Excel header — public and internal columns distinguishable',
       },
@@ -265,7 +265,7 @@ export const en = {
         year: '2026',
         stack: ['French VIP', 'Google Apps Script', 'Protocol'],
         body:
-          'Led planning and end-to-end operations for President Emmanuel Macron\'s special lecture at Yonsei University, April 3, 2026. Across 7 weeks, coordinated with the Élysée Palace, the French Embassy, Presidential Security, and multiple offices on and off campus. Handled program design, stage planning, rehearsals, press releases, and the PCO contract. Covered by 169 domestic press hits, an official Élysée Palace YouTube broadcast, and international coverage.',
+          'Led planning and end-to-end operations for President Emmanuel Macron\'s special lecture at Yonsei University, April 3, 2026. Coordinated with the Élysée Palace, the French Embassy, Presidential Security, and multiple offices on and off campus. Covered by 169 domestic press hits, an official Élysée Palace YouTube broadcast, and international coverage.',
         imageCaption: 'The event at Gakdang Hall',
         imageHint: 'One public-safe photo from the event — venue overview or welcome speech moment',
       },
@@ -282,9 +282,9 @@ export const en = {
         period: 'Nov 2025 – Present',
         bullets: [
           'Lead end-to-end operations for Yonsei\'s outbound exchange program',
-          'Strategy, agreements, and operations across 105 European partner universities',
-          'Executed end-to-end operations for the French President\'s special lecture at Yonsei (April 2026)',
-          'Drove the outbound program automation initiative — Flask, GAS, React, D3.js, Claude Code',
+          'Led overall planning of the French President\'s special lecture at Yonsei',
+          'Outbound program automation initiative: Flask · GAS · React · D3.js · Claude Code',
+          '2025 EAIE conference and partner-university visits (Sweden, Norway, France) — secured new agreements',
         ],
       },
       {
@@ -292,9 +292,8 @@ export const en = {
         position: 'YISS/WAY Program Coordinator',
         period: 'Jan 2024 – Oct 2025',
         bullets: [
-          'Planned the 40th anniversary of Yonsei International Summer School (Suno AI theme song, AI character social accounts 110K+ views)',
+          'Planned the 40th anniversary of Yonsei International Summer School (Suno AI theme song, social accounts 110K+ views)',
           'Ran short-term international programs — invoicing, email, and registration validation automation',
-          '2025 EAIE conference and partner-university visits (Sweden, Norway, France); secured new agreements',
         ],
       },
     ],
@@ -322,24 +321,16 @@ export const en = {
     title: 'Skills',
     groups: [
       {
-        heading: 'AI & Development',
-        items: 'Python · Flask · Google Apps Script · Claude API · Claude Code · React · TypeScript · D3.js · Chart.js · HTML/CSS/JS · Git · Netlify',
+        heading: 'Technical',
+        items: 'Python · Flask · React · TypeScript · Google Apps Script · Claude API · D3.js · Chart.js · HTML/CSS/JS · Git · Netlify',
       },
       {
-        heading: 'Product & Planning',
-        items: 'Service Design · User Research · KPI Design · Cross-functional Coordination · Technical Documentation · AI PoC Ideation & Delivery',
+        heading: 'Operations & Product',
+        items: 'Service Design · User Research · KPI Design · Workflow Automation · API Integration · Data Visualization · Cross-functional Coordination · Technical Documentation · AI PoC Ideation & Delivery',
       },
       {
-        heading: 'Data & Automation',
-        items: 'Google Sheets · Excel · Data Visualization (D3.js, Chart.js, Tableau) · Workflow Automation · API Integration',
-      },
-      {
-        heading: 'Domain',
-        items: 'International Education · European University Partnerships · Government Liaison · Event Management · Multilingual Communication',
-      },
-      {
-        heading: 'Languages',
-        items: 'Korean (Native) · English (Professional) · French (Intermediate)',
+        heading: 'International Affairs',
+        items: 'International Education · European University Partnerships · Event Management · Multilingual Communication · Korean (Native) · English (Professional) · French (Intermediate)',
       },
     ],
   },
@@ -348,7 +339,7 @@ export const en = {
     number: 'VI',
     title: 'Contact',
     heading: 'Looking for a new stage.',
-    email: 'sachoi@yonsei.ac.kr',
+    email: 'choy4130@yonsei.ac.kr',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',
   },
