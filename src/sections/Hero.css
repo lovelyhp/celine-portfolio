@@ -11,12 +11,12 @@
   margin-bottom: 0.5rem;
 }
 .hero-headline {
-  font-size: clamp(1.4rem, 3.2vw, 2.4rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 500;
   color: var(--cream);
-  max-width: 42ch;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
+  max-width: 30ch;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
   white-space: pre-line;
   word-break: keep-all;
 }
@@ -30,14 +30,14 @@
 }
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: clamp(1.5rem, 3vw, 3rem);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2.5rem) clamp(2rem, 4vw, 4rem);
   padding-top: 2rem;
   border-top: 1px solid var(--line);
-  max-width: 900px;
+  max-width: 760px;
 }
 .hero-stat-value {
-  font-size: clamp(1.2rem, 1.9vw, 1.65rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.5rem);
   font-weight: 400;
   color: var(--cream);
   line-height: 1.1;
@@ -46,10 +46,13 @@
   word-break: keep-all;
 }
 .hero-stat-label {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--cream-faint);
   letter-spacing: 0.04em;
   line-height: 1.4;
+}
+@media (max-width: 560px) {
+  .hero-stats { grid-template-columns: 1fr; }
 }
 .hero-hint {
   margin-top: 2.5rem;

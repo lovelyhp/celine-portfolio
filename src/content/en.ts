@@ -3,7 +3,7 @@ export const en = {
     nameRoman: 'Céline Choi',
     tagline: 'A planner opening futures, one drop of AI at a time — out of the daily routine.',
     subtitle:
-      'A University staff stepping into AI — trading "we can\'t" for "oh, it actually works."',
+      'A university staff member stepping into AI — trading "we can\'t" for "oh, it actually works."',
   },
   nav: {
     hero: 'Intro',
@@ -26,9 +26,9 @@ export const en = {
     number: 'I',
     title: 'About',
     body: [
-      'I manage the exchange program with 105 European partner universities at Yonsei University\'s Office of International Affairs. In parallel, I\'m pursuing a master\'s in AI Computing at the Yonsei Graduate School of AI Convergence.',
-      'It was only a year ago that I — a humanities student who majored in French — began transforming administrative routine into AI workflows. I\'ve built tools with Flask, Google Apps Script, D3.js, and React. Most recently, using Claude Code, I built the "OIA Automation Office": a six-floor virtual building where 15 AI secretaries and my cat Uboo each tend their own rooms.',
-      'I can\'t stand ideas that stay in memos. I love designing the thing people said "could this even work?" about, deploying it for real, and proving the effect in numbers. Every day I try another experiment that changes how the organization works.',
+      'I run Yonsei University\'s outbound program with overseas partner universities — academic exchange, student selection, and broader cooperation. In parallel, I\'m pursuing a master\'s in AI Computing at the Yonsei Graduate School of AI Convergence.',
+      'It was only a year ago that I — an ordinary university staffer who majored in French — began turning the routine work in front of me into AI workflows. I built tools with Flask, Google Apps Script, D3.js, and React. Most recently, using Claude Code, I built the "OIA Automation Office": a six-floor virtual building where 15 AI secretaries and my cat Uboo keep watch.',
+      'I can\'t stand ideas that stay in memos. I love designing the thing people said "could this even work?" about, and proving the effect in real numbers. Every day I try another experiment that changes how the organization works.',
       'Now I\'m looking for a bigger stage where my curious little laboratory can run wider.',
     ],
   },
@@ -64,8 +64,7 @@ export const en = {
         heading: '100 emails a day. An infinite mail loop.',
         body: [
           'Every morning at 9 AM, at least 100 new emails waited in my inbox. Inquiries from 105+ partner universities and hundreds of students at home and abroad, mixing Korean, English, and French. A single day of delay, and unread mail climbed past 200.',
-          'Administrative inquiries — similar on the surface, subtly different case by case. Partner data, student records, and past cases lived in scattered spreadsheets, documents, and emails — every single item made me cycle through dozens of windows.',
-          'Most of my day vanished into repetition. The planning and strategy the company actually needed from me had nowhere to land.',
+          'Records of administrative inquiries and operational data of every kind lived scattered across spreadsheets, documents, and emails — every single item made me cycle through dozens of windows. Most of my day vanished into repetition, and the planning and strategy the company needed from me had nowhere to land.',
         ],
         imageSrc: null,
         imageCaption: 'Gmail inbox (150+ unread)',
@@ -135,13 +134,7 @@ export const en = {
       {
         kind: 'result',
         tag: 'RESULT',
-        heading: 'Change in numbers',
-        table: [
-          { label: 'Weekly Email Processing Time', before: '25h+', after: 'under 5h' },
-          { label: 'ECTS Conversion (per case)', before: '8–10 min', after: 'under 30 sec' },
-          { label: 'Nomination Admission Email (per student)', before: '15 min', after: '2–3 min' },
-          { label: 'Unread Email Backlog', before: '150–200', after: 'under 20' },
-        ],
+        heading: 'A different structure, a different everyday.',
         body: [
           {
             h: 'Honestly — at first, it actually took twice as long.',
@@ -163,7 +156,7 @@ export const en = {
         tag: 'SCENES',
         heading: 'A new everyday.',
         scenes: [
-          'On the day of President Macron\'s visit, I could focus on the protocol floor. My AI secretary had already sorted over 90 emails in my place.',
+          'On the day President Macron visited Yonsei, my secretaries gave me the room to focus on the on-site work.',
           'The day I left on time, Uboo greeted me earlier than usual when I got home.',
           'The first time I arrived at my graduate class without being late, I took a seat in the front row.',
         ],
