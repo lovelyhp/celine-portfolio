@@ -11,6 +11,7 @@ type Slide =
       imageSrc: string | null;
       imageCaption: string;
       imageHint: string;
+      videoSrc?: string | null;
     }
   | {
       kind: 'section';
@@ -89,7 +90,10 @@ export const ProjectDeck = forwardRef<ProjectDeckHandle, ProjectDeckProps>(
     );
 
     const slide = slides[slideIndex];
-    const hasImage = slide.imageSrc !== null;
+    const videoSrc = slide.kind === 'cover' ? slide.videoSrc ?? null : null;
+    const hasVideo = videoSrc !== null;
+    const hasImage = !hasVideo && slide.imageSrc !== null;
+    const hasMedia = hasVideo || hasImage;
 
     return (
       <div className="project-inner">
@@ -113,7 +117,7 @@ export const ProjectDeck = forwardRef<ProjectDeckHandle, ProjectDeckProps>(
         <div className="project-slide-wrap">
           <article
             key={slideIndex}
-            className={`project-slide ${hasImage ? '' : 'project-slide--textonly'}`}
+            className={`project-slide ${hasMedia ? '' : 'project-slide--textonly'}`}
           >
             <div className="project-slide-text">
               {'tag' in slide && slide.tag && (
@@ -193,6 +197,25 @@ export const ProjectDeck = forwardRef<ProjectDeckHandle, ProjectDeckProps>(
               )}
             </div>
 
+            {hasVideo && (
+              <div className="project-slide-image project-slide-video">
+                <video
+                  className="project-video"
+                  src={`/videos/${videoSrc}`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  aria-label={slide.imageCaption}
+                />
+                {slide.imageCaption && (
+                  <figcaption className="img-caption font-italic-serif">
+                    — {slide.imageCaption}
+                  </figcaption>
+                )}
+              </div>
+            )}
             {hasImage && (
               <div className="project-slide-image">
                 <ImageSlot

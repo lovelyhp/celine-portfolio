@@ -54,8 +54,9 @@ export const en = {
         body:
           'An integrated automation system that links 15 scattered work folders via file-system events, where 15 AI personas — one planted in each folder — carry out their own work. A one-year record of moving from executor to conductor.',
         imageSrc: null,
-        imageCaption: 'OIA Building — full visualization',
+        imageCaption: 'OIA Rush — 6-floor building simulation',
         imageHint: 'Render of the 6-floor building (characters, elevator, Uboo visible)',
+        videoSrc: 'oia-rush.webm',
       },
       {
         kind: 'section',

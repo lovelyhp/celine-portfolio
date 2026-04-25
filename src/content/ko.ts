@@ -66,8 +66,9 @@ export const ko = {
         body:
           '현 근무지의 분산된 15개 업무 폴더를 파일 시스템 이벤트로 연결해, 각 폴더에 심어둔 15명의 AI 페르소나들이 자신의 업무를 수행하는 통합 자동화 시스템. 실무자에서 지휘자로 역할을 바꾼 지난 1년간의 기록.',
         imageSrc: null,
-        imageCaption: 'OIA 빌딩 전체 시각화',
+        imageCaption: 'OIA Rush — 6층 빌딩 시뮬레이션',
         imageHint: 'FLOOR_PLAN의 6층 빌딩 렌더 이미지 (캐릭터·엘리베이터·유부까지 보이는 메인 비주얼)',
+        videoSrc: 'oia-rush.webm',
       },
       {
         kind: 'section',
