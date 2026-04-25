@@ -110,8 +110,8 @@ export const en = {
         tag: 'APPROACH · IV',
         heading: 'One afternoon. D-2 before a deadline.',
         body: [
-          '3 PM. Léa on 1F reviews an MoU draft from a French university, Mail on 2F sorts 154 emails, Nomi on 3F processes 8 nominations, and Solène on 4F updates the exchange balance. Honorary Chairman Uboo finishes his patrol and heads up to ride the cat wheel.',
-          'I simply ask my chief-of-staff Céline: "What are today\'s negotiation points with our partners?" In the past I would have opened every email, dug through folders, recomputed the balances by hand. Now my secretaries each tend their own posts, and I only decide `what, to whom, in what order` to ask.',
+          '3 PM. Léa reviews an MoU draft, Mail sorts 154 emails, Nomi handles 8 nominations, and Solène updates the exchange balance. Uboo runs on the cat wheel up top.',
+          'I just ask Céline: "What are today\'s negotiation points with our partners?" Where I once opened every email and dug through folders, now I only decide `what, to whom, in what order` to ask.',
         ],
         imageSrc: null,
         imageCaption: 'OIA Building at peak activity',
