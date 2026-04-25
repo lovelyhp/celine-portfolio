@@ -142,7 +142,7 @@ export const en = {
           {
             h: 'What having time really means',
             p:
-              'Away from the repetitive labor, I can focus on the company\'s planning and strategy. After work, I attend graduate classes and AI society meetups. A life impossible without OIA Rush.',
+              'Away from the repetitive labor, I can focus on the company\'s planning and strategy. After work, I attend graduate classes and AI society meetups.',
           },
         ],
         imageSrc: null,
