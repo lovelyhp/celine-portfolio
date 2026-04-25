@@ -114,6 +114,15 @@
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
+.slide-link {
+  color: var(--iris);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+  word-break: break-all;
+}
+.slide-link:hover { opacity: 0.75; }
 .slide-subheading {
   color: var(--cream-muted);
   font-size: 0.8em;

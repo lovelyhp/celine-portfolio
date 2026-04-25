@@ -1,6 +1,26 @@
-import { forwardRef, useImperativeHandle, useState } from 'react';
+import { forwardRef, ReactNode, useImperativeHandle, useState } from 'react';
 import { ImageSlot } from '../components/ImageSlot';
 import './ProjectDeck.css';
+
+function renderTextWithLinks(text: string): ReactNode {
+  const parts = text.split(/(https?:\/\/\S+)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('http://') || part.startsWith('https://')) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="slide-link"
+        >
+          {part}
+        </a>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
 
 type Slide =
   | {
@@ -126,11 +146,11 @@ export const ProjectDeck = forwardRef<ProjectDeckHandle, ProjectDeckProps>(
               <h3 className="slide-heading font-display">
                 {slide.kind === 'cover' ? (
                   <>
-                    {slide.heading}
+                    {renderTextWithLinks(slide.heading)}
                     <span className="slide-subheading font-italic-serif"> — {slide.sub}</span>
                   </>
                 ) : (
-                  slide.heading
+                  renderTextWithLinks(slide.heading)
                 )}
               </h3>
 

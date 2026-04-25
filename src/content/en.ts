@@ -213,7 +213,7 @@ export const en = {
       {
         kind: 'result',
         tag: 'RESULT',
-        heading: 'Deployed at oia.yonsei.ac.kr/univfinder',
+        heading: 'Deployed at https://oia.yonsei.ac.kr/univfinder',
         body: [
           {
             h: '',
