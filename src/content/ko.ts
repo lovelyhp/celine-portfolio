@@ -14,7 +14,7 @@ export const ko = {
     nameRoman: 'Céline Choi',
     tagline: '반복되는 일상 속,\n인공지능 한 방울로 미래를 여는 기획자',
     subtitle:
-      '연세대학교 교직원의 새로운 도전, "이건 안 돼요" 대신 "이게 되네"를 외치는 사람',
+      '대학 교직원의 새로운 도전, "이건 안 돼요" 대신 "이게 되네"를 외치는 사람',
   },
   nav: {
     hero: 'Intro',
@@ -55,13 +55,13 @@ export const ko = {
     id: 'oia-building',
     index: '01',
     year: '2026',
-    title: 'OIA 자동화 사무실',
+    title: 'OIA Rush',
     subtitle: '15명의 AI 비서가 근무하는 가상의 6층 빌딩',
     stack: ['Claude Code', 'Flask', 'GAS', 'Claude API', 'D3.js'],
     slides: [
       {
         kind: 'cover',
-        heading: 'OIA Rush',
+        heading: 'OIA 자동화 사무실',
         sub: '15명의 AI 비서가 근무하는 가상의 6층 빌딩',
         body:
           '현 근무지의 분산된 15개 업무 폴더를 파일 시스템 이벤트로 연결해, 각 폴더에 심어둔 15명의 AI 페르소나들이 자신의 업무를 수행하는 통합 자동화 시스템. 실무자에서 지휘자로 역할을 바꾼 지난 1년간의 기록.',

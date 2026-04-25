@@ -3,7 +3,7 @@ export const en = {
     nameRoman: 'Céline Choi',
     tagline: 'A planner opening futures, one drop of AI at a time — out of the daily routine.',
     subtitle:
-      'A Yonsei University staffer stepping into AI — trading "we can\'t" for "oh, it actually works."',
+      'A University staff stepping into AI — trading "we can\'t" for "oh, it actually works."',
   },
   nav: {
     hero: 'Intro',
@@ -43,13 +43,13 @@ export const en = {
     id: 'oia-building',
     index: '01',
     year: '2026',
-    title: 'OIA Automation Office',
+    title: 'OIA Rush',
     subtitle: 'A virtual 6-floor building with 15 AI secretaries',
     stack: ['Claude Code', 'Flask', 'GAS', 'Claude API', 'D3.js'],
     slides: [
       {
         kind: 'cover',
-        heading: 'OIA Rush',
+        heading: 'OIA Automation Office',
         sub: 'A virtual 6-floor building with 15 AI secretaries',
         body:
           'An integrated automation system that links 15 scattered work folders via file-system events, where 15 AI personas — one planted in each folder — carry out their own work. A one-year record of moving from executor to conductor.',
