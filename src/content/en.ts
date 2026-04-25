@@ -76,7 +76,7 @@ export const en = {
         heading: 'It began with plain curiosity.',
         body: [
           'I never set out to automate everything. I just wanted a slightly better workspace.',
-          'An email classifier and drafter. An automatic ECTS converter. A D3.js dashboard. A nomination-management GAS web app. An automatic certificate system. Every time an experiment worked, the result showed up visibly in the numbers.',
+          'Email triage. An automatic ECTS converter. A D3.js dashboard. A nomination-management GAS web app. An automatic certificate system. Every time an experiment worked, the result showed up visibly in the numbers.',
         ],
         imageSrc: null,
         imageCaption: 'First tools — initial interfaces',
@@ -99,9 +99,8 @@ export const en = {
         tag: 'APPROACH · III',
         heading: 'Crown me Honorary Landlord of OIA.',
         body: [
-          'With Claude Code\'s sub-agents and the CLAUDE.md persona system, I raised a virtual 6-floor building. 15 department folders mapped to floors and rooms, each with a dedicated secretary. Léa on 1F (agreements), Mail on 2F (email), Nomi on 3F (nominations), Céline on 5F (chief-of-staff). On 6F, me and Uboo, my cat.',
-          'This isn\'t decoration — it\'s a designed game. Folder = department. File-change event = a secretary\'s state change. Total activity = Uboo\'s patrol speed. I translated abstract events into something you can see, and something cute.',
-          'Through these details I wanted to treat AI not as a tool but as a colleague.',
+          'Using Claude Code\'s sub-agents and a structured CLAUDE.md persona system, I raised a virtual 6-floor building. 15 department folders mapped to their own floors, each staffed by a dedicated secretary.',
+          'Folder = department. File-change event = a secretary\'s state change. Total activity = Uboo\'s patrol speed. I translated abstract events into something you can see, and something cute — wanting to treat AI not as a tool but as a colleague.',
         ],
         imageSrc: null,
         imageCaption: 'Upper floors of OIA Building (6F CEO office with Uboo)',
@@ -112,8 +111,8 @@ export const en = {
         tag: 'APPROACH · IV',
         heading: 'One afternoon. D-2 before a deadline.',
         body: [
-          '3 PM. Every floor at full capacity. Mail on 2F sorts 54 emails. Nomi on 3F processes 8 Sciences Po nominations. Solène on 4F updates the exchange balance. Léa on 1F reviews an MoU renewal draft just in from IP Paris. Honorary Chairman Uboo declares `peak` mode and runs hard on the cat wheel up top.',
-          'I simply ask my chief-of-staff Céline: "What are the negotiation points on IP Paris today?" In the past I would have opened 150 emails, dug through the agreements folder, recomputed the balances by hand. Now my secretaries each tend their own folders, and I only decide `what, to whom, in what order` to ask.',
+          '3 PM. Léa on 1F reviews an MoU renewal draft just in from IP Paris in France, Mail on 2F sorts 154 emails, Nomi on 3F processes 8 Sciences Po nominations, and Solène on 4F updates the exchange balance. Honorary Chairman Uboo declares `peak` mode and runs hard on the cat wheel up top.',
+          'I simply ask my chief-of-staff Céline on 5F: "What are the negotiation points on IP Paris today?" In the past I would have opened every email, dug through the agreements folder, recomputed the balances by hand. Now my secretaries each tend their own folders, and I only decide `what, to whom, in what order` to ask.',
         ],
         imageSrc: null,
         imageCaption: 'OIA Building at peak activity',
@@ -124,8 +123,8 @@ export const en = {
         tag: 'APPROACH · V',
         heading: 'How an ordinary university staffer works with AI.',
         body: [
-          'I\'m an administrative office worker, yet through pair-play with AI I\'ve acquired a cycle: spot the problem → build the system that solves it → iterate. I don\'t memorize code or skills. What I do have is the eye to name exactly "what the problem is," "how it should work," "what feels off right now."',
-          'Being non-CS, a humanities major, is no longer a weakness. It turned into a weapon: proof that the planner who knows the field\'s real pain points can build the tools herself.',
+          'I\'m not a developer, so I can\'t wield fancy code or skills. What I can do is define "what the problem is," design the "how to solve it," and look ahead to "where else this could apply."',
+          'Being non-CS, a humanities major, is no longer a weakness. I\'m proving that the planner who knows the field\'s pain points best can build the tools herself.',
         ],
         imageSrc: null,
         imageCaption: 'Claude Code session in progress',
@@ -139,12 +138,12 @@ export const en = {
           {
             h: 'Honestly — at first, it actually took twice as long.',
             p:
-              'Because I had to keep clearing the existing workload while designing the new workflow at the same time. But now that the system is complete and the OIA Building stands, my secretaries — right this second — are reviewing drafts, writing emails, analyzing data. I\'ve been pulled out of the inefficiency swamp, and I\'m now the landlord who oversees, reviews, and approves.',
+              'Because I had to design the MCP while juggling my existing work and graduate school at the same time. But once the OIA Building stood, my secretaries — right this second — are reviewing drafts, writing emails, analyzing data. I\'ve been pulled out of the inefficiency swamp, and I now reign over it all as the landlord.',
           },
           {
             h: 'What having time really means',
             p:
-              'Only once I escaped the repetitive labor could I focus on the company\'s planning and strategy. Office website renewal, the partner-university DB, the European benchmarking trip — and after work, I attend graduate classes and AI study groups. A life impossible without the automation office.',
+              'Away from the repetitive labor, I can focus on the company\'s planning and strategy. The OIA website renewal, the partner-university DB, and after work, graduate classes and AI society meetups. A life impossible without OIA Rush.',
           },
         ],
         imageSrc: null,
