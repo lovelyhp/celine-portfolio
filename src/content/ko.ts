@@ -352,7 +352,7 @@ export const ko = {
     number: 'VI',
     title: 'Contact',
     heading: '새로운 무대를 찾습니다.',
-    email: 'choy4130@yonsei.ac.kr',
+    email: 'choy4130@gmail.com',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',
   },

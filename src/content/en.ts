@@ -339,7 +339,7 @@ export const en = {
     number: 'VI',
     title: 'Contact',
     heading: 'Looking for a new stage.',
-    email: 'choy4130@yonsei.ac.kr',
+    email: 'choy4130@gmail.com',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',
   },
