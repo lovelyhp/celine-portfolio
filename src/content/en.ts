@@ -26,8 +26,7 @@ export const en = {
     number: 'I',
     title: 'About',
     body: [
-      'I run Yonsei University\'s outbound program with overseas partner universities — academic exchange, student selection, and broader cooperation. In parallel, I\'m pursuing a master\'s in AI Computing at the Yonsei Graduate School of AI Convergence.',
-      'It was only a year ago that I — an ordinary university staffer who majored in French — began turning the routine work in front of me into AI workflows. I built tools with Flask, Google Apps Script, D3.js, and React. Most recently, using Claude Code, I built the "OIA Automation Office": a six-floor virtual building where 15 AI secretaries and my cat Uboo keep watch.',
+      'I handle international affairs at Yonsei University, while in parallel pursuing a master\'s at the Yonsei Graduate School of AI Convergence. An ordinary university staffer who majored in French, I began turning routine office work into AI workflows — building tools with Flask, Google Apps Script, D3.js, and React, and most recently raising the six-floor "OIA Automation Office" with Claude Code.',
       'I can\'t stand ideas that stay in memos. I love designing the thing people said "could this even work?" about, and proving the effect in real numbers. Every day I try another experiment that changes how the organization works.',
       'Now I\'m looking for a bigger stage where my curious little laboratory can run wider.',
     ],
@@ -36,7 +35,7 @@ export const en = {
   featured: {
     number: 'II',
     title: 'Featured Work',
-    intro: 'Two main works, told as stories.',
+    intro: 'A look at two key projects I built.',
   },
 
   oiaBuilding: {
@@ -63,8 +62,8 @@ export const en = {
         tag: 'PROBLEM',
         heading: '100 emails a day. An infinite mail loop.',
         body: [
-          'Every morning at 9 AM, at least 100 new emails waited in my inbox. Inquiries from 105+ partner universities and hundreds of students at home and abroad, mixing Korean, English, and French. A single day of delay, and unread mail climbed past 200.',
-          'Records of administrative inquiries and operational data of every kind lived scattered across spreadsheets, documents, and emails — every single item made me cycle through dozens of windows. Most of my day vanished into repetition, and the planning and strategy the company needed from me had nowhere to land.',
+          'Every morning at 9 AM, hundreds of emails poured in from overseas partner universities and students, mixed in Korean, English, and French. Reading them one by one, the planning and strategy work always took a back seat.',
+          'Operational data lived scattered across spreadsheets, documents, and emails — every single item made me cycle through dozens of windows. Most of my day vanished into repetition, and the planning and strategy the company needed from me had nowhere to land.',
         ],
         imageSrc: null,
         imageCaption: 'Gmail inbox (150+ unread)',
@@ -75,8 +74,8 @@ export const en = {
         tag: 'APPROACH · I',
         heading: 'It began with plain curiosity.',
         body: [
-          'I never set out to automate everything. I just wanted a slightly better workspace.',
-          'Email triage. An automatic ECTS converter. A D3.js dashboard. A nomination-management GAS web app. An automatic certificate system. Every time an experiment worked, the result showed up visibly in the numbers.',
+          'I never set out to automate everything — I just wanted a slightly better workspace.',
+          'Email triage. An automatic ECTS converter. A unified GAS dashboard for nominations. An automatic certificate system. Every time an experiment worked, the result showed up visibly in the numbers.',
         ],
         imageSrc: null,
         imageCaption: 'First tools — initial interfaces',
@@ -87,8 +86,8 @@ export const en = {
         tag: 'APPROACH · II',
         heading: 'Human appetite has no end, and AI is a delightful game.',
         body: [
-          'The more systems I built, the heavier it became just to decide "which tool for which task?" The experiments worked, but each lived in its own folder, with its own execution pattern, its own update cycle.',
-          'Then one day, a thought crossed my mind. What if I gathered all of them into one place? And while I\'m at it — why not build it like a simulation game?',
+          'The more systems I built, the heavier it became just to decide "which tool for which task?" Each lived in its own folder with its own update cycle, until one day a thought crossed my mind: what if I gathered them all into one place?',
+          'And while I\'m at it — why not build it like a simulation game?',
         ],
         imageSrc: null,
         imageCaption: 'Project folder structure',
@@ -100,7 +99,7 @@ export const en = {
         heading: 'Crown me Honorary Landlord of OIA.',
         body: [
           'Using Claude Code\'s sub-agents and a structured CLAUDE.md persona system, I raised a virtual 6-floor building. 15 department folders mapped to their own floors, each staffed by a dedicated secretary.',
-          'Folder = department. File-change event = a secretary\'s state change. Total activity = Uboo\'s patrol speed. I translated abstract events into something you can see, and something cute — wanting to treat AI not as a tool but as a colleague.',
+          'I translated abstract events into something you can see, and something cute — wanting to treat AI not as a tool but as a "teammate."',
         ],
         imageSrc: null,
         imageCaption: 'Upper floors of OIA Building (6F CEO office with Uboo)',
@@ -111,8 +110,8 @@ export const en = {
         tag: 'APPROACH · IV',
         heading: 'One afternoon. D-2 before a deadline.',
         body: [
-          '3 PM. Léa on 1F reviews an MoU renewal draft just in from IP Paris in France, Mail on 2F sorts 154 emails, Nomi on 3F processes 8 Sciences Po nominations, and Solène on 4F updates the exchange balance. Honorary Chairman Uboo declares `peak` mode and runs hard on the cat wheel up top.',
-          'I simply ask my chief-of-staff Céline on 5F: "What are the negotiation points on IP Paris today?" In the past I would have opened every email, dug through the agreements folder, recomputed the balances by hand. Now my secretaries each tend their own folders, and I only decide `what, to whom, in what order` to ask.',
+          '3 PM. Léa on 1F reviews an MoU draft from a French university, Mail on 2F sorts 154 emails, Nomi on 3F processes 8 nominations, and Solène on 4F updates the exchange balance. Honorary Chairman Uboo finishes his patrol and heads up to ride the cat wheel.',
+          'I simply ask my chief-of-staff Céline: "What are today\'s negotiation points with our partners?" In the past I would have opened every email, dug through the agreements folder, recomputed the balances by hand. Now my secretaries each tend their own posts, and I only decide `what, to whom, in what order` to ask.',
         ],
         imageSrc: null,
         imageCaption: 'OIA Building at peak activity',
@@ -123,7 +122,7 @@ export const en = {
         tag: 'APPROACH · V',
         heading: 'How an ordinary university staffer works with AI.',
         body: [
-          'I\'m not a developer, so I can\'t wield fancy code or skills. What I can do is define "what the problem is," design the "how to solve it," and look ahead to "where else this could apply."',
+          'Difficult code and skills aren\'t my forte, but I can define what the problem is, design how to solve it, and find where else the solution applies.',
           'Being non-CS, a humanities major, is no longer a weakness. I\'m proving that the planner who knows the field\'s pain points best can build the tools herself.',
         ],
         imageSrc: null,
@@ -138,12 +137,12 @@ export const en = {
           {
             h: 'Honestly — at first, it actually took twice as long.',
             p:
-              'Because I had to design the MCP while juggling my existing work and graduate school at the same time. But once the OIA Building stood, my secretaries — right this second — are reviewing drafts, writing emails, analyzing data. I\'ve been pulled out of the inefficiency swamp, and I now reign over it all as the landlord.',
+              'Because I had to design the MCP while juggling work and graduate school. But once the OIA Building stood, I was pulled out of the inefficiency swamp and now reign over it all as the landlord.',
           },
           {
             h: 'What having time really means',
             p:
-              'Away from the repetitive labor, I can focus on the company\'s planning and strategy. The OIA website renewal, the partner-university DB, and after work, graduate classes and AI society meetups. A life impossible without OIA Rush.',
+              'Away from the repetitive labor, I can focus on the company\'s planning and strategy. After work, I attend graduate classes and AI society meetups. A life impossible without OIA Rush.',
           },
         ],
         imageSrc: null,

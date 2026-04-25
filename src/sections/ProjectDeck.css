@@ -196,11 +196,11 @@
 .slide-scenes-wrap {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .slide-scenes {
   list-style: none;
-  padding: 1.5rem 1.75rem;
+  padding: 0.85rem 1.5rem;
   background: rgba(196, 169, 255, 0.06);
   border-left: 2px solid var(--iris);
   border-radius: 2px;
@@ -209,9 +209,9 @@
 .slide-scenes li {
   display: flex;
   gap: 0.9rem;
-  padding: 0.75rem 0;
+  padding: 0.4rem 0;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.55;
   color: var(--cream);
   border-bottom: 1px dashed var(--line);
 }
@@ -219,11 +219,11 @@
 .scene-bullet {
   color: var(--iris);
   font-size: 0.7rem;
-  line-height: 1.9;
+  line-height: 1.7;
   flex-shrink: 0;
 }
 .slide-closing {
-  padding-top: 1rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--line);
 }
 
