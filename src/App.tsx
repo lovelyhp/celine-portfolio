@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { LangProvider, useLang } from './context/LangContext';
 import { HeroChapter } from './sections/Hero';
 import { AboutChapter } from './sections/About';
+import { MethodChapter } from './sections/Method';
 import { FeaturedIntroChapter } from './sections/FeaturedIntro';
 import { ProjectDeck, ProjectDeckHandle } from './sections/ProjectDeck';
 import { SelectedChapter } from './sections/Selected';
@@ -13,6 +14,7 @@ import './components/Deck.css';
 const SECTION_IDS = [
   'hero',
   'about',
+  'method',
   'work-intro',
   'oia',
   'univ',
@@ -153,6 +155,7 @@ function Shell() {
   const navItems: { id: SectionId; label: string; matches: SectionId[] }[] = [
     { id: 'hero', label: t.nav.hero, matches: ['hero'] },
     { id: 'about', label: t.nav.about, matches: ['about'] },
+    { id: 'method', label: t.nav.method, matches: ['method'] },
     { id: 'work-intro', label: t.nav.work, matches: WORK_IDS },
     { id: 'selected', label: 'Selected', matches: ['selected'] },
     { id: 'experience', label: t.nav.experience, matches: ['experience'] },
@@ -203,6 +206,9 @@ function Shell() {
         </section>
         <section id="about" className="chapter">
           <AboutChapter />
+        </section>
+        <section id="method" className="chapter chapter--flow">
+          <MethodChapter />
         </section>
         <section id="work-intro" className="chapter">
           <FeaturedIntroChapter />

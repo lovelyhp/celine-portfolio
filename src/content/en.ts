@@ -8,6 +8,7 @@ export const en = {
   nav: {
     hero: 'Intro',
     about: 'About',
+    method: 'Method',
     work: 'Work',
     experience: 'Experience',
     skills: 'Skills',
@@ -32,8 +33,22 @@ export const en = {
     ],
   },
 
-  featured: {
+  method: {
     number: 'II',
+    title: 'Method',
+    headline: 'Not someone who uses tools — someone who builds them to use.',
+    steps: [
+      { id: '01', label: 'Problem framing', desc: 'Start by asking what tool is worth building.' },
+      { id: '02', label: 'Data structure', desc: 'Sketch how the data should be shaped first.' },
+      { id: '03', label: 'Question design', desc: 'Decide what to ask Claude, and how.' },
+      { id: '04', label: 'Validation', desc: 'Use it in real work to see if it holds up.' },
+      { id: '05', label: 'Iteration', desc: 'Refine through feedback from self and colleagues.' },
+      { id: '06', label: 'Deployment', desc: 'Take it all the way into actual use.' },
+    ],
+  },
+
+  featured: {
+    number: 'III',
     title: 'Featured Work',
     intro: 'A look at two key projects I built.',
   },
@@ -229,7 +244,7 @@ export const en = {
   },
 
   selected: {
-    number: 'III',
+    number: 'IV',
     title: 'Selected Works',
     intro: 'Other projects.',
     projects: [
@@ -273,7 +288,7 @@ export const en = {
   },
 
   experience: {
-    number: 'IV',
+    number: 'V',
     title: 'Experience & Education',
     roles: [
       {
@@ -317,7 +332,7 @@ export const en = {
   },
 
   skills: {
-    number: 'V',
+    number: 'VI',
     title: 'Skills',
     groups: [
       {
@@ -336,7 +351,7 @@ export const en = {
   },
 
   contact: {
-    number: 'VI',
+    number: 'VII',
     title: 'Contact',
     heading: 'Looking for a new stage.',
     email: 'choy4130@gmail.com',

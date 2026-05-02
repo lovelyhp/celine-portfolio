@@ -1,0 +1,99 @@
+.method-inner {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  justify-content: center;
+  max-width: 920px;
+  min-height: 100%;
+}
+
+.method-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.method-headline {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  word-break: keep-all;
+  max-width: 24ch;
+}
+
+.method-subhead {
+  font-size: var(--fs-body-lg);
+  color: var(--cream-muted);
+  line-height: 1.65;
+  max-width: 56ch;
+  word-break: keep-all;
+}
+
+.method-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.method-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: baseline;
+  padding: 0.55rem 0;
+}
+
+.method-step-num {
+  font-size: var(--fs-small);
+  color: var(--iris);
+  letter-spacing: 0.1em;
+  min-width: 2.5rem;
+}
+
+.method-step-text {
+  display: grid;
+  grid-template-columns: minmax(8rem, 11rem) 1fr;
+  align-items: baseline;
+  column-gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.method-step-label {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+}
+
+.method-step-desc {
+  font-size: var(--fs-body);
+  color: var(--cream-muted);
+  line-height: 1.6;
+  word-break: keep-all;
+  max-width: 50ch;
+}
+
+.method-closing {
+  font-size: 1.25rem;
+  color: var(--iris);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .method-step {
+    grid-template-columns: 1fr;
+    row-gap: 0.4rem;
+  }
+  .method-step-text {
+    grid-template-columns: 1fr;
+    row-gap: 0.35rem;
+  }
+}

@@ -19,6 +19,7 @@ export const ko = {
   nav: {
     hero: 'Intro',
     about: 'About',
+    method: 'Method',
     work: 'Work',
     experience: 'Experience',
     skills: 'Skills',
@@ -43,8 +44,22 @@ export const ko = {
     ],
   },
 
-  featured: {
+  method: {
     number: 'II',
+    title: 'Method',
+    headline: '도구를 쓰는 사람이 아니라, 도구를 만들어 쓰는 사람.',
+    steps: [
+      { id: '01', label: '문제 정의', desc: '어떤 도구를 만들어야 하는지부터 묻는다.' },
+      { id: '02', label: '구조 설계', desc: '데이터를 어떤 형태로 담을지 먼저 그린다.' },
+      { id: '03', label: '질문 설계', desc: 'Claude에게 무엇을, 어떻게 물을지 정한다.' },
+      { id: '04', label: '검증', desc: '결과물이 실제 업무에 쓸 만한지 직접 써본다.' },
+      { id: '05', label: '반복 개선', desc: '본인과 동료의 피드백을 받아 다시 만진다.' },
+      { id: '06', label: '배포·운영', desc: '실제로 쓰이는 곳까지 가져간다.' },
+    ],
+  },
+
+  featured: {
+    number: 'III',
     title: 'Featured Work',
     intro: '제가 만들어 낸 주요 작업 두 가지를 소개합니다.',
   },
@@ -242,7 +257,7 @@ export const ko = {
   },
 
   selected: {
-    number: 'III',
+    number: 'IV',
     title: 'Selected Works',
     intro: '그 외 작업들.',
     projects: [
@@ -286,7 +301,7 @@ export const ko = {
   },
 
   experience: {
-    number: 'IV',
+    number: 'V',
     title: 'Experience & Education',
     roles: [
       {
@@ -330,7 +345,7 @@ export const ko = {
   },
 
   skills: {
-    number: 'V',
+    number: 'VI',
     title: 'Skills',
     groups: [
       {
@@ -349,7 +364,7 @@ export const ko = {
   },
 
   contact: {
-    number: 'VI',
+    number: 'VII',
     title: 'Contact',
     heading: '새로운 무대를 찾습니다.',
     email: 'choy4130@gmail.com',
