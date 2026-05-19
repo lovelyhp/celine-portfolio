@@ -1,31 +1,60 @@
 /* ─────────────────────────────────────────────────────
- * Design Tokens — "Deep Violet Night" Editorial
+ * Design Tokens — Charcoal × Amber Editorial (v2)
  * ──────────────────────────────────────────────────── */
 :root {
-  --night: #14102A;
-  --plum: #1E1638;
-  --plum-lift: #2A1F4A;
-  --iris: #C4A9FF;
-  --lilac: #E9D8FF;
-  --aurora: #8C6CFF;
-  --cream: #F5F0E8;
-  --cream-muted: rgba(245, 240, 232, 0.86);
-  --cream-faint: rgba(245, 240, 232, 0.52);
-  --cream-whisper: rgba(245, 240, 232, 0.15);
-  --line: rgba(245, 240, 232, 0.12);
-  --line-strong: rgba(245, 240, 232, 0.25);
+  /* Base */
+  --ink:        #0B1220;
+  --ink-soft:   #14171F;
+  --ink-line:   rgba(250, 250, 248, 0.18);
+  --ink-line-2: rgba(250, 250, 248, 0.30);
 
-  --fs-hero: clamp(2.5rem, 6.5vw, 5.5rem);
+  /* Paper */
+  --paper:      #FAFAF8;
+  --paper-warm: #F4EDE0;
+  --paper-line: rgba(11, 18, 32, 0.10);
+
+  /* Accent */
+  --amber:      #FBBF24;
+  --amber-deep: #B8870C;
+
+  /* Text on dark / light */
+  --text-on-dark:        #FAFAF8;
+  --text-on-dark-muted:  rgba(250, 250, 248, 0.72);
+  --text-on-dark-faint:  rgba(250, 250, 248, 0.52);
+  --text-on-light:       #14171F;
+  --text-on-light-muted: rgba(20, 23, 31, 0.72);
+  --text-on-light-faint: rgba(20, 23, 31, 0.52);
+
+  /* Bridge aliases — 기존 컴포넌트 호환용. Task 13 cleanup에서 제거 */
+  --night: var(--ink);
+  --plum: var(--ink-soft);
+  --plum-lift: var(--ink-soft);
+  --iris: var(--amber);
+  --lilac: var(--amber);
+  --aurora: var(--amber);
+  --cream: var(--text-on-dark);
+  --cream-muted: var(--text-on-dark-muted);
+  --cream-faint: var(--text-on-dark-faint);
+  --cream-whisper: rgba(250, 250, 248, 0.15);
+  --line: var(--ink-line);
+  --line-strong: var(--ink-line-2);
+
+  /* Fonts */
+  --font-sans-ko:  'Pretendard Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif-en: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+  /* Sizes (기존 유지, hero만 약간 키움) */
+  --fs-hero:    clamp(2.75rem, 7vw, 6rem);
   --fs-display: clamp(2rem, 4.75vw, 3.75rem);
-  --fs-h1: clamp(1.5rem, 3vw, 2.375rem);
-  --fs-h2: clamp(1.25rem, 2.25vw, 1.75rem);
-  --fs-h3: clamp(1rem, 1.6vw, 1.3rem);
-  --fs-body: 1rem;
+  --fs-h1:      clamp(1.5rem, 3vw, 2.375rem);
+  --fs-h2:      clamp(1.25rem, 2.25vw, 1.75rem);
+  --fs-h3:      clamp(1rem, 1.6vw, 1.3rem);
+  --fs-body:    1rem;
   --fs-body-lg: 1.0625rem;
-  --fs-small: 0.85rem;
-  --fs-xs: 0.72rem;
+  --fs-small:   0.85rem;
+  --fs-xs:      0.72rem;
 
-  --max-w: 1280px;
+  --max-w: 1320px;
   --pad-x: clamp(1.25rem, 4vw, 3rem);
 }
 
@@ -33,85 +62,60 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
   scroll-padding-top: 3.75rem;
 }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 body {
-  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-sans-ko);
   font-size: var(--fs-body);
   font-weight: 400;
   line-height: 1.65;
-  color: var(--cream);
-  background: var(--night);
+  color: var(--text-on-dark);
+  background: var(--ink);
   font-feature-settings: 'kern' 1, 'liga' 1, 'ss03' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; scroll-snap-type: none; }
 }
 
 img, svg { display: block; max-width: 100%; }
 button { font: inherit; cursor: pointer; border: none; background: transparent; color: inherit; }
 a { color: inherit; text-decoration: none; }
 
+/* Font helper classes — Task 2에서 컴포넌트들이 사용 */
 .font-display {
-  font-family: 'Pretendard Variable', -apple-system, sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1.1;
+  font-family: var(--font-sans-ko);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 .font-serif {
-  font-family: 'Pretendard Variable', -apple-system, sans-serif;
+  font-family: var(--font-serif-en);
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
-.font-mono-num {
-  font-family: 'Pretendard Variable', -apple-system, sans-serif;
-  font-weight: 300;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.03em;
-}
-.font-italic-serif {
-  font-family: 'Pretendard Variable', sans-serif;
+.font-serif-italic {
+  font-family: var(--font-serif-en);
+  font-style: italic;
   font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0;
 }
+.font-num {
+  font-family: var(--font-serif-en);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.015em;
+}
+/* Bridge alias for legacy classes */
+.font-italic-serif { font-family: var(--font-serif-en); font-style: italic; font-weight: 400; }
+.font-mono-num { font-family: var(--font-serif-en); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -0.015em; }
 
 #root {
   position: relative;
-  background: var(--night);
+  background: var(--ink);
   overflow-x: clip;
 }
-
-/* ambient background glow — fixed so it follows the viewport */
-#root::before {
-  content: '';
-  position: fixed;
-  top: -20%;
-  right: -10%;
-  width: 70vw;
-  height: 70vw;
-  max-width: 900px;
-  max-height: 900px;
-  background: radial-gradient(circle at center, rgba(140, 108, 255, 0.18) 0%, transparent 55%);
-  pointer-events: none;
-  z-index: 0;
-}
-#root::after {
-  content: '';
-  position: fixed;
-  bottom: -20%;
-  left: -10%;
-  width: 60vw;
-  height: 60vw;
-  max-width: 800px;
-  max-height: 800px;
-  background: radial-gradient(circle at center, rgba(196, 169, 255, 0.1) 0%, transparent 55%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* ambient glow는 v2에서 제거됨 (단일 다크 톤의 주범) */
 
 .page {
   position: relative;
@@ -120,11 +124,9 @@ a { color: inherit; text-decoration: none; }
 
 .chapter {
   position: relative;
-  padding: clamp(4.5rem, 8vw, 6rem) var(--pad-x) clamp(4.5rem, 8vw, 6rem);
+  padding: clamp(4.5rem, 8vw, 6rem) var(--pad-x);
   min-height: 100vh;
   min-height: 100dvh;
-  scroll-snap-align: start;
-  scroll-margin-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,9 +137,16 @@ a { color: inherit; text-decoration: none; }
   padding-top: clamp(3rem, 6vw, 5rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
-.chapter--project {
-  justify-content: flex-start;
-  padding-top: clamp(4rem, 7vw, 5.5rem);
+.chapter--light {
+  background: var(--paper);
+  color: var(--text-on-light);
+}
+.chapter--warm {
+  background: var(--paper-warm);
+  color: var(--text-on-light);
+}
+.chapter--dark-soft {
+  background: var(--ink-soft);
 }
 
 .chapter-inner {
@@ -152,42 +161,50 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: 'Pretendard Variable', sans-serif;
-  font-size: var(--fs-xs);
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--iris);
+  letter-spacing: 0;
+  color: var(--amber);
   margin-bottom: 1.25rem;
 }
+.chapter--light .section-label,
+.chapter--warm .section-label { color: var(--amber-deep); }
 .section-label::before {
   content: '';
   width: 2.5rem;
   height: 1px;
-  background: var(--iris);
+  background: currentColor;
   opacity: 0.6;
 }
 
 .chip {
   display: inline-block;
   padding: 0.28rem 0.7rem;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--ink-line-2);
   border-radius: 999px;
   font-size: var(--fs-xs);
-  color: var(--cream-muted);
+  color: var(--text-on-dark-muted);
   letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.03);
 }
+.chapter--light .chip,
+.chapter--warm .chip {
+  border-color: var(--paper-line);
+  color: var(--text-on-light-muted);
+  background: rgba(0, 0, 0, 0.02);
+}
 
 ::selection {
-  background: var(--aurora);
-  color: var(--night);
+  background: var(--amber);
+  color: var(--ink);
 }
 
 *::-webkit-scrollbar { width: 8px; height: 8px; }
 *::-webkit-scrollbar-track { background: transparent; }
-*::-webkit-scrollbar-thumb { background: rgba(245, 240, 232, 0.1); border-radius: 4px; }
-*::-webkit-scrollbar-thumb:hover { background: rgba(245, 240, 232, 0.2); }
+*::-webkit-scrollbar-thumb { background: rgba(250, 250, 248, 0.1); border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: rgba(250, 250, 248, 0.2); }
 
 @media (max-width: 640px) {
   :root { --pad-x: 1.25rem; }
