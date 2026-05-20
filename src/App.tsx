@@ -33,12 +33,11 @@ function Shell() {
 
     const pickActive = () => {
       const probe = window.innerHeight * 0.35;
-      let best: SectionId = 'hero';
+      let best: SectionId = sections[0]?.id as SectionId ?? 'hero';
       for (const s of sections) {
         const rect = s.getBoundingClientRect();
-        if (rect.top <= probe && rect.bottom > probe) {
-          best = s.id as SectionId;
-          break;
+        if (rect.top <= probe) {
+          best = s.id as SectionId; // keep advancing — last matching wins
         }
       }
       setActiveId(best);
@@ -84,7 +83,7 @@ function Shell() {
         >
           Céline Choi
         </a>
-        <nav className="deck-nav">
+        <nav className="deck-nav" aria-label="Page navigation">
           {navItems.map((n) => (
             <a
               key={n.id}

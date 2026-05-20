@@ -25,20 +25,6 @@
   --text-on-light-muted: rgba(20, 23, 31, 0.72);
   --text-on-light-faint: rgba(20, 23, 31, 0.52);
 
-  /* Bridge aliases — 기존 컴포넌트 호환용. Task 13 cleanup에서 제거 */
-  --night: var(--ink);
-  --plum: var(--ink-soft);
-  --plum-lift: var(--ink-soft);
-  --iris: var(--amber);
-  --lilac: var(--amber);
-  --aurora: var(--amber);
-  --cream: var(--text-on-dark);
-  --cream-muted: var(--text-on-dark-muted);
-  --cream-faint: var(--text-on-dark-faint);
-  --cream-whisper: rgba(250, 250, 248, 0.15);
-  --line: var(--ink-line);
-  --line-strong: var(--ink-line-2);
-
   /* Fonts */
   --font-sans-ko:  'Pretendard Variable', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif-en: 'Newsreader', Georgia, 'Times New Roman', serif;
@@ -106,10 +92,6 @@ a { color: inherit; text-decoration: none; }
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.015em;
 }
-/* Bridge alias for legacy classes */
-.font-italic-serif { font-family: var(--font-serif-en); font-style: italic; font-weight: 400; }
-.font-mono-num { font-family: var(--font-serif-en); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -0.015em; }
-
 #root {
   position: relative;
   background: var(--ink);
