@@ -212,12 +212,12 @@ export const ko = {
       {
         kind: 'cover',
         heading: 'OIA University Finder',
-        sub: '대학 검색 대시보드',
+        sub: '265개 해외대학을 직관적으로 — D3.js 기반 인터랙티브 대시보드',
         body:
-          '265개 해외대학 정보를 직관적으로 탐색할 수 있게 만든 대시보드. 학생들의 반복 FAQ를 도구로 전환하다.',
+          '학생들의 반복 FAQ를 도구로 전환했습니다. 자기 조건으로 필터링·즐겨찾기·CSV 내보내기가 가능한 대시보드.',
         imageSrc: null,
         imageCaption: 'Univ Finder 메인 화면',
-        imageHint: 'oiaunivfinder.netlify.app 메인 뷰 스크린샷 (전체 UI)',
+        imageHint: 'oiaunivfinder.netlify.app 메인 뷰 스크린샷',
       },
       {
         kind: 'section',

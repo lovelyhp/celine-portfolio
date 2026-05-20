@@ -199,12 +199,12 @@ export const en = {
       {
         kind: 'cover',
         heading: 'OIA University Finder',
-        sub: 'University Search Dashboard',
+        sub: '265 partner universities, navigable in seconds — a D3.js interactive dashboard.',
         body:
-          'A dashboard letting students intuitively explore information on 265 overseas partner universities. Turning students\' repetitive FAQ into a tool.',
+          'A tool I built to convert students\' repetitive FAQs into self-service: filter by criteria, favorite universities, export CSV.',
         imageSrc: null,
-        imageCaption: 'Univ Finder main view',
-        imageHint: 'Screenshot of oiaunivfinder.netlify.app home page',
+        imageCaption: 'Univ Finder main screen',
+        imageHint: 'oiaunivfinder.netlify.app main view screenshot',
       },
       {
         kind: 'section',
