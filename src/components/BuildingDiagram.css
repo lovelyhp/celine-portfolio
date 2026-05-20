@@ -1,0 +1,106 @@
+.building-diagram {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans-ko);
+  color: var(--text-on-dark);
+}
+.building-diagram__roof {
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--amber);
+  text-align: center;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0;
+}
+.building-diagram__body {
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid var(--text-on-dark);
+  border-radius: 6px 6px 0 0;
+  background: rgba(250, 250, 248, 0.02);
+  flex: 1;
+}
+.building-diagram__floor {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.75rem;
+  border-bottom: 1px solid var(--ink-line);
+  font-size: 0.72rem;
+  color: var(--text-on-dark-muted);
+  transition: background 0.25s ease, color 0.25s ease;
+  min-height: 2.2rem;
+}
+.building-diagram__floor:last-child { border-bottom: none; }
+.building-diagram__floor[data-highlighted="true"] {
+  background: rgba(251, 191, 36, 0.10);
+  color: var(--amber);
+  box-shadow: inset 3px 0 0 var(--amber);
+}
+.building-diagram__floor-num {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: var(--font-serif-en);
+}
+.building-diagram__floor-label {
+  font-size: 0.7rem;
+  opacity: 0.85;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.building-diagram__floor-text {
+  font-size: 0.72rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.building-diagram__lights {
+  display: flex;
+  gap: 3px;
+  margin-left: auto;
+}
+.building-diagram__lights span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(250, 250, 248, 0.20);
+  display: inline-block;
+}
+.building-diagram__lights span.on { background: var(--amber); }
+.building-diagram__lights span.off { background: rgba(250, 250, 248, 0.18); }
+
+/* Sizes */
+.building-diagram--mini { width: 80px; }
+.building-diagram--mini .building-diagram__roof { font-size: 0.55rem; padding: 2px 0; }
+.building-diagram--mini .building-diagram__floor { min-height: 1.1rem; padding: 0 0.3rem; font-size: 0; }
+.building-diagram--mini .building-diagram__floor-num,
+.building-diagram--mini .building-diagram__floor-label { display: none; }
+.building-diagram--mini .building-diagram__lights span { width: 3px; height: 3px; }
+
+.building-diagram--standard { width: 100%; max-width: 200px; }
+.building-diagram--standard .building-diagram__floor { min-height: 2rem; }
+
+.building-diagram--large { width: 100%; max-width: 320px; }
+.building-diagram--large .building-diagram__roof { font-size: 0.95rem; padding: 0.55rem 0; }
+.building-diagram--large .building-diagram__floor { min-height: 2.8rem; font-size: 0.82rem; }
+.building-diagram--large .building-diagram__floor-label { font-size: 0.78rem; }
+
+/* Light background variant (used in About+Method 등) */
+.chapter--light .building-diagram,
+.chapter--warm .building-diagram { color: var(--text-on-light); }
+.chapter--light .building-diagram__body,
+.chapter--warm .building-diagram__body { border-color: var(--text-on-light); }
+.chapter--light .building-diagram__floor,
+.chapter--warm .building-diagram__floor { color: var(--text-on-light-muted); border-bottom-color: var(--paper-line); }
+.chapter--light .building-diagram__roof,
+.chapter--warm .building-diagram__roof { color: var(--amber-deep); }
+.chapter--light .building-diagram__floor[data-highlighted="true"],
+.chapter--warm .building-diagram__floor[data-highlighted="true"] {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--amber-deep);
+}
