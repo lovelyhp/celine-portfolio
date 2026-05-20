@@ -130,7 +130,7 @@ export const ko = {
           'Claude Code의 서브에이전트, 조직적인 CLAUDE.md 페르소나로 가상의 6층 빌딩을 세웠습니다. 15개 부서 폴더를 층별로 매핑하고, 각 부서에 담당 비서를 배치했습니다.',
           '추상적 이벤트들을 눈에 보이는 귀여움으로 탄생시켰습니다. AI를 도구가 아니라 "팀원"으로 대하고 싶은 마음을 담았습니다.',
         ],
-        imageSrc: null,
+        imageSrc: 'Seo-Ah.png',
         imageCaption: 'OIA 빌딩 상단부 (6F 대표 사무실과 유부)',
         imageHint: '6F 대표실 렌더 — 서아 책상, 캣휠, 캣타워, 유부가 보이는 클로즈업',
       },
@@ -142,7 +142,7 @@ export const ko = {
           '오후 3시. Léa는 MoU 초안을, Mail은 154통의 메일을, Nomi는 노미네이션 8건을, Solène는 교환 밸런스를 처리합니다. 유부는 꼭대기 층에서 캣휠을 탑니다.',
           '저는 Céline에게 묻기만 하면 됩니다. "오늘 파트너 협상 포인트는 뭐야?" 예전이라면 모든 메일과 폴더를 뒤졌을 일을, 지금은 `무엇을, 누구에게, 어떤 순서로` 물을지만 결정합니다.',
         ],
-        imageSrc: null,
+        imageSrc: 'chibi-friendly-mascot.png',
         imageCaption: '풀가동 상태의 OIA 빌딩 (peak 모드)',
         imageHint: '전 층에 비서들이 working 상태, 유부가 엘리베이터에서 이동 중인 상태의 스크린샷',
       },
@@ -183,7 +183,7 @@ export const ko = {
         tag: 'SCENES',
         heading: '모든 것이 달라진 일상',
         scenes: [
-          '마크롱 대통령이 연세대학교를 찾은 날에도 저는 제 비서들 덕분에 현장 기획에 집중할 수 있었습니다.',
+          '마크롱 대통령이 연세대학교를 찬 날에도 저는 제 비서들 덕분에 현장 기획에 집중할 수 있었습니다.',
           '정시 퇴근을 하고 집에 돌아오면, 유부가 평소보다 일찍 저를 반겼습니다.',
           '대학원 수업에 지각 없이 도착해, 강의실 맨 앞자리에 앉았습니다.',
         ],
@@ -192,11 +192,12 @@ export const ko = {
           p:
             '이제 저는 변화를 직접 설계할 무대를 찾고 있습니다.',
         },
-        imageSrc: null,
+        imageSrc: 'cat-uboo.png',
         imageCaption: '실제 유부 (치즈 고양이) 사진',
         imageHint: '유부 사진 한 장 — 잘 나온 귀여운 포즈 (편안한 톤의 마무리 이미지)',
       },
     ],
+    buildingFloorMap: [null, 2, null, null, 5, 5, null, 5, 0] as const,
   },
 
   // ── Project 2 — Univ Finder ────────────────────
@@ -256,6 +257,8 @@ export const ko = {
         imageHint: '하트 체크된 대학들이 보이는 상태 + CSV 다운로드 버튼 강조된 스크린샷',
       },
     ],
+    buildingFloorMap: [null, null, null, null] as const,
+    showBuilding: false,
   },
 
   selected: {

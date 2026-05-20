@@ -118,7 +118,7 @@ export const en = {
           'Using Claude Code\'s sub-agents and a structured CLAUDE.md persona system, I raised a virtual 6-floor building. 15 department folders mapped to their own floors, each staffed by a dedicated secretary.',
           'I translated abstract events into something you can see, and something cute — wanting to treat AI not as a tool but as a "teammate."',
         ],
-        imageSrc: null,
+        imageSrc: 'Seo-Ah.png',
         imageCaption: 'Upper floors of OIA Building (6F CEO office with Uboo)',
         imageHint: 'Close-up render of the 6F suite — Seo-Ah\'s desk, cat wheel, cat tower, Uboo',
       },
@@ -130,7 +130,7 @@ export const en = {
           '3 PM. Léa reviews an MoU draft, Mail sorts 154 emails, Nomi handles 8 nominations, and Solène updates the exchange balance. Uboo runs on the cat wheel up top.',
           'I just ask Céline: "What are today\'s negotiation points with our partners?" Where I once opened every email and dug through folders, now I only decide `what, to whom, in what order` to ask.',
         ],
-        imageSrc: null,
+        imageSrc: 'chibi-friendly-mascot.png',
         imageCaption: 'OIA Building at peak activity',
         imageHint: 'Screenshot of the building at full capacity, with all secretaries working and Uboo in the elevator',
       },
@@ -180,11 +180,12 @@ export const en = {
           p:
             'Now I\'m looking for a stage where I can design that change directly.',
         },
-        imageSrc: null,
+        imageSrc: 'cat-uboo.png',
         imageCaption: 'Uboo, the real cheese cat',
         imageHint: 'A cute photo of Uboo — warm closing image',
       },
     ],
+    buildingFloorMap: [null, 2, null, null, 5, 5, null, 5, 0] as const,
   },
 
   univFinder: {
@@ -243,6 +244,8 @@ export const en = {
         imageHint: 'Screenshot with starred universities and CSV download button highlighted',
       },
     ],
+    buildingFloorMap: [null, null, null, null] as const,
+    showBuilding: false,
   },
 
   selected: {
