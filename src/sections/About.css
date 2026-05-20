@@ -2,30 +2,78 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: clamp(2rem, 5vw, 5rem);
-  align-content: center;
-  min-height: 100%;
+  align-content: start;
 }
+.about-head { position: sticky; top: 6rem; align-self: start; }
 .about-heading {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 500;
-  color: var(--cream);
+  color: var(--text-on-light);
+  letter-spacing: -0.025em;
+  font-family: var(--font-sans-ko);
+  font-weight: 800;
 }
 .about-body p {
   font-size: var(--fs-body-lg);
   line-height: 1.85;
-  color: var(--cream-muted);
+  color: var(--text-on-light-muted);
   margin-bottom: 1.25rem;
   max-width: 62ch;
 }
 .about-body p.about-last {
-  color: var(--iris);
-  font-family: 'Pretendard Variable', sans-serif;
-  font-weight: 400;
+  color: var(--amber-deep);
+  font-weight: 500;
   font-size: 1.2rem;
   letter-spacing: -0.015em;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
-@media (max-width: 720px) {
+
+.about-method {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--paper-line);
+}
+.about-method-label {
+  color: var(--amber-deep);
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+.about-method-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem 1.75rem;
+}
+.about-method-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.85rem;
+}
+.about-method-id {
+  grid-row: 1 / 3;
+  font-size: 1.6rem;
+  color: var(--amber-deep);
+  align-self: start;
+  line-height: 1;
+}
+.about-method-name {
+  font-weight: 700;
+  color: var(--text-on-light);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+.about-method-desc {
+  font-size: 0.85rem;
+  color: var(--text-on-light-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 880px) {
   .about-inner { grid-template-columns: 1fr; }
+  .about-head { position: static; }
+  .about-method-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .about-method-list { grid-template-columns: 1fr; }
 }
