@@ -27,7 +27,11 @@ export function BuildingDiagram({
   showLabels = true,
 }: BuildingDiagramProps) {
   return (
-    <div className={`building-diagram building-diagram--${size}`}>
+    <div
+      className={`building-diagram building-diagram--${size}`}
+      role="img"
+      aria-label="OIA 자동화 사무실 6층 빌딩 단면도"
+    >
       <div className="building-diagram__roof">OIA · EST. 2026</div>
       <div className="building-diagram__body">
         {FLOORS.map((f, i) => {
@@ -45,9 +49,9 @@ export function BuildingDiagram({
               {showLabels && (
                 <span className="building-diagram__floor-label">{' '}· {f.label}</span>
               )}
-              <span className="building-diagram__lights">
+              <span className="building-diagram__lights" aria-hidden="true">
                 <span className={isHighlighted ? 'on' : 'off'} />
-                <span className={isHighlighted ? 'on' : ''} />
+                <span className={isHighlighted ? 'on' : 'off'} />
               </span>
             </div>
           );

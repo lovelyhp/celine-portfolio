@@ -26,4 +26,12 @@ describe('BuildingDiagram', () => {
     const { container } = render(<BuildingDiagram size="mini" />);
     expect(container.querySelector('.building-diagram--mini')).not.toBeNull();
   });
+
+  it('omits floor labels when showLabels is false', () => {
+    const { container } = render(<BuildingDiagram showLabels={false} />);
+    const labels = container.querySelectorAll('.building-diagram__floor-label');
+    expect(labels.length).toBe(0);
+    // floor number must still render
+    expect(container.querySelectorAll('.building-diagram__floor-num').length).toBe(6);
+  });
 });
