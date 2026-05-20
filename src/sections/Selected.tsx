@@ -3,37 +3,31 @@ import './Selected.css';
 
 export function SelectedChapter() {
   const { t } = useLang();
-
   return (
     <div className="chapter-inner selected-inner">
       <div className="selected-head">
         <div className="section-label">
           <span>{t.selected.number}</span>
-          <span>{t.selected.title}</span>
+          <span className="font-serif-italic">Selected Works</span>
         </div>
-        <h2 className="selected-heading font-display">Selected Works</h2>
+        <h2 className="selected-heading font-display">{t.selected.title}</h2>
         <p className="selected-intro">{t.selected.intro}</p>
       </div>
 
-      <div className="selected-grid">
+      <ol className="selected-grid">
         {t.selected.projects.map((p, i) => (
-          <article key={i} className="selected-card">
-            <div className="selected-card-head">
-              <div className="selected-card-num font-mono-num">0{i + 1}</div>
-              <div className="selected-card-year font-italic-serif">{p.year}</div>
+          <li key={i} className={`selected-card ${i === t.selected.projects.length - 1 ? 'is-wide' : ''}`}>
+            <div className="selected-card-meta">
+              <span className="selected-card-year font-num">{p.year}</span>
+              <div className="selected-card-stack">
+                {p.stack.map((s) => <span key={s} className="chip">{s}</span>)}
+              </div>
             </div>
-            <h3 className="selected-card-title font-serif">{p.title}</h3>
-            <div className="selected-card-stack">
-              {p.stack.map((s) => (
-                <span key={s} className="chip">
-                  {s}
-                </span>
-              ))}
-            </div>
+            <h3 className="selected-card-title font-display">{p.title}</h3>
             <p className="selected-card-body">{p.body}</p>
-          </article>
+          </li>
         ))}
-      </div>
+      </ol>
     </div>
   );
 }
