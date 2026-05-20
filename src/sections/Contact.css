@@ -1,59 +1,61 @@
 .contact-inner {
-  justify-content: center;
-  gap: 3rem;
-  max-width: 900px;
+  text-align: left;
+  max-width: 920px;
+  margin-inline: auto;
 }
 .contact-heading {
   font-size: clamp(2.5rem, 6vw, 5rem);
-  color: var(--cream);
-  font-weight: 500;
+  color: var(--text-on-dark);
   letter-spacing: -0.03em;
-  max-width: 20ch;
-  line-height: 1.1;
+  margin: 1.5rem 0 0.5rem;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.contact-heading::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--amber);
+  margin-top: 1.2rem;
+}
+.contact-sub {
+  color: var(--text-on-dark-muted);
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
 }
 .contact-links {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
+  gap: 0.75rem;
+  margin-bottom: 4rem;
 }
 .contact-link {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
-  transition: padding 0.25s ease, color 0.25s ease;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--ink-line);
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
-.contact-link:hover { padding-left: 0.75rem; }
+.contact-link:hover {
+  border-bottom-color: var(--amber);
+  color: var(--amber);
+}
 .contact-link-label {
-  font-size: var(--fs-xs);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--cream-faint);
-  min-width: 100px;
+  font-family: var(--font-serif-en);
+  font-style: italic;
+  width: 7rem;
+  color: var(--text-on-dark-faint);
+  font-size: 1rem;
 }
 .contact-link-value {
-  font-size: clamp(1.15rem, 2.5vw, 1.75rem);
-  color: var(--cream);
-  flex: 1;
-  transition: color 0.2s ease;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  color: var(--text-on-dark);
 }
-.contact-link:hover .contact-link-value { color: var(--iris); }
-.contact-link-arrow {
-  font-size: 1.25rem;
-  color: var(--cream-faint);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.contact-link:hover .contact-link-arrow {
-  transform: translate(3px, -3px);
-  color: var(--iris);
-}
-
+.contact-link:hover .contact-link-value { color: var(--amber); }
 .contact-footer {
-  margin-top: 2rem;
-  font-size: var(--fs-xs);
-  color: var(--cream-faint);
-  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  color: var(--text-on-dark-faint);
+  margin-top: auto;
 }
