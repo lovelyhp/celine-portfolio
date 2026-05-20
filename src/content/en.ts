@@ -1,9 +1,11 @@
 export const en = {
   meta: {
     nameRoman: 'Céline Choi',
-    tagline: 'A planner opening futures, one drop of AI at a time — out of the daily routine.',
+    role: 'AI Planner & Builder',
+    taglineEn: 'Planner, Builder, Operator.',
+    tagline: 'A university administrator\nwho rebuilt her workplace, one floor at a time.',
     subtitle:
-      'A university staff member stepping into AI — trading "we can\'t" for "oh, it actually works."',
+      'I delegate email, translation, statistics, and verification to fifteen AI assistants, and focus on strategy and negotiation.',
   },
   nav: {
     hero: 'Intro',
@@ -21,7 +23,7 @@ export const en = {
       { value: '15', label: 'AI Personas Orchestrated' },
       { value: '15,000+', label: 'Exchange Reviews Analyzed' },
     ],
-    hint: 'Scroll to continue',
+    hint: 'Enter the building ↓',
   },
   about: {
     number: 'I',

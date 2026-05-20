@@ -12,9 +12,11 @@
 export const ko = {
   meta: {
     nameRoman: 'Céline Choi',
-    tagline: '반복되는 일상 속,\n인공지능 한 방울로 미래를 여는 기획자',
+    role: 'AI 기획자 · 빌더',
+    taglineEn: 'Planner, Builder, Operator.',
+    tagline: '평범한 교직원이\nAI로 일하는 법, 한 권의 빌딩.',
     subtitle:
-      '대학 교직원의 새로운 도전, "이건 안 돼요" 대신 "이게 되네"를 외치는 사람',
+      '이메일·번역·통계·검증을 15명의 AI 비서에게 위임하고, 저는 기획·협상에 집중합니다.',
   },
   nav: {
     hero: 'Intro',
@@ -32,7 +34,7 @@ export const ko = {
       { value: '15', label: 'AI 페르소나 오케스트레이션' },
       { value: '15,000+', label: '교환학생 경험보고서 후기 분석' },
     ],
-    hint: 'Scroll to continue',
+    hint: 'Enter the building ↓',
   },
   about: {
     number: 'I',
