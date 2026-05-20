@@ -1,16 +1,18 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { BuildingDiagram } from './BuildingDiagram';
 
 describe('BuildingDiagram', () => {
   it('renders 6 floors with labels', () => {
-    render(<BuildingDiagram />);
-    expect(screen.getByText(/6F · 대표실 \+ 유부/)).toBeInTheDocument();
-    expect(screen.getByText(/5F · Léa/)).toBeInTheDocument();
-    expect(screen.getByText(/4F · Mail/)).toBeInTheDocument();
-    expect(screen.getByText(/3F · Nomi/)).toBeInTheDocument();
-    expect(screen.getByText(/2F · Solène/)).toBeInTheDocument();
-    expect(screen.getByText(/1F · Reception/)).toBeInTheDocument();
+    const { container } = render(<BuildingDiagram />);
+    const floors = container.querySelectorAll('.building-diagram__floor');
+    const texts = Array.from(floors).map((f) => f.textContent?.replace(/\s+/g, ' ').trim());
+    expect(texts).toContain('6F · 대표실 + 유부');
+    expect(texts).toContain('5F · Léa (MoU)');
+    expect(texts).toContain('4F · Mail (154통)');
+    expect(texts).toContain('3F · Nomi (8건)');
+    expect(texts).toContain('2F · Solène (밸런스)');
+    expect(texts).toContain('1F · Reception');
   });
 
   it('marks the highlighted floor with a data attribute', () => {

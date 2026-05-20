@@ -52,13 +52,6 @@
   text-overflow: ellipsis;
   flex: 1;
 }
-.building-diagram__floor-text {
-  font-size: 0.72rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex: 1;
-}
 .building-diagram__lights {
   display: flex;
   gap: 3px;

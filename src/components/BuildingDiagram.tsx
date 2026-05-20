@@ -41,9 +41,10 @@ export function BuildingDiagram({
               data-floor={floorIndex}
               data-highlighted={isHighlighted}
             >
-              <span className="building-diagram__floor-text">
-                {showLabels ? `${f.num} · ${f.label}` : f.num}
-              </span>
+              <span className="building-diagram__floor-num">{f.num}</span>
+              {showLabels && (
+                <span className="building-diagram__floor-label">{' '}· {f.label}</span>
+              )}
               <span className="building-diagram__lights">
                 <span className={isHighlighted ? 'on' : 'off'} />
                 <span className={isHighlighted ? 'on' : ''} />
