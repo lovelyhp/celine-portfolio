@@ -10,7 +10,11 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: flex-end;
+  text-align: right;
 }
+.case-aside .section-label { flex-direction: row-reverse; }
+.case-stack { justify-content: flex-end; }
 .case-title {
   font-size: clamp(1.7rem, 3vw, 2.4rem);
   color: var(--text-on-dark);
@@ -153,8 +157,11 @@
     top: auto;
     flex-direction: row;
     align-items: flex-start;
+    text-align: left;
     gap: 1.25rem;
   }
+  .case-aside .section-label { flex-direction: row; }
+  .case-stack { justify-content: flex-start; }
   .case-building { max-width: 100px; }
 }
 @media (max-width: 560px) {
