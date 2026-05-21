@@ -83,11 +83,22 @@
   margin-bottom: 1rem;
 }
 .case-media video { width: 100%; height: 100%; object-fit: cover; }
-.case-figure { margin-top: 1rem; }
+.case-figure {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
 .case-figure img {
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid var(--ink-line);
+  width: auto;
+  max-width: 240px;
+  max-height: 280px;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  display: block;
 }
 .case-figure figcaption {
   margin-top: 0.5rem;

@@ -1,7 +1,7 @@
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: 1.55fr 1fr;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
   align-items: center;
   min-height: 100%;
 }
@@ -27,12 +27,12 @@
   margin-bottom: 0.4rem;
 }
 .hero-headline-ko {
-  font-size: var(--fs-hero);
+  font-size: clamp(2.1rem, 4.6vw, 4.25rem);
   color: var(--text-on-dark);
   white-space: pre-line;
   word-break: keep-all;
   letter-spacing: -0.03em;
-  max-width: 18ch;
+  max-width: 24ch;
   margin-bottom: 1.25rem;
 }
 .hero-headline-ko::after {
