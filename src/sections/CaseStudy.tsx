@@ -4,7 +4,7 @@ import './CaseStudy.css';
 
 export type CaseSlide =
   | { kind: 'cover'; heading: string; sub: string; body: string; videoSrc?: string; imageSrc?: string | null; imageCaption?: string; imageHint?: string }
-  | { kind: 'section'; tag: string; heading: string; body: string[]; imageSrc?: string | null; imageCaption?: string; imageHint?: string }
+  | { kind: 'section'; tag: string; heading: string; body: string[]; videoSrc?: string; imageSrc?: string | null; imageCaption?: string; imageHint?: string }
   | { kind: 'result'; tag: string; heading: string; body: Array<{ h: string; p: string }>; imageSrc?: string | null; imageCaption?: string; imageHint?: string }
   | { kind: 'scenes'; tag: string; heading: string; scenes: string[]; closing: { h: string; p: string }; imageSrc?: string | null; imageCaption?: string };
 
@@ -90,8 +90,8 @@ function CaseSlideRender({ slide }: { slide: CaseSlide }) {
     return (
       <>
         {slide.videoSrc && (
-          <div className="case-media">
-            <video src={`/${slide.videoSrc}`} autoPlay muted loop playsInline />
+          <div className="case-media case-media--portrait">
+            <video src={`/videos/${slide.videoSrc}`} autoPlay muted loop playsInline />
           </div>
         )}
         <h3 className="case-heading font-display">{slide.heading}</h3>
@@ -106,12 +106,17 @@ function CaseSlideRender({ slide }: { slide: CaseSlide }) {
         <div className="case-tag font-serif-italic">{slide.tag}</div>
         <h3 className="case-heading font-display">{slide.heading}</h3>
         {slide.body.map((p, i) => <p key={i} className="case-body">{p}</p>)}
-        {slide.imageSrc && (
+        {slide.videoSrc ? (
+          <figure className="case-figure case-figure--video">
+            <video src={`/videos/${slide.videoSrc}`} autoPlay muted loop playsInline />
+            {slide.imageCaption && <figcaption>{slide.imageCaption}</figcaption>}
+          </figure>
+        ) : slide.imageSrc ? (
           <figure className="case-figure">
             <img src={`/images/${slide.imageSrc}`} alt={slide.imageCaption ?? ''} />
             {slide.imageCaption && <figcaption>{slide.imageCaption}</figcaption>}
           </figure>
-        )}
+        ) : null}
       </>
     );
   }
