@@ -44,11 +44,12 @@
   margin-top: 1.1rem;
 }
 .hero-sub {
-  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-size: clamp(0.82rem, 1.05vw, 0.98rem);
   color: var(--text-on-dark-muted);
-  max-width: 52ch;
-  line-height: 1.6;
+  max-width: none;
+  line-height: 1.55;
   margin-bottom: 2.25rem;
+  word-break: keep-all;
 }
 
 .hero-stats {

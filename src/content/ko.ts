@@ -32,7 +32,7 @@ export const ko = {
       { value: '265+', label: '대학 검색 대시보드' },
       { value: '25h → 8h', label: '주간 이메일 처리 시간' },
       { value: '15', label: 'AI 페르소나 오케스트레이션' },
-      { value: '15,000+', label: '교환학생 경험보고서 후기 분석' },
+      { value: '13,000+', label: '교환학생 경험보고서 후기 분석' },
     ],
     hint: 'Enter the building ↓',
   },
@@ -132,7 +132,7 @@ export const ko = {
         ],
         videoSrc: 'oia-rush.webm#t=10,19',
         imageSrc: null,
-        imageCaption: 'OIA 빌딩 상단부 (6F 대표 사무실과 유부)',
+        imageCaption: '',
         imageHint: '6F 대표실 렌더 — 서아 책상, 캣휠, 캣타워, 유부가 보이는 클로즈업',
       },
       {
@@ -144,7 +144,7 @@ export const ko = {
           '저는 Céline에게 묻기만 하면 됩니다. "오늘 파트너 협상 포인트는 뭐야?" 예전이라면 모든 메일과 폴더를 뒤졌을 일을, 지금은 `무엇을, 누구에게, 어떤 순서로` 물을지만 결정합니다.',
         ],
         imageSrc: 'chibi-friendly-mascot.png',
-        imageCaption: '풀가동 상태의 OIA 빌딩 (peak 모드)',
+        imageCaption: '',
         imageHint: '전 층에 비서들이 working 상태, 유부가 엘리베이터에서 이동 중인 상태의 스크린샷',
       },
       {

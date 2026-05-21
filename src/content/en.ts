@@ -21,7 +21,7 @@ export const en = {
       { value: '265+', label: 'Universities in Finder Dashboard' },
       { value: '25h → 8h', label: 'Weekly Email Processing Time' },
       { value: '15', label: 'AI Personas Orchestrated' },
-      { value: '15,000+', label: 'Exchange Reviews Analyzed' },
+      { value: '13,000+', label: 'Exchange Reviews Analyzed' },
     ],
     hint: 'Enter the building ↓',
   },
@@ -120,7 +120,7 @@ export const en = {
         ],
         videoSrc: 'oia-rush.webm#t=10,19',
         imageSrc: null,
-        imageCaption: 'Upper floors of OIA Building (6F CEO office with Uboo)',
+        imageCaption: '',
         imageHint: 'Close-up render of the 6F suite — Seo-Ah\'s desk, cat wheel, cat tower, Uboo',
       },
       {
@@ -132,7 +132,7 @@ export const en = {
           'I just ask Céline: "What are today\'s negotiation points with our partners?" Where I once opened every email and dug through folders, now I only decide `what, to whom, in what order` to ask.',
         ],
         imageSrc: 'chibi-friendly-mascot.png',
-        imageCaption: 'OIA Building at peak activity',
+        imageCaption: '',
         imageHint: 'Screenshot of the building at full capacity, with all secretaries working and Uboo in the elevator',
       },
       {
