@@ -22,16 +22,22 @@ export function HeroChapter() {
   return (
     <div className="chapter-inner hero-inner" ref={heroRef}>
       <div className="hero-left">
+        <div className="hero-name font-serif">{t.meta.nameRoman}</div>
         <div className="hero-eyebrow">
-          <span className="font-serif-italic">{t.meta.nameRoman}</span>
-          <span className="hero-eyebrow-sep">·</span>
-          <span>{(t.meta as any).role ?? 'AI 기획자 · 빌더'}</span>
+          <span>{t.meta.role}</span>
         </div>
 
         <h1 className="hero-headline-en font-serif">
           {(t.meta as any).taglineEn ?? 'Planner, Builder, Operator.'}
         </h1>
-        <h2 className="hero-headline-ko font-display">{t.meta.tagline}</h2>
+        <h2 className="hero-headline-ko font-display">
+          {t.meta.tagline.split('\n').map((line, i, arr) => (
+            <span key={i} className={i === arr.length - 1 ? 'hero-headline-accent' : undefined}>
+              {line}
+              {i < arr.length - 1 && <br />}
+            </span>
+          ))}
+        </h2>
         <p className="hero-sub">{t.meta.subtitle}</p>
 
         <div className="hero-stats">

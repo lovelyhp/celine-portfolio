@@ -13,7 +13,7 @@ export function ContactChapter() {
         {t.contact.heading}
       </h2>
       <p className="contact-sub font-serif-italic">
-        Looking for a stage to do this on a larger scale.
+        {t.contact.sub}
       </p>
 
       <div className="contact-links">
@@ -24,6 +24,10 @@ export function ContactChapter() {
         <a className="contact-link" href={t.contact.linkedinUrl} target="_blank" rel="noreferrer">
           <span className="contact-link-label">LinkedIn</span>
           <span className="contact-link-value font-num">{t.contact.linkedin}</span>
+        </a>
+        <a className="contact-link" href={t.contact.cvUrl} target="_blank" rel="noreferrer">
+          <span className="contact-link-label">CV</span>
+          <span className="contact-link-value font-num">{t.contact.cvValue}</span>
         </a>
       </div>
 

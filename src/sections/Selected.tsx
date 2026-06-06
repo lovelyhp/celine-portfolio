@@ -8,7 +8,7 @@ export function SelectedChapter() {
       <div className="selected-head">
         <div className="section-label">
           <span>{t.selected.number}</span>
-          <span className="font-serif-italic">Selected Works</span>
+          <span className="font-serif-italic">Projects</span>
         </div>
         <h2 className="selected-heading font-display">{t.selected.title}</h2>
         <p className="selected-intro">{t.selected.intro}</p>

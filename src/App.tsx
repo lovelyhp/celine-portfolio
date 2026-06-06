@@ -8,7 +8,7 @@ import { ExperienceChapter } from './sections/Experience';
 import { ContactChapter } from './sections/Contact';
 import './components/Deck.css';
 
-const SECTION_IDS = ['hero', 'about', 'oia', 'univ', 'selected', 'experience', 'contact'] as const;
+const SECTION_IDS = ['hero', 'about', 'oia', 'univ', 'web', 'selected', 'experience', 'contact'] as const;
 type SectionId = (typeof SECTION_IDS)[number];
 
 const CHAPTER_TONE: Record<SectionId, 'dark' | 'light'> = {
@@ -16,6 +16,7 @@ const CHAPTER_TONE: Record<SectionId, 'dark' | 'light'> = {
   about: 'light',
   oia: 'dark',
   univ: 'dark',
+  web: 'dark',
   selected: 'light',
   experience: 'light',
   contact: 'dark',
@@ -59,9 +60,10 @@ function Shell() {
   const navItems: { id: SectionId; label: string }[] = [
     { id: 'hero', label: t.nav.hero },
     { id: 'about', label: t.nav.about },
-    { id: 'oia', label: 'OIA' },
-    { id: 'univ', label: 'Univ' },
-    { id: 'selected', label: 'Selected' },
+    { id: 'oia', label: t.nav.oia },
+    { id: 'univ', label: t.nav.univ },
+    { id: 'web', label: t.nav.web },
+    { id: 'selected', label: t.nav.selected },
     { id: 'experience', label: t.nav.experience },
     { id: 'contact', label: t.nav.contact },
   ];
@@ -95,11 +97,21 @@ function Shell() {
             </a>
           ))}
         </nav>
-        <button onClick={toggle} className="deck-lang" aria-label="Toggle language">
-          <span className={lang === 'ko' ? 'active' : ''}>KO</span>
-          <span className="sep">·</span>
-          <span className={lang === 'en' ? 'active' : ''}>EN</span>
-        </button>
+        <div className="deck-actions">
+          <a
+            className="deck-cv"
+            href={t.contact.cvUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            CV
+          </a>
+          <button onClick={toggle} className="deck-lang" aria-label="Toggle language">
+            <span className={lang === 'ko' ? 'active' : ''}>KO</span>
+            <span className="sep">·</span>
+            <span className={lang === 'en' ? 'active' : ''}>EN</span>
+          </button>
+        </div>
         <div className="deck-progress-line" aria-hidden="true">
           <span className="deck-progress-line-fill" style={{ transform: `scaleX(${progress})` }} />
         </div>
@@ -131,6 +143,17 @@ function Shell() {
             subtitle={t.univFinder.subtitle}
             stack={t.univFinder.stack}
             slides={t.univFinder.slides as any}
+            showBuilding={false}
+          />
+        </section>
+        <section id="web" className="chapter chapter--flow">
+          <CaseStudy
+            index={t.oiaWebsite.index}
+            year={t.oiaWebsite.year}
+            title={t.oiaWebsite.title}
+            subtitle={t.oiaWebsite.subtitle}
+            stack={t.oiaWebsite.stack}
+            slides={t.oiaWebsite.slides as any}
             showBuilding={false}
           />
         </section>

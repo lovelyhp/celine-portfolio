@@ -8,15 +8,21 @@
 .hero-left { display: flex; flex-direction: column; }
 .hero-right { display: flex; justify-content: center; align-items: center; }
 
+.hero-name {
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  color: var(--text-on-dark);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
 .hero-eyebrow {
   display: inline-flex;
   align-items: baseline;
   gap: 0.5rem;
   font-size: 0.95rem;
-  color: var(--text-on-dark-muted);
+  color: var(--amber);
   margin-bottom: 1.25rem;
 }
-.hero-eyebrow .font-serif-italic { color: var(--amber); font-size: 1.05rem; }
 .hero-eyebrow-sep { opacity: 0.5; }
 
 .hero-headline-en {
@@ -35,6 +41,7 @@
   max-width: 24ch;
   margin-bottom: 1.25rem;
 }
+.hero-headline-accent { color: var(--amber); }
 .hero-headline-ko::after {
   content: '';
   display: block;

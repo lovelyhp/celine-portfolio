@@ -15,21 +15,36 @@ export function AboutChapter() {
 
       <div className="about-body">
         {t.about.body.map((p, i) => (
-          <p key={i} className={i === t.about.body.length - 1 ? 'about-last' : ''}>{p}</p>
+          <p key={i}>{p}</p>
         ))}
+
+        <dl className="about-snapshot">
+          {t.about.snapshot.map((s) => (
+            <div key={s.k} className="about-snap-row">
+              <dt className="about-snap-k">{s.k}</dt>
+              <dd className="about-snap-v">{s.v}</dd>
+            </div>
+          ))}
+        </dl>
 
         <div className="about-method">
           <div className="about-method-label font-serif-italic">How I Work</div>
-          <ol className="about-method-list">
-            {t.method.steps.map((s) => (
-              <li key={s.id} className="about-method-item">
-                <span className="about-method-id font-num">{s.id}</span>
-                <span className="about-method-name">{s.label}</span>
-                <span className="about-method-desc">{s.desc}</span>
-              </li>
+          <p className="about-flow">
+            {t.method.steps.map((s, i, arr) => (
+              <span key={s.id} className="about-flow-seg">
+                <span className="about-flow-step">{s.label}</span>
+                {i < arr.length - 1 && <span className="about-flow-arr"> → </span>}
+              </span>
             ))}
-          </ol>
+          </p>
         </div>
+
+        <p className="about-cv">
+          <a className="about-cv-link" href={t.contact.cvUrl} target="_blank" rel="noreferrer">
+            Curriculum Vitae →
+          </a>{' '}
+          {t.about.cvTrail}
+        </p>
       </div>
     </div>
   );
