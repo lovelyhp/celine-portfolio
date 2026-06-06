@@ -11,28 +11,29 @@
 
 export const ko = {
   meta: {
-    nameRoman: 'Céline Choi',
-    role: 'AI 기획자 · 빌더',
+    nameRoman: 'Seo-Ah (Céline) Choi',
+    role: 'AI 기획자 · 기술 PM 지향',
     taglineEn: 'Planner, Builder, Operator.',
-    tagline: '평범한 교직원이\nAI로 일하는 법, 한 권의 빌딩.',
+    tagline: '도구를 쓰지 않습니다.\n만들어 씁니다.',
     subtitle:
-      '이메일·번역·통계·검증을 15명의 AI 비서에게 위임하고, 저는 기획·협상에 집중합니다.',
+      '운영 현장의 문제를 가장 잘 아는 사람이, 그 문제를 푸는 프로덕션 시스템을 직접 만듭니다.',
   },
   nav: {
     hero: 'Intro',
     about: 'About',
-    method: 'Method',
-    work: 'Work',
+    oia: 'OIA',
+    univ: 'Univ Finder',
+    web: 'Website',
+    selected: 'Projects',
     experience: 'Experience',
-    skills: 'Skills',
     contact: 'Contact',
   },
   hero: {
     stats: [
-      { value: '265+', label: '대학 검색 대시보드' },
-      { value: '25h → 8h', label: '주간 이메일 처리 시간' },
-      { value: '15', label: 'AI 페르소나 오케스트레이션' },
-      { value: '13,000+', label: '교환학생 경험보고서 후기 분석' },
+      { value: '-83%', label: 'ECTS 학점 환산 처리시간' },
+      { value: '25h → 8h', label: '주간 이메일 트리아지' },
+      { value: '10,000+', label: '740+ 협정교 문서 분석' },
+      { value: '15', label: '운영 중인 AI 에이전트' },
     ],
     hint: 'Enter the building ↓',
   },
@@ -40,16 +41,19 @@ export const ko = {
     number: 'I',
     title: 'About',
     body: [
-      '연세대학교의 국제 행정 업무를 담당하며, 동시에 연세대 인공지능융합대학원 석사과정에 재학 중입니다. 프랑스어를 전공한 평범한 교직원이 현장의 단순 반복 업무를 AI로 바꾸기 시작했고, Flask·GAS·D3.js·React로 직접 도구를 만들고 Claude Code로 6층 빌딩 구조의 "OIA 자동화 사무실"을 세웠습니다.',
-      '아이디어가 메모장에만 남는 걸 견디지 못합니다. "이게 될까?" 싶던 것을 설계하고 실제 숫자로 증명해 내는 것을 좋아합니다. 조직의 일하는 방식 자체를 바꾸는 실험을 매일 시도합니다.',
-      '호기심 넘치는 저의 실험실을 더 큰 무대에서 펼칠 수 있는 곳을 찾고 있습니다.',
+      '프랑스어를 전공한 비개발자가, 국제 업무 운영 현장에서 직접 프로덕션 시스템을 만듭니다. 흩어져 있던 부서 업무를 15개 AI 에이전트가 상주하는 6층 사무실 시뮬레이션으로 설계하고, 15개 에이전트를 14개 부서 폴더에 매핑한 뒤 file-watching으로 각 폴더의 상태를 연동했습니다.',
+      '무엇을 자동화할지 고르고, 데이터 구조와 아키텍처를 설계하고, 출력을 검증하는 판단을 내립니다. 다음 목표는 운영 현장을 아는 사람이 만드는 AI 프로덕트를 AI 기획자·기술 PM으로서 이어가는 것입니다.',
     ],
+    snapshot: [
+      { k: 'Now', v: '연세대학교 국제처 · 유럽 교환 담당 (Exchange Program Manager)' },
+      { k: 'Study', v: 'AI융합대학원 석사 재학 · RAG · ReAct' },
+      { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
+      { k: 'Proof', v: 'ECTS -83% · 이메일 25h→8h · 740+ 협정교 1만 건 분석 · 마크롱 특강 총괄' },
+    ],
+    cvTrail: '· 아래에서 대표 프로젝트 3건과 상세 경력을 볼 수 있습니다.',
   },
 
   method: {
-    number: 'II',
-    title: 'Method',
-    headline: '도구를 쓰는 사람이 아니라, 도구를 만들어 쓰는 사람.',
     steps: [
       { id: '01', label: '문제 정의', desc: '어떤 도구를 만들어야 하는지부터 묻는다.' },
       { id: '02', label: '구조 설계', desc: '데이터를 어떤 형태로 담을지 먼저 그린다.' },
@@ -58,12 +62,6 @@ export const ko = {
       { id: '05', label: '반복 개선', desc: '본인과 동료의 피드백을 받아 다시 만진다.' },
       { id: '06', label: '배포·운영', desc: '실제로 쓰이는 곳까지 가져간다.' },
     ],
-  },
-
-  featured: {
-    number: 'III',
-    title: 'Featured Work',
-    intro: '제가 만들어 낸 주요 작업 두 가지를 소개합니다.',
   },
 
   // ── Project 1 — OIA Building ──────────────────────
@@ -143,17 +141,17 @@ export const ko = {
           '오후 3시. Léa는 MoU 초안을, Mail은 154통의 메일을, Nomi는 노미네이션 8건을, Solène는 교환 밸런스를 처리합니다. 유부는 꼭대기 층에서 캣휠을 탑니다.',
           '저는 Céline에게 묻기만 하면 됩니다. "오늘 파트너 협상 포인트는 뭐야?" 예전이라면 모든 메일과 폴더를 뒤졌을 일을, 지금은 `무엇을, 누구에게, 어떤 순서로` 물을지만 결정합니다.',
         ],
-        imageSrc: 'chibi-friendly-mascot.png',
+        imageSrc: null,
         imageCaption: '',
         imageHint: '전 층에 비서들이 working 상태, 유부가 엘리베이터에서 이동 중인 상태의 스크린샷',
       },
       {
         kind: 'section',
         tag: 'APPROACH · V',
-        heading: '평범한 교직원이 AI와 일하는 법.',
+        heading: '코드가 아니라 판단으로 만듭니다.',
         body: [
-          '어려운 코드나 스킬을 사용할 줄은 모르지만, 무엇이 문제인지 정의하고, 어떻게 해결해야 하는지 방법을 설계하고, 다른 곳에 응용할 곳을 찾을 능력을 갖추고 있습니다.',
-          '비전공자, 인문학도라는 배경은 더 이상 저의 약점이 아닙니다. 업무 현장의 페인포인트를 가장 잘 아는 기획자가 직접 도구를 만들 수 있다는 것을 입증하고 있습니다.',
+          '무엇이 문제인지 정의하고, 어떻게 풀지 아키텍처를 설계하고, 출력을 검증하고, 다른 영역에 응용할 지점을 찾습니다. 도구가 대신 못 하는 이 판단들이 시스템의 품질을 결정합니다.',
+          '업무 현장의 페인포인트를 가장 잘 아는 사람이 직접 프로덕션 도구를 만듭니다. 비개발자·인문학 배경은 약점이 아니라 그 강점의 출발점입니다.',
         ],
         imageSrc: null,
         imageCaption: 'Claude Code 터미널 작업 중',
@@ -193,8 +191,8 @@ export const ko = {
           p:
             '이제 저는 변화를 직접 설계할 무대를 찾고 있습니다.',
         },
-        imageSrc: 'cat-uboo.png',
-        imageCaption: '실제 유부 (치즈 고양이) 사진',
+        imageSrc: null,
+        imageCaption: '',
         imageHint: '유부 사진 한 장 — 잘 나온 귀여운 포즈 (편안한 톤의 마무리 이미지)',
       },
     ],
@@ -262,9 +260,100 @@ export const ko = {
     showBuilding: false,
   },
 
+  // ── Project 3 — OIA Website Redesign ───────────────
+  oiaWebsite: {
+    id: 'oia-website',
+    index: '03',
+    year: '2026',
+    title: 'OIA Website Redesign',
+    subtitle: '레거시 ASP 공식 사이트를, 작동하는 React 프로토타입을 기준선으로 개편',
+    stack: ['React', 'TypeScript', 'SEO', 'Bilingual Copy', 'Netlify'],
+    slides: [
+      {
+        kind: 'cover',
+        heading: 'OIA Website Redesign',
+        sub: '기획서가 아니라, 실제 배포된 프로토타입을 기준선으로.',
+        body:
+          '레거시(ASP) 공식 사이트 oia.yonsei.ac.kr를 현대적 구조로 개편하기 위해, 기획자가 직접 작동하는 React 목업을 만들고 개발 요건 정의서와 함께 제시한 프로젝트. 산출물: yonsei-oia.netlify.app',
+        imageSrc: null,
+        imageCaption: 'yonsei-oia.netlify.app 메인 히어로',
+        imageHint: '목업 사이트의 Hero + 메인 통계 영역 스크린샷',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · I',
+        heading: '작동하는 프로토타입부터.',
+        body: [
+          '전체 사이트맵을 5개 대분류(Introduction · Partnerships · Inbound · Outbound · News & Events)로 구조화하고, 38개 페이지를 더미 데이터로 구현했습니다.',
+          '2-depth 아코디언 메뉴, 언더바 호버 애니메이션, 반응형(1024/768px 기준점), 연세 공식 네이비(#003876) 기반 디자인을 적용. 확장성과 유지보수성을 최우선으로 모듈화하고, 순수 HTML/CSS/JS에서 React/TypeScript SPA로 고도화했습니다.',
+        ],
+        imageSrc: null,
+        imageCaption: '5개 대분류 사이트맵 / 아코디언 내비게이션',
+        imageHint: '사이트맵 다이어그램 또는 2-depth 아코디언 메뉴가 펼쳐진 스크린샷',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · II',
+        heading: '개발사가 바로 착수할 수 있는 문서.',
+        body: [
+          'React 목업과 기존 ASP 사이트를 비교하는 AS-IS / TO-BE 문서(PPT)를 제작했습니다.',
+          '페이지를 4가지 개발 유형(정적 텍스트형 · 게시판형 · 데이터 관리형 · SSO 보호형)으로 분류해 개발 복잡도를 명확히 하고, SSO 인증 범위(Outbound 전용)와 관리자 CMS 요건을 정의했습니다.',
+        ],
+        imageSrc: null,
+        imageCaption: 'AS-IS / TO-BE 요건 정의서',
+        imageHint: 'AS-IS/TO-BE 비교 슬라이드 또는 페이지 유형 분류표 스크린샷',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · III',
+        heading: '노후화되지 않는 콘텐츠와 SEO.',
+        body: [
+          'route-based metadata map 방식으로 페이지별 title · description · keywords를 최적화했습니다(길이 기준 정리, 키워드 중복 제거, 브랜드 표기 통일).',
+          '매년 바뀌는 랭킹 숫자 대신 "Since 1966 · 80+ Partner Countries · 740+ Partner Universities"로 메인 통계를 재구성해 콘텐츠 노후화를 방지. 연세 국제화 타임라인을 스크롤 인터랙션으로 풀고, 기존엔 입학처로 바로 리다이렉트되던 공백을 메우는 "Degree Seeking" 안내 랜딩 페이지를 신설했습니다.',
+        ],
+        imageSrc: null,
+        imageCaption: '메인 통계 영역 / 국제화 타임라인',
+        imageHint: 'Since 1966 통계 블록 또는 스크롤 타임라인 인터랙션 스크린샷',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · IV',
+        heading: '"안내문을 읽는 홈페이지에서, 세계를 탐색하는 홈페이지로."',
+        body: [
+          '관료적인 기관 문체를 자연스럽고 사람다운 톤으로 다듬었습니다(히어로, 사무실 이전 안내, 프로그램·이벤트 소개).',
+          '비전문가도 이해할 수 있는 HTML 런칭 안내 이메일을 제작해 내부 공유까지 마무리했습니다.',
+        ],
+        imageSrc: null,
+        imageCaption: 'Before / After 카피 비교',
+        imageHint: '기존 문체와 개선된 카피를 나란히 둔 비교 이미지',
+      },
+      {
+        kind: 'result',
+        tag: 'RESULT',
+        heading: '개편 프로젝트의 기준선이 되다.',
+        body: [
+          {
+            h: '보수적 조직에서 외주를 움직인 방법',
+            p:
+              '조직이 AI·신기술에 보수적이고 레거시 개발 환경에서 외주를 움직이기 어려운 상황에서, 기획자가 직접 작동하는 프로토타입과 요건 정의서를 제시해 실제 개편 프로젝트의 기준선을 마련했습니다.',
+          },
+          {
+            h: '디자인부터 카피까지 풀스택 단독 수행',
+            p:
+              '디자인·정보구조·SEO·이중언어 카피까지 단독으로 수행했고, University Finder 연동으로 학생 반복 문의를 도구로 전환하는 방향성도 함께 제시했습니다.',
+          },
+        ],
+        imageSrc: null,
+        imageCaption: '',
+        imageHint: '',
+      },
+    ],
+    showBuilding: false,
+  },
+
   selected: {
     number: 'IV',
-    title: 'Selected Works',
+    title: 'Projects',
     intro: '그 외 작업들.',
     projects: [
       {
@@ -272,18 +361,9 @@ export const ko = {
         year: '2025–2026',
         stack: ['GAS', 'Claude API', 'python-docx'],
         body:
-          '교환학생이 유럽 파트너교에서 받아온 성적표(ECTS 단위)를 연세대 학점으로 환산하는 작업을 자동화. 학기당 200건 이상의 반복 작업이 건당 8~10분에서 30초 이내로 단축.',
+          '교환학생이 유럽 파트너교에서 받아온 성적표(ECTS 단위)를 연세대 학점으로 환산하는 작업을 자동화. 학기당 200건 이상의 반복 작업에서 처리시간을 83% 단축.',
         imageCaption: 'ECTS 환산 결과 스프레드시트',
         imageHint: 'GAS가 자동 생성한 연세대 학점이 채워진 Google Sheets 스크린샷',
-      },
-      {
-        title: '연세대 국제처 홈페이지 개편',
-        year: '2026',
-        stack: ['React', 'TypeScript', 'Netlify'],
-        body:
-          '레거시 중심의 개발 환경에서 직접 React로 목업을 만들어 기획 추진. UX/UI를 재구성하고, 연세대학교 공식 웹사이트 개편 프로젝트의 기준을 제시함.',
-        imageCaption: 'yonsei-oia.netlify.app 메인 히어로',
-        imageHint: '목업 사이트의 Hero + 통계 3개가 보이는 상단부 스크린샷',
       },
       {
         title: '협정교 DB 구축',
@@ -373,9 +453,12 @@ export const ko = {
     number: 'VII',
     title: 'Contact',
     heading: '새로운 무대를 찾습니다.',
-    email: 'choy4130@gmail.com',
+    sub: '제 작은 실험실을 더 큰 무대에서 펼치고 싶습니다.',
+    email: 'sachoi.pro@gmail.com',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',
+    cvUrl: '/CV_SeoAh_Choi_EN.pdf',
+    cvValue: 'Curriculum Vitae',
   },
 
   footer: {

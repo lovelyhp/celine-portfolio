@@ -1,27 +1,28 @@
 export const en = {
   meta: {
-    nameRoman: 'Céline Choi',
-    role: 'AI Planner & Builder',
+    nameRoman: 'Seo-Ah (Céline) Choi',
+    role: 'AI Planner · aspiring Technical PM',
     taglineEn: 'Planner, Builder, Operator.',
-    tagline: 'A university administrator\nwho rebuilt her workplace, one floor at a time.',
+    tagline: 'I do not use tools.\nI build them.',
     subtitle:
-      'I delegate email, translation, statistics, and verification to fifteen AI assistants, and focus on strategy and negotiation.',
+      'The person who knows the operational problems best builds the production systems that solve them.',
   },
   nav: {
     hero: 'Intro',
     about: 'About',
-    method: 'Method',
-    work: 'Work',
+    oia: 'OIA',
+    univ: 'Univ Finder',
+    web: 'Website',
+    selected: 'Projects',
     experience: 'Experience',
-    skills: 'Skills',
     contact: 'Contact',
   },
   hero: {
     stats: [
-      { value: '265+', label: 'Universities in Finder Dashboard' },
-      { value: '25h → 8h', label: 'Weekly Email Processing Time' },
-      { value: '15', label: 'AI Personas Orchestrated' },
-      { value: '13,000+', label: 'Exchange Reviews Analyzed' },
+      { value: '-83%', label: 'ECTS conversion time' },
+      { value: '25h → 8h', label: 'Weekly email triage' },
+      { value: '10,000+', label: 'Docs analyzed · 740+ partners' },
+      { value: '15', label: 'AI agents in production' },
     ],
     hint: 'Enter the building ↓',
   },
@@ -29,16 +30,19 @@ export const en = {
     number: 'I',
     title: 'About',
     body: [
-      'I handle international affairs at Yonsei University, while in parallel pursuing a master\'s at the Yonsei Graduate School of AI Convergence. An ordinary university staffer who majored in French, I began turning routine office work into AI workflows — building tools with Flask, Google Apps Script, D3.js, and React, and most recently raising the six-floor "OIA Automation Office" with Claude Code.',
-      'I can\'t stand ideas that stay in memos. I love designing the thing people said "could this even work?" about, and proving the effect in real numbers. Every day I try another experiment that changes how the organization works.',
-      'Now I\'m looking for a bigger stage where my curious little laboratory can run wider.',
+      'A non-developer who majored in French, building production systems firsthand in the field of international-affairs operations. I designed scattered department work into a six-floor office simulation staffed by 15 AI agents, mapped those 15 agents to 14 department folders, and wired their state together with file-watching.',
+      'I choose what to automate, design the data structures and architecture, and validate the output. Next, I want to keep building AI products as the person who knows the operations field, as an AI product planner and technical PM.',
     ],
+    snapshot: [
+      { k: 'Now', v: 'Yonsei Office of International Affairs · Europe Exchange — Exchange Program Manager' },
+      { k: 'Study', v: 'M.S. candidate, Graduate School of AI Convergence · RAG · ReAct' },
+      { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
+      { k: 'Proof', v: 'ECTS -83% · email 25h→8h · 10K docs across 740+ partners · led Macron lecture' },
+    ],
+    cvTrail: '· Three featured projects and detailed experience follow below.',
   },
 
   method: {
-    number: 'II',
-    title: 'Method',
-    headline: 'Not someone who uses tools — someone who builds them to use.',
     steps: [
       { id: '01', label: 'Problem framing', desc: 'Start by asking what tool is worth building.' },
       { id: '02', label: 'Data structure', desc: 'Sketch how the data should be shaped first.' },
@@ -47,12 +51,6 @@ export const en = {
       { id: '05', label: 'Iteration', desc: 'Refine through feedback from self and colleagues.' },
       { id: '06', label: 'Deployment', desc: 'Take it all the way into actual use.' },
     ],
-  },
-
-  featured: {
-    number: 'III',
-    title: 'Featured Work',
-    intro: 'A look at two key projects I built.',
   },
 
   oiaBuilding: {
@@ -131,17 +129,17 @@ export const en = {
           '3 PM. Léa reviews an MoU draft, Mail sorts 154 emails, Nomi handles 8 nominations, and Solène updates the exchange balance. Uboo runs on the cat wheel up top.',
           'I just ask Céline: "What are today\'s negotiation points with our partners?" Where I once opened every email and dug through folders, now I only decide `what, to whom, in what order` to ask.',
         ],
-        imageSrc: 'chibi-friendly-mascot.png',
+        imageSrc: null,
         imageCaption: '',
         imageHint: 'Screenshot of the building at full capacity, with all secretaries working and Uboo in the elevator',
       },
       {
         kind: 'section',
         tag: 'APPROACH · V',
-        heading: 'How an ordinary university staffer works with AI.',
+        heading: 'I build with judgment, not code.',
         body: [
-          'Difficult code and skills aren\'t my forte, but I can define what the problem is, design how to solve it, and find where else the solution applies.',
-          'Being non-CS, a humanities major, is no longer a weakness. I\'m proving that the planner who knows the field\'s pain points best can build the tools herself.',
+          'I define what the problem is, design the architecture to solve it, validate the output, and find where else it applies. These are the judgments a tool cannot make for me, and they decide the quality of the system.',
+          'The person who knows the field\'s pain points best builds the production tools directly. A non-CS, humanities background is not a weakness but the starting point of that strength.',
         ],
         imageSrc: null,
         imageCaption: 'Claude Code session in progress',
@@ -181,8 +179,8 @@ export const en = {
           p:
             'Now I\'m looking for a stage where I can design that change directly.',
         },
-        imageSrc: 'cat-uboo.png',
-        imageCaption: 'Uboo, the real cheese cat',
+        imageSrc: null,
+        imageCaption: '',
         imageHint: 'A cute photo of Uboo — warm closing image',
       },
     ],
@@ -249,9 +247,99 @@ export const en = {
     showBuilding: false,
   },
 
+  oiaWebsite: {
+    id: 'oia-website',
+    index: '03',
+    year: '2026',
+    title: 'OIA Website Redesign',
+    subtitle: 'Replacing a legacy ASP site, with a working React prototype as the baseline',
+    stack: ['React', 'TypeScript', 'SEO', 'Bilingual Copy', 'Netlify'],
+    slides: [
+      {
+        kind: 'cover',
+        heading: 'OIA Website Redesign',
+        sub: 'Not a planning deck — a deployed prototype as the baseline.',
+        body:
+          'To modernize the legacy (ASP) official site oia.yonsei.ac.kr, I — as the planner — built a fully working React mockup and presented it alongside a development requirements document. Deliverable: yonsei-oia.netlify.app',
+        imageSrc: null,
+        imageCaption: 'Hero of yonsei-oia.netlify.app',
+        imageHint: 'Screenshot of the mockup site\'s Hero + main statistics section',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · I',
+        heading: 'Start with a working prototype.',
+        body: [
+          'I structured the full sitemap into five top-level sections (Introduction · Partnerships · Inbound · Outbound · News & Events) and built 38 pages with dummy data.',
+          'Applied a 2-depth accordion menu, underline hover animation, responsive breakpoints (1024 / 768px), and a design grounded in the official Yonsei navy (#003876). Modularized for scalability and maintainability first, then upgraded from plain HTML/CSS/JS to a React/TypeScript SPA.',
+        ],
+        imageSrc: null,
+        imageCaption: 'Five-section sitemap / accordion navigation',
+        imageHint: 'Sitemap diagram or screenshot of the 2-depth accordion menu expanded',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · II',
+        heading: 'A document a vendor can build from on day one.',
+        body: [
+          'Produced an AS-IS / TO-BE document (PPT) comparing the React mockup with the existing ASP site.',
+          'Classified pages into four development types (static text / board / data-managed / SSO-protected) to make complexity explicit, and defined the SSO authentication scope (Outbound only) and admin CMS requirements.',
+        ],
+        imageSrc: null,
+        imageCaption: 'AS-IS / TO-BE requirements document',
+        imageHint: 'AS-IS/TO-BE comparison slide or the page-type classification table',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · III',
+        heading: 'Content and SEO that will not age.',
+        body: [
+          'Optimized per-page title · description · keywords with a route-based metadata map (length discipline, de-duplicated keywords, unified brand naming).',
+          'Replaced yearly-changing ranking numbers with "Since 1966 · 80+ Partner Countries · 740+ Partner Universities" for the main statistics, preventing content decay. Unfolded Yonsei\'s internationalization timeline as a scroll interaction, and added a new "Degree Seeking" landing page to fill a gap that previously redirected straight to Admissions.',
+        ],
+        imageSrc: null,
+        imageCaption: 'Main statistics / internationalization timeline',
+        imageHint: 'The Since-1966 statistics block or the scroll-timeline interaction',
+      },
+      {
+        kind: 'section',
+        tag: 'PHASE · IV',
+        heading: '"From a site you read notices on, to a site you explore the world with."',
+        body: [
+          'Reworked bureaucratic institutional phrasing into a natural, human voice (hero, office-relocation notice, program and event intros).',
+          'Wrote an HTML launch-announcement email plain enough for non-specialists, closing the loop on internal rollout.',
+        ],
+        imageSrc: null,
+        imageCaption: 'Before / after copy',
+        imageHint: 'Side-by-side of the old phrasing and the revised copy',
+      },
+      {
+        kind: 'result',
+        tag: 'RESULT',
+        heading: 'It became the baseline for the redesign project.',
+        body: [
+          {
+            h: 'Moving a vendor inside a conservative organization',
+            p:
+              'In an organization wary of AI and new tech, where moving a vendor through a legacy environment is hard, I set the baseline for the actual redesign project by presenting a working prototype and a requirements document myself.',
+          },
+          {
+            h: 'Full-stack, solo — from design to copy',
+            p:
+              'I carried design, information architecture, SEO, and bilingual copy single-handedly, and proposed the direction of turning repetitive student inquiries into tools through University Finder integration.',
+          },
+        ],
+        imageSrc: null,
+        imageCaption: '',
+        imageHint: '',
+      },
+    ],
+    showBuilding: false,
+  },
+
   selected: {
     number: 'IV',
-    title: 'Selected Works',
+    title: 'Projects',
     intro: 'Other projects.',
     projects: [
       {
@@ -259,18 +347,9 @@ export const en = {
         year: '2025–2026',
         stack: ['GAS', 'Claude API', 'python-docx'],
         body:
-          'Automated the conversion of European (ECTS) transcripts into Yonsei credits. 200+ cases per semester reduced from 8–10 minutes each to under 30 seconds.',
+          'Automated the conversion of European (ECTS) transcripts into Yonsei credits. Cut processing time by 83% across 200+ cases per semester.',
         imageCaption: 'ECTS conversion spreadsheet',
         imageHint: 'Google Sheets screenshot with Yonsei credits auto-populated',
-      },
-      {
-        title: 'OIA Website Renewal',
-        year: '2026',
-        stack: ['React', 'TypeScript', 'Netlify'],
-        body:
-          'In a legacy-dominated development environment, I — as a planner — built a React mockup and drove the planning. Restructured UX/UI, and the work set the baseline for Yonsei University\'s official website renewal project.',
-        imageCaption: 'Hero of yonsei-oia.netlify.app',
-        imageHint: 'Screenshot of the mockup site\'s Hero + 3-stat section',
       },
       {
         title: 'Partner University Database',
@@ -360,9 +439,12 @@ export const en = {
     number: 'VII',
     title: 'Contact',
     heading: 'Looking for a new stage.',
-    email: 'choy4130@gmail.com',
+    sub: 'A place to run my small laboratory at a far larger scale.',
+    email: 'sachoi.pro@gmail.com',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',
+    cvUrl: '/CV_SeoAh_Choi_EN.pdf',
+    cvValue: 'Curriculum Vitae',
   },
 
   footer: {
