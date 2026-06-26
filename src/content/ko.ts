@@ -19,13 +19,9 @@ export const ko = {
       '운영 현장의 문제를 가장 잘 아는 사람이, 그 문제를 푸는 프로덕션 시스템을 직접 만듭니다.',
   },
   nav: {
-    hero: 'Intro',
+    work: 'Work',
     about: 'About',
-    oia: 'OIA',
-    univ: 'Univ Finder',
-    web: 'Website',
-    selected: 'Projects',
-    experience: 'Experience',
+    lab: 'Lab',
     contact: 'Contact',
   },
   hero: {
@@ -35,10 +31,10 @@ export const ko = {
       { value: '10,000+', label: '740+ 협정교 문서 분석' },
       { value: '15', label: '운영 중인 AI 에이전트' },
     ],
-    hint: 'Enter the building ↓',
+    hint: '↓ Selected Work',
   },
   about: {
-    number: 'I',
+    number: '02',
     title: 'About',
     body: [
       '프랑스어를 전공한 비개발자가, 국제 업무 운영 현장에서 직접 프로덕션 시스템을 만듭니다. 흩어져 있던 부서 업무를 15개 AI 에이전트가 상주하는 6층 사무실 시뮬레이션으로 설계하고, 15개 에이전트를 14개 부서 폴더에 매핑한 뒤 file-watching으로 각 폴더의 상태를 연동했습니다.',
@@ -50,7 +46,16 @@ export const ko = {
       { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
       { k: 'Proof', v: 'ECTS -83% · 이메일 25h→8h · 740+ 협정교 1만 건 분석 · 마크롱 특강 총괄' },
     ],
-    cvTrail: '· 아래에서 대표 프로젝트 3건과 상세 경력을 볼 수 있습니다.',
+    careerTitle: '경력 · 학력',
+    skillsTitle: 'Skills',
+    highlight: {
+      label: '운영 하이라이트',
+      title: '마크롱 대통령 특강 총괄',
+      year: '2026',
+      body:
+        '2026년 4월 3일 에마뉘엘 마크롱 프랑스 대통령의 연세대학교 특별강연 기획·실무를 총괄했습니다. 엘리제궁·주한프랑스대사관·경호처·교내외 부서와 협의했고, 국내 언론 169건과 엘리제궁 공식 유튜브 방영, 프랑스 외신 보도로 이어졌습니다.',
+    },
+    cvTrail: '· 아래에서 대표 작업과 상세 경력을 볼 수 있습니다.',
   },
 
   method: {
@@ -62,6 +67,12 @@ export const ko = {
       { id: '05', label: '반복 개선', desc: '본인과 동료의 피드백을 받아 다시 만진다.' },
       { id: '06', label: '배포·운영', desc: '실제로 쓰이는 곳까지 가져간다.' },
     ],
+  },
+
+  work: {
+    number: '01',
+    title: '주요 작업',
+    intro: '운영 현장의 문제를 직접 만든 프로덕션 시스템으로 풀어낸 대표 작업들.',
   },
 
   // ── Project 1 — OIA Building ──────────────────────
@@ -258,6 +269,7 @@ export const ko = {
     ],
     buildingFloorMap: [null, null, null, null] as const,
     showBuilding: false,
+    link: 'https://oia.yonsei.ac.kr/univfinder',
   },
 
   // ── Project 3 — OIA Website Redesign ───────────────
@@ -349,39 +361,48 @@ export const ko = {
       },
     ],
     showBuilding: false,
+    link: 'https://yonsei-oia.netlify.app',
   },
 
-  selected: {
-    number: 'IV',
-    title: 'Projects',
-    intro: '그 외 작업들.',
-    projects: [
+  lab: {
+    number: '03',
+    title: '실험실',
+    intro: '대표 작업으로 자라기 전, 현장에서 만든 작은 도구들.',
+    tools: [
       {
         title: 'ECTS 성적 환산 자동화',
         year: '2025–2026',
         stack: ['GAS', 'Claude API', 'python-docx'],
         body:
-          '교환학생이 유럽 파트너교에서 받아온 성적표(ECTS 단위)를 연세대 학점으로 환산하는 작업을 자동화. 학기당 200건 이상의 반복 작업에서 처리시간을 83% 단축.',
-        imageCaption: 'ECTS 환산 결과 스프레드시트',
-        imageHint: 'GAS가 자동 생성한 연세대 학점이 채워진 Google Sheets 스크린샷',
+          '유럽 파트너교 성적표(ECTS)를 연세대 학점으로 환산. 학기당 200건 이상 반복 작업에서 처리시간 83% 단축.',
       },
       {
         title: '협정교 DB 구축',
         year: '2026',
         stack: ['Google Sheets', 'openpyxl', 'Claude Code'],
         body:
-          '전 세계 해외 파트너 대학의 협정 정보를 27개 컬럼 스키마로 표준화하고, 주요 필드에 드롭다운 유효성 검사 적용. 향후 어드민 임베드와 내부망 대시보드로 확장 예정.',
-        imageCaption: '27컬럼 DB 스키마 (공개/내부 구분)',
-        imageHint: '색상으로 구분된 엑셀 헤더 스크린샷 — 공개 컬럼과 내부 컬럼 경계가 보이게',
+          '전 세계 협정 정보를 27개 컬럼 스키마로 표준화하고 주요 필드에 드롭다운 유효성 검사 적용. 어드민 임베드·내부망 대시보드로 확장 예정.',
       },
       {
-        title: '마크롱 대통령 특강 운영',
-        year: '2026',
-        stack: ['French VIP', 'Google Apps Script', 'Protocol'],
+        title: '이메일 트리아지 시스템',
+        year: '2025',
+        stack: ['GAS', 'Claude API'],
         body:
-          '2026년 4월 3일 에마뉘엘 마크롱 프랑스 대통령의 연세대학교 특별강연 기획 및 실무 총괄 진행. 엘리제궁·주한프랑스대사관·청와대 경호처·교내외 부서와 업무 협의. 국내 언론 169건은 물론 엘리제궁 공식 유튜브 방영, 프랑스 외신 보도의 성과 기록.',
-        imageCaption: '행사 당일 각당헌 현장',
-        imageHint: '공개 가능한 현장 사진 1컷 — 행사장 전경 또는 총장 환영사 장면',
+          '하루 100통 넘게 쏟아지는 한·영·불 혼합 메일을 자동 분류·요약. 주간 이메일 처리 시간을 25시간에서 8시간으로 줄였습니다.',
+      },
+      {
+        title: 'FAQ 챗봇',
+        year: '2025',
+        stack: ['Claude API'],
+        body:
+          '학생들이 매년 반복하던 파견 관련 FAQ를 셀프서비스로 전환. 같은 질문에 반복 응대하던 업무를 도구로 흡수했습니다.',
+      },
+      {
+        title: '노미네이션 통합 GAS 대시보드',
+        year: '2025',
+        stack: ['GAS', 'Google Sheets'],
+        body:
+          '여러 시트·메일에 흩어진 노미네이션 처리 상태를 한 화면으로 통합. 건별 상태 추적과 누락 방지를 자동화했습니다.',
       },
     ],
   },
@@ -450,7 +471,7 @@ export const ko = {
   },
 
   contact: {
-    number: 'VII',
+    number: '04',
     title: 'Contact',
     heading: '새로운 무대를 찾습니다.',
     sub: '제 작은 실험실을 더 큰 무대에서 펼치고 싶습니다.',

@@ -8,13 +8,9 @@ export const en = {
       'The person who knows the operational problems best builds the production systems that solve them.',
   },
   nav: {
-    hero: 'Intro',
+    work: 'Work',
     about: 'About',
-    oia: 'OIA',
-    univ: 'Univ Finder',
-    web: 'Website',
-    selected: 'Projects',
-    experience: 'Experience',
+    lab: 'Lab',
     contact: 'Contact',
   },
   hero: {
@@ -24,10 +20,10 @@ export const en = {
       { value: '10,000+', label: 'Docs analyzed · 740+ partners' },
       { value: '15', label: 'AI agents in production' },
     ],
-    hint: 'Enter the building ↓',
+    hint: '↓ Selected Work',
   },
   about: {
-    number: 'I',
+    number: '02',
     title: 'About',
     body: [
       'A non-developer who majored in French, building production systems firsthand in the field of international-affairs operations. I designed scattered department work into a six-floor office simulation staffed by 15 AI agents, mapped those 15 agents to 14 department folders, and wired their state together with file-watching.',
@@ -39,7 +35,16 @@ export const en = {
       { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
       { k: 'Proof', v: 'ECTS -83% · email 25h→8h · 10K docs across 740+ partners · led Macron lecture' },
     ],
-    cvTrail: '· Three featured projects and detailed experience follow below.',
+    careerTitle: 'Experience & Education',
+    skillsTitle: 'Skills',
+    highlight: {
+      label: 'Operations Highlight',
+      title: 'President Macron Special Lecture',
+      year: '2026',
+      body:
+        'I led planning and end-to-end operations for President Emmanuel Macron\'s special lecture at Yonsei on April 3, 2026. I coordinated with the Élysée Palace, the French Embassy, Presidential Security, and multiple offices — covered by 169 domestic press hits, an official Élysée YouTube broadcast, and international coverage.',
+    },
+    cvTrail: '· Selected work and detailed experience follow below.',
   },
 
   method: {
@@ -51,6 +56,12 @@ export const en = {
       { id: '05', label: 'Iteration', desc: 'Refine through feedback from self and colleagues.' },
       { id: '06', label: 'Deployment', desc: 'Take it all the way into actual use.' },
     ],
+  },
+
+  work: {
+    number: '01',
+    title: 'Selected Work',
+    intro: 'Production systems I built firsthand to solve problems I knew from the field.',
   },
 
   oiaBuilding: {
@@ -245,6 +256,7 @@ export const en = {
     ],
     buildingFloorMap: [null, null, null, null] as const,
     showBuilding: false,
+    link: 'https://oia.yonsei.ac.kr/univfinder',
   },
 
   oiaWebsite: {
@@ -335,39 +347,43 @@ export const en = {
       },
     ],
     showBuilding: false,
+    link: 'https://yonsei-oia.netlify.app',
   },
 
-  selected: {
-    number: 'IV',
-    title: 'Projects',
-    intro: 'Other projects.',
-    projects: [
+  lab: {
+    number: '03',
+    title: 'Lab',
+    intro: 'The small tools I built in the field before any of them grew into featured work.',
+    tools: [
       {
         title: 'ECTS Credit Conversion Automation',
         year: '2025–2026',
         stack: ['GAS', 'Claude API', 'python-docx'],
-        body:
-          'Automated the conversion of European (ECTS) transcripts into Yonsei credits. Cut processing time by 83% across 200+ cases per semester.',
-        imageCaption: 'ECTS conversion spreadsheet',
-        imageHint: 'Google Sheets screenshot with Yonsei credits auto-populated',
+        body: 'Automated converting European (ECTS) transcripts into Yonsei credits. Cut processing time by 83% across 200+ cases per semester.',
       },
       {
         title: 'Partner University Database',
         year: '2026',
         stack: ['Google Sheets', 'openpyxl', 'Claude Code'],
-        body:
-          'Standardized worldwide partner-university agreement data into a 27-column schema, with dropdown validation on key fields. Designed to extend to admin-panel embedding and an internal-network dashboard.',
-        imageCaption: '27-column DB schema',
-        imageHint: 'Color-coded Excel header — public and internal columns distinguishable',
+        body: 'Standardized worldwide agreement data into a 27-column schema with dropdown validation. Designed to extend to admin embedding and an internal dashboard.',
       },
       {
-        title: 'President Macron Lecture Operations',
-        year: '2026',
-        stack: ['French VIP', 'Google Apps Script', 'Protocol'],
-        body:
-          'Led planning and end-to-end operations for President Emmanuel Macron\'s special lecture at Yonsei University, April 3, 2026. Coordinated with the Élysée Palace, the French Embassy, Presidential Security, and multiple offices on and off campus. Covered by 169 domestic press hits, an official Élysée Palace YouTube broadcast, and international coverage.',
-        imageCaption: 'The event at Gakdang Hall',
-        imageHint: 'One public-safe photo from the event — venue overview or welcome speech moment',
+        title: 'Email Triage System',
+        year: '2025',
+        stack: ['GAS', 'Claude API'],
+        body: 'Auto-classifies and summarizes 100+ daily emails mixed in Korean, English, and French. Cut weekly email handling from 25 hours to 8.',
+      },
+      {
+        title: 'FAQ Chatbot',
+        year: '2025',
+        stack: ['Claude API'],
+        body: 'Turned recurring exchange-program FAQs into self-service, absorbing repetitive student inquiries into a tool.',
+      },
+      {
+        title: 'Nomination GAS Dashboard',
+        year: '2025',
+        stack: ['GAS', 'Google Sheets'],
+        body: 'Unified nomination status scattered across sheets and email into one view, automating per-case tracking and gap prevention.',
       },
     ],
   },
@@ -436,7 +452,7 @@ export const en = {
   },
 
   contact: {
-    number: 'VII',
+    number: '04',
     title: 'Contact',
     heading: 'Looking for a new stage.',
     sub: 'A place to run my small laboratory at a far larger scale.',
