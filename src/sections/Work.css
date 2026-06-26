@@ -1,0 +1,18 @@
+.work-inner { gap: clamp(2.5rem, 5vw, 4rem); }
+.work-head { max-width: 48rem; }
+.work-intro {
+  font-size: var(--fs-body-lg);
+  color: var(--text-on-light-muted);
+  margin-top: 0.5rem;
+}
+.work-featured { margin-top: 0.5rem; }
+.work-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+@media (max-width: 720px) {
+  .work-list { grid-template-columns: 1fr; }
+}
