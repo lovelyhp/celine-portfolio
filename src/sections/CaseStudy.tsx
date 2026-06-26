@@ -19,14 +19,17 @@ export interface CaseStudyProps {
   buildingFloorMap?: Array<0 | 1 | 2 | 3 | 4 | 5 | null>;
   /** true이면 좌측 sticky sidebar에 BuildingDiagram을 표시. false면 메타 정보만. */
   showBuilding?: boolean;
+  /** true이면 cover 외 슬라이드를 토글 뒤로 접는다(대표작용). */
+  collapsible?: boolean;
 }
 
 export function CaseStudy({
   index, year, title, subtitle, stack, slides,
-  buildingFloorMap, showBuilding = true,
+  buildingFloorMap, showBuilding = true, collapsible = false,
 }: CaseStudyProps) {
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIdx, setActiveIdx] = useState(0);
+  const [expanded, setExpanded] = useState(!collapsible);
 
   useEffect(() => {
     const targets = slideRefs.current.filter(Boolean) as HTMLDivElement[];
@@ -45,7 +48,7 @@ export function CaseStudy({
     );
     targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
-  }, [slides.length]);
+  }, [slides.length, expanded]);
 
   const activeFloor = buildingFloorMap?.[activeIdx] ?? undefined;
 
@@ -71,10 +74,30 @@ export function CaseStudy({
       </aside>
 
       <div className="case-content">
-        {slides.map((slide, i) => (
+        {(collapsible ? slides.slice(0, 1) : slides).map((slide, i) => (
           <div
             key={i}
             ref={(el) => { slideRefs.current[i] = el; }}
+            className={`case-slide case-slide--${slide.kind}`}
+          >
+            <CaseSlideRender slide={slide} />
+          </div>
+        ))}
+
+        {collapsible && (
+          <button
+            className="case-expand-btn font-serif-italic"
+            aria-expanded={expanded}
+            onClick={() => setExpanded((v) => !v)}
+          >
+            {expanded ? '접기' : '자세히 보기 →'}
+          </button>
+        )}
+
+        {collapsible && expanded && slides.slice(1).map((slide, i) => (
+          <div
+            key={i + 1}
+            ref={(el) => { slideRefs.current[i + 1] = el; }}
             className={`case-slide case-slide--${slide.kind}`}
           >
             <CaseSlideRender slide={slide} />
