@@ -1,0 +1,24 @@
+.lab-head { max-width: 48rem; }
+.lab-intro { font-size: var(--fs-body-lg); color: var(--text-on-light-muted); margin-top: 0.5rem; }
+.lab-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+.lab-card {
+  padding: 1.4rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.015);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.lab-card-year { color: var(--text-on-light-faint); font-size: var(--fs-small); }
+.lab-card-title { font-size: var(--fs-h3); }
+.lab-card-body { color: var(--text-on-light-muted); font-size: var(--fs-small); flex: 1; }
+.lab-card-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+@media (max-width: 980px) { .lab-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .lab-grid { grid-template-columns: 1fr; } }
