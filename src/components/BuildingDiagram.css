@@ -35,9 +35,9 @@
 }
 .building-diagram__floor:last-child { border-bottom: none; }
 .building-diagram__floor[data-highlighted="true"] {
-  background: rgba(251, 191, 36, 0.10);
-  color: var(--amber);
-  box-shadow: inset 3px 0 0 var(--amber);
+  background: rgba(251, 191, 36, 0.14);
+  color: var(--amber-deep);
+  box-shadow: inset 3px 0 0 var(--amber-deep);
 }
 .building-diagram__floor-num {
   font-weight: 700;
