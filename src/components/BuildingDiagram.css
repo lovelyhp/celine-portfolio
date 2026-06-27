@@ -83,16 +83,11 @@
 .building-diagram--large .building-diagram__floor { min-height: 2.8rem; font-size: 0.82rem; }
 .building-diagram--large .building-diagram__floor-label { font-size: 0.78rem; }
 
-/* Light background variant (used in About+Method 등) */
-.chapter--light .building-diagram,
+/* Warm background variant (used in About 등) */
 .chapter--warm .building-diagram { color: var(--text-on-light); }
-.chapter--light .building-diagram__body,
 .chapter--warm .building-diagram__body { border-color: var(--text-on-light); }
-.chapter--light .building-diagram__floor,
 .chapter--warm .building-diagram__floor { color: var(--text-on-light-muted); border-bottom-color: var(--paper-line); }
-.chapter--light .building-diagram__roof,
 .chapter--warm .building-diagram__roof { color: var(--amber-deep); }
-.chapter--light .building-diagram__floor[data-highlighted="true"],
 .chapter--warm .building-diagram__floor[data-highlighted="true"] {
   background: rgba(251, 191, 36, 0.15);
   color: var(--amber-deep);
