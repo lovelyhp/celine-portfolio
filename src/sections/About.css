@@ -72,3 +72,31 @@
   .about-head { position: static; }
   .about-snapshot { grid-template-columns: 1fr; }
 }
+
+.about-highlight {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 0.75rem;
+  background: var(--paper-warm);
+}
+.about-highlight-label { color: var(--amber-deep); font-size: 0.95rem; }
+.about-highlight-title { font-size: var(--fs-h2); margin-top: 0.35rem; }
+.about-highlight-year { color: var(--text-on-light-faint); font-weight: 400; }
+.about-highlight-body { margin-top: 0.6rem; color: var(--text-on-light-muted); }
+
+.about-career, .about-skills { margin-top: 2.5rem; }
+.about-block-h { color: var(--amber-deep); margin-bottom: 1rem; }
+.about-career-item { border-bottom: 1px solid var(--paper-line); padding: 0.85rem 0; }
+.about-career-item summary {
+  display: flex; justify-content: space-between; gap: 1rem;
+  cursor: pointer; list-style: none; font-weight: 600;
+}
+.about-career-item summary::-webkit-details-marker { display: none; }
+.about-career-period { color: var(--text-on-light-faint); font-weight: 400; }
+.about-career-role { color: var(--text-on-light-muted); margin-top: 0.35rem; }
+.about-career-bullets { margin: 0.6rem 0 0 1rem; color: var(--text-on-light-muted); }
+.about-career-bullets li { margin-bottom: 0.3rem; }
+.about-skill-group { margin-bottom: 1rem; }
+.about-skill-head { font-weight: 600; margin-bottom: 0.2rem; }
+.about-skill-items { color: var(--text-on-light-muted); font-size: var(--fs-small); }

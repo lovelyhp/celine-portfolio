@@ -45,6 +45,55 @@ export function AboutChapter() {
           </a>{' '}
           {t.about.cvTrail}
         </p>
+
+        <div className="about-highlight">
+          <div className="about-highlight-label font-serif-italic">{t.about.highlight.label}</div>
+          <h3 className="about-highlight-title font-display">
+            {t.about.highlight.title}
+            <span className="about-highlight-year font-num"> · {t.about.highlight.year}</span>
+          </h3>
+          <p className="about-highlight-body">{t.about.highlight.body}</p>
+        </div>
+
+        <div className="about-career">
+          <h3 className="about-block-h font-serif-italic">{t.about.careerTitle}</h3>
+          {t.experience.roles.map((r, i) => (
+            <details key={`r${i}`} className="about-career-item">
+              <summary>
+                <span className="about-career-org">{r.org}</span>
+                <span className="about-career-period font-num">{r.period}</span>
+              </summary>
+              <div className="about-career-role">{r.position}</div>
+              <ul className="about-career-bullets">
+                {r.bullets.map((b, j) => <li key={j}>{b}</li>)}
+              </ul>
+            </details>
+          ))}
+          {t.experience.education.map((e, i) => (
+            <details key={`e${i}`} className="about-career-item">
+              <summary>
+                <span className="about-career-org">{e.school}</span>
+                <span className="about-career-period font-num">{e.period}</span>
+              </summary>
+              <div className="about-career-role">{e.degree}</div>
+              {e.bullets.length > 0 && (
+                <ul className="about-career-bullets">
+                  {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                </ul>
+              )}
+            </details>
+          ))}
+        </div>
+
+        <div className="about-skills">
+          <h3 className="about-block-h font-serif-italic">{t.about.skillsTitle}</h3>
+          {t.skills.groups.map((g, i) => (
+            <div key={i} className="about-skill-group">
+              <h4 className="about-skill-head">{g.heading}</h4>
+              <p className="about-skill-items">{g.items}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

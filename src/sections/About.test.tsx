@@ -32,4 +32,22 @@ describe('AboutChapter', () => {
     const link = container.querySelector('a.about-cv-link');
     expect(link?.getAttribute('href')).toBe('/CV_SeoAh_Choi_EN.pdf');
   });
+
+  it('renders the Macron operations highlight', () => {
+    const { container } = renderAbout();
+    const hl = container.querySelector('.about-highlight');
+    expect(hl).not.toBeNull();
+    expect(hl?.textContent).toContain('마크롱');
+  });
+
+  it('renders career as collapsible details with role and education entries', () => {
+    const { container } = renderAbout();
+    const details = container.querySelectorAll('.about-career details');
+    expect(details.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('renders the three skill groups', () => {
+    const { container } = renderAbout();
+    expect(container.querySelectorAll('.about-skill-group').length).toBe(3);
+  });
 });
