@@ -1,26 +1,14 @@
 import { useState, useEffect } from 'react';
 import { LangProvider, useLang } from './context/LangContext';
 import { HeroChapter } from './sections/Hero';
+import { WorkChapter } from './sections/Work';
 import { AboutChapter } from './sections/About';
-import { CaseStudy } from './sections/CaseStudy';
-import { SelectedChapter } from './sections/Selected';
-import { ExperienceChapter } from './sections/Experience';
+import { LabChapter } from './sections/Lab';
 import { ContactChapter } from './sections/Contact';
 import './components/Deck.css';
 
-const SECTION_IDS = ['hero', 'about', 'oia', 'univ', 'web', 'selected', 'experience', 'contact'] as const;
+const SECTION_IDS = ['hero', 'work', 'about', 'lab', 'contact'] as const;
 type SectionId = (typeof SECTION_IDS)[number];
-
-const CHAPTER_TONE: Record<SectionId, 'dark' | 'light'> = {
-  hero: 'dark',
-  about: 'light',
-  oia: 'dark',
-  univ: 'dark',
-  web: 'dark',
-  selected: 'light',
-  experience: 'light',
-  contact: 'dark',
-};
 
 function Shell() {
   const { t, toggle, lang } = useLang();
@@ -58,13 +46,9 @@ function Shell() {
   }, []);
 
   const navItems: { id: SectionId; label: string }[] = [
-    { id: 'hero', label: t.nav.hero },
+    { id: 'work', label: t.nav.work },
     { id: 'about', label: t.nav.about },
-    { id: 'oia', label: t.nav.oia },
-    { id: 'univ', label: t.nav.univ },
-    { id: 'web', label: t.nav.web },
-    { id: 'selected', label: t.nav.selected },
-    { id: 'experience', label: t.nav.experience },
+    { id: 'lab', label: t.nav.lab },
     { id: 'contact', label: t.nav.contact },
   ];
 
@@ -73,11 +57,9 @@ function Shell() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const navTone = CHAPTER_TONE[activeId];
-
   return (
     <>
-      <header className={`deck-top deck-top--${navTone}`}>
+      <header className="deck-top deck-top--light">
         <a
           href="#hero"
           onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}
@@ -121,47 +103,14 @@ function Shell() {
         <section id="hero" className="chapter">
           <HeroChapter />
         </section>
+        <section id="work" className="chapter chapter--flow">
+          <WorkChapter />
+        </section>
         <section id="about" className="chapter chapter--warm chapter--flow">
           <AboutChapter />
         </section>
-        <section id="oia" className="chapter chapter--flow">
-          <CaseStudy
-            index={t.oiaBuilding.index}
-            year={t.oiaBuilding.year}
-            title={t.oiaBuilding.title}
-            subtitle={t.oiaBuilding.subtitle}
-            stack={t.oiaBuilding.stack}
-            slides={t.oiaBuilding.slides as any}
-            buildingFloorMap={(t.oiaBuilding as any).buildingFloorMap}
-          />
-        </section>
-        <section id="univ" className="chapter chapter--dark-soft chapter--flow">
-          <CaseStudy
-            index={t.univFinder.index}
-            year={t.univFinder.year}
-            title={t.univFinder.title}
-            subtitle={t.univFinder.subtitle}
-            stack={t.univFinder.stack}
-            slides={t.univFinder.slides as any}
-            showBuilding={false}
-          />
-        </section>
-        <section id="web" className="chapter chapter--flow">
-          <CaseStudy
-            index={t.oiaWebsite.index}
-            year={t.oiaWebsite.year}
-            title={t.oiaWebsite.title}
-            subtitle={t.oiaWebsite.subtitle}
-            stack={t.oiaWebsite.stack}
-            slides={t.oiaWebsite.slides as any}
-            showBuilding={false}
-          />
-        </section>
-        <section id="selected" className="chapter chapter--light chapter--flow">
-          <SelectedChapter />
-        </section>
-        <section id="experience" className="chapter chapter--warm chapter--flow">
-          <ExperienceChapter />
+        <section id="lab" className="chapter chapter--flow">
+          <LabChapter />
         </section>
         <section id="contact" className="chapter">
           <ContactChapter />
