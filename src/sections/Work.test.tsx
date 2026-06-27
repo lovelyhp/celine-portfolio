@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { LangProvider } from '../context/LangContext';
 import { WorkChapter } from './Work';
 
@@ -8,9 +8,10 @@ const renderWork = () =>
 
 describe('WorkChapter', () => {
   it('shows the featured project title and section number', () => {
-    renderWork();
+    const { container } = renderWork();
     expect(screen.getByText('OIA Rush')).toBeInTheDocument();
-    expect(screen.getByText('01')).toBeInTheDocument();
+    const head = container.querySelector('.work-head') as HTMLElement;
+    expect(within(head).getByText('01')).toBeInTheDocument();
   });
 
   it('renders the two compact project cards with live links', () => {

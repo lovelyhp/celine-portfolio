@@ -11,6 +11,10 @@ export function WorkChapter() {
   return (
     <div className="chapter-inner work-inner">
       <div className="work-head">
+        <div className="section-label">
+          <span>{t.work.number}</span>
+          <span className="font-serif-italic">{t.work.title}</span>
+        </div>
         <p className="work-intro">{t.work.intro}</p>
       </div>
 
