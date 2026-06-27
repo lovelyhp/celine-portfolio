@@ -1,3 +1,4 @@
+// @ts-nocheck — dead code awaiting Task 8 deletion; content schema no longer has t.experience
 import { useLang } from '../context/LangContext';
 import './Experience.css';
 
