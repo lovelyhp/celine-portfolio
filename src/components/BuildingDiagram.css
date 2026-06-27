@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   font-family: var(--font-sans-ko);
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
 }
 .building-diagram__roof {
   font-family: var(--font-serif-en);
   font-style: italic;
   font-size: 0.85rem;
-  color: var(--amber);
+  color: var(--amber-deep);
   text-align: center;
   letter-spacing: 0.08em;
   padding: 0.4rem 0;
@@ -16,9 +16,9 @@
 .building-diagram__body {
   display: flex;
   flex-direction: column;
-  border: 1.5px solid var(--text-on-dark);
+  border: 1.5px solid var(--paper-line);
   border-radius: 6px 6px 0 0;
-  background: rgba(250, 250, 248, 0.02);
+  background: rgba(20, 23, 31, 0.02);
   flex: 1;
 }
 .building-diagram__floor {
@@ -27,9 +27,9 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0 0.75rem;
-  border-bottom: 1px solid var(--ink-line);
+  border-bottom: 1px solid var(--paper-line);
   font-size: 0.72rem;
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
   transition: background 0.25s ease, color 0.25s ease;
   min-height: 2.2rem;
 }
@@ -61,11 +61,11 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(250, 250, 248, 0.20);
+  background: rgba(20, 23, 31, 0.15);
   display: inline-block;
 }
 .building-diagram__lights span.on { background: var(--amber); }
-.building-diagram__lights span.off { background: rgba(250, 250, 248, 0.18); }
+.building-diagram__lights span.off { background: rgba(20, 23, 31, 0.12); }
 
 /* Sizes */
 .building-diagram--mini { width: 80px; }
@@ -85,7 +85,7 @@
 
 /* Warm background variant (used in About 등) */
 .chapter--warm .building-diagram { color: var(--text-on-light); }
-.chapter--warm .building-diagram__body { border-color: var(--text-on-light); }
+.chapter--warm .building-diagram__body { border-color: var(--paper-line); }
 .chapter--warm .building-diagram__floor { color: var(--text-on-light-muted); border-bottom-color: var(--paper-line); }
 .chapter--warm .building-diagram__roof { color: var(--amber-deep); }
 .chapter--warm .building-diagram__floor[data-highlighted="true"] {

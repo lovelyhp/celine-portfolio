@@ -5,7 +5,7 @@
 }
 .contact-heading {
   font-size: clamp(2.5rem, 6vw, 5rem);
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
   letter-spacing: -0.03em;
   margin: 1.5rem 0 0.5rem;
   font-weight: 800;
@@ -16,11 +16,11 @@
   display: block;
   width: 3rem;
   height: 3px;
-  background: var(--amber);
+  background: var(--amber-deep);
   margin-top: 1.2rem;
 }
 .contact-sub {
-  color: var(--text-on-dark-muted);
+  color: var(--text-on-light-muted);
   font-size: 1.15rem;
   margin-bottom: 3rem;
 }
@@ -35,27 +35,27 @@
   align-items: baseline;
   gap: 1.5rem;
   padding: 1.1rem 0;
-  border-bottom: 1px solid var(--ink-line);
+  border-bottom: 1px solid var(--paper-line);
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 .contact-link:hover {
-  border-bottom-color: var(--amber);
-  color: var(--amber);
+  border-bottom-color: var(--amber-deep);
+  color: var(--amber-deep);
 }
 .contact-link-label {
   font-family: var(--font-serif-en);
   font-style: italic;
   width: 7rem;
-  color: var(--text-on-dark-faint);
+  color: var(--text-on-light-faint);
   font-size: 1rem;
 }
 .contact-link-value {
   font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-  color: var(--text-on-dark);
+  color: var(--text-on-light);
 }
-.contact-link:hover .contact-link-value { color: var(--amber); }
+.contact-link:hover .contact-link-value { color: var(--amber-deep); }
 .contact-footer {
   font-size: 0.85rem;
-  color: var(--text-on-dark-faint);
+  color: var(--text-on-light-faint);
   margin-top: auto;
 }

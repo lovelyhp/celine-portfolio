@@ -62,6 +62,8 @@ export const en = {
     number: '01',
     title: 'Selected Work',
     intro: 'Production systems I built firsthand to solve problems I knew from the field.',
+    more: 'Read more →',
+    less: 'Show less',
   },
 
   oiaBuilding: {
@@ -389,8 +391,6 @@ export const en = {
   },
 
   experience: {
-    number: 'V',
-    title: 'Experience & Education',
     roles: [
       {
         org: 'Yonsei University, Office of International Affairs',
@@ -433,8 +433,6 @@ export const en = {
   },
 
   skills: {
-    number: 'VI',
-    title: 'Skills',
     groups: [
       {
         heading: 'Technical',

@@ -73,6 +73,8 @@ export const ko = {
     number: '01',
     title: '주요 작업',
     intro: '운영 현장의 문제를 직접 만든 프로덕션 시스템으로 풀어낸 대표 작업들.',
+    more: '자세히 보기 →',
+    less: '접기',
   },
 
   // ── Project 1 — OIA Building ──────────────────────
@@ -408,8 +410,6 @@ export const ko = {
   },
 
   experience: {
-    number: 'V',
-    title: 'Experience & Education',
     roles: [
       {
         org: '연세대학교 국제처',
@@ -452,8 +452,6 @@ export const ko = {
   },
 
   skills: {
-    number: 'VI',
-    title: 'Skills',
     groups: [
       {
         heading: 'Technical',

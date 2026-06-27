@@ -28,6 +28,8 @@ export function WorkChapter() {
           slides={featured.slides as CaseSlide[]}
           buildingFloorMap={(featured as any).buildingFloorMap}
           collapsible
+          expandLabel={t.work.more}
+          collapseLabel={t.work.less}
         />
       </div>
 

@@ -21,11 +21,14 @@ export interface CaseStudyProps {
   showBuilding?: boolean;
   /** true이면 cover 외 슬라이드를 토글 뒤로 접는다(대표작용). */
   collapsible?: boolean;
+  expandLabel?: string;
+  collapseLabel?: string;
 }
 
 export function CaseStudy({
   index, year, title, subtitle, stack, slides,
   buildingFloorMap, showBuilding = true, collapsible = false,
+  expandLabel = '자세히 보기 →', collapseLabel = '접기',
 }: CaseStudyProps) {
   const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -90,7 +93,7 @@ export function CaseStudy({
             aria-expanded={expanded}
             onClick={() => setExpanded((v) => !v)}
           >
-            {expanded ? '접기' : '자세히 보기 →'}
+            {expanded ? collapseLabel : expandLabel}
           </button>
         )}
 

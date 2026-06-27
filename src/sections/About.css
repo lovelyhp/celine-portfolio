@@ -91,8 +91,19 @@
 .about-career-item summary {
   display: flex; justify-content: space-between; gap: 1rem;
   cursor: pointer; list-style: none; font-weight: 600;
+  position: relative;
 }
 .about-career-item summary::-webkit-details-marker { display: none; }
+.about-career-item summary::after {
+  content: '▸';
+  color: var(--text-on-light-faint);
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.about-career-item[open] summary::after {
+  transform: rotate(90deg);
+}
 .about-career-period { color: var(--text-on-light-faint); font-weight: 400; }
 .about-career-role { color: var(--text-on-light-muted); margin-top: 0.35rem; }
 .about-career-bullets { margin: 0.6rem 0 0 1rem; color: var(--text-on-light-muted); }

@@ -16,3 +16,60 @@
 @media (max-width: 720px) {
   .work-list { grid-template-columns: 1fr; }
 }
+
+/* ── ProjectCard ─────────────────────────────────── */
+.project-card {
+  padding: 1.4rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.015);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.project-card-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.project-card-index {
+  font-weight: 700;
+  color: var(--text-on-light-faint);
+  font-size: var(--fs-small);
+}
+.project-card-year {
+  color: var(--text-on-light-faint);
+  font-size: var(--fs-small);
+}
+.project-card-title {
+  font-size: var(--fs-h3);
+  color: var(--text-on-light);
+  margin: 0;
+}
+.project-card-subtitle {
+  color: var(--text-on-light-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.project-card-summary {
+  color: var(--text-on-light-muted);
+  font-size: var(--fs-small);
+  flex: 1;
+  line-height: 1.7;
+  margin: 0;
+}
+.project-card-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.project-card-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: var(--amber-deep);
+  font-size: var(--fs-small);
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+.project-card-link:hover { opacity: 0.7; text-decoration: underline; }
