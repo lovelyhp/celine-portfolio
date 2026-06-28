@@ -1,4 +1,5 @@
 import { useLang } from '../context/LangContext';
+import { Shot } from '../components/Shot';
 import './About.css';
 
 export function AboutChapter() {
@@ -47,30 +48,55 @@ export function AboutChapter() {
         </p>
 
         <div className="about-highlight">
-          <div className="about-highlight-label font-serif-italic">{t.about.highlight.label}</div>
-          <h3 className="about-highlight-title font-display">
-            {t.about.highlight.title}
-            <span className="about-highlight-year font-num"> · {t.about.highlight.year}</span>
-          </h3>
-          <p className="about-highlight-body">{t.about.highlight.body}</p>
+          {(t.about.highlight as any).image && (
+            <div className="about-highlight-media">
+              <Shot src={(t.about.highlight as any).image} alt={t.about.highlight.title} ratio="16 / 9" />
+            </div>
+          )}
+          <div className="about-highlight-text">
+            <div className="about-highlight-label font-serif-italic">{t.about.highlight.label}</div>
+            <h3 className="about-highlight-title font-display">
+              {t.about.highlight.title}
+              <span className="about-highlight-year font-num"> · {t.about.highlight.year}</span>
+            </h3>
+            <p className="about-highlight-body">{t.about.highlight.body}</p>
+          </div>
         </div>
 
         <div className="about-career">
           <h3 className="about-block-h font-serif-italic">{t.about.careerTitle}</h3>
-          {t.experience.roles.map((r, i) => (
-            <details key={`r${i}`} className="about-career-item">
-              <summary>
-                <span className="about-career-org">{r.org}</span>
-                <span className="about-career-period font-num">{r.period}</span>
-              </summary>
-              <div className="about-career-role">{r.position}</div>
-              <ul className="about-career-bullets">
-                {r.bullets.map((b, j) => <li key={j}>{b}</li>)}
-              </ul>
-            </details>
+
+          <div className="about-affiliation">
+            <span className="about-affiliation-org font-display">{t.experience.affiliation.org}</span>
+            <span className="about-affiliation-period font-num">{t.experience.affiliation.period}</span>
+          </div>
+
+          {t.experience.affiliation.divisions.map((d, di) => (
+            <div key={`d${di}`} className="about-division">
+              <div className="about-division-head">
+                <span className="about-division-name">{d.name}</span>
+                {d.period && <span className="about-division-period font-num">{d.period}</span>}
+              </div>
+              {d.roles.map((r, ri) => (
+                <details key={`d${di}r${ri}`} className="about-career-item" open>
+                  <summary>
+                    <span className="about-career-org">{r.position}</span>
+                    {r.period && <span className="about-career-period font-num">{r.period}</span>}
+                  </summary>
+                  <ul className="about-career-bullets">
+                    {r.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                  </ul>
+                </details>
+              ))}
+            </div>
           ))}
+
+        </div>
+
+        <div className="about-skills">
+          <h3 className="about-block-h font-serif-italic">{t.about.eduTitle}</h3>
           {t.experience.education.map((e, i) => (
-            <details key={`e${i}`} className="about-career-item">
+            <details key={`e${i}`} className="about-career-item" open>
               <summary>
                 <span className="about-career-org">{e.school}</span>
                 <span className="about-career-period font-num">{e.period}</span>

@@ -1,4 +1,5 @@
 import { useLang } from '../context/LangContext';
+import { Shot } from '../components/Shot';
 import './Lab.css';
 
 export function LabChapter() {
@@ -10,12 +11,17 @@ export function LabChapter() {
           <span>{t.lab.number}</span>
           <span className="font-serif-italic">{t.lab.title}</span>
         </div>
-        <p className="lab-intro">{t.lab.intro}</p>
+        {t.lab.intro && <p className="lab-intro">{t.lab.intro}</p>}
       </div>
 
       <ul className="lab-grid">
         {t.lab.tools.map((tool, i) => (
           <li key={i} className="lab-card">
+            {(tool as any).image && (
+              <div className="lab-card-media">
+                <Shot src={(tool as any).image} alt={tool.title} ratio="16 / 9" fit="fill" />
+              </div>
+            )}
             <div className="lab-card-meta">
               <span className="lab-card-year font-num">{tool.year}</span>
             </div>

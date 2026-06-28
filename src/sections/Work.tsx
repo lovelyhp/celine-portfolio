@@ -26,7 +26,7 @@ export function WorkChapter() {
           subtitle={featured.subtitle}
           stack={featured.stack}
           slides={featured.slides as CaseSlide[]}
-          buildingFloorMap={(featured as any).buildingFloorMap}
+          showBuilding={false}
           collapsible
           expandLabel={t.work.more}
           collapseLabel={t.work.less}
@@ -46,6 +46,7 @@ export function WorkChapter() {
                 summary={cover.body}
                 stack={c.stack}
                 link={(c as any).link}
+                image={(c as any).image}
               />
             </li>
           );

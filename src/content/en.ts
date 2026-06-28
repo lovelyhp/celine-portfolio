@@ -3,7 +3,7 @@ export const en = {
     nameRoman: 'Seo-Ah (Céline) Choi',
     role: 'AI Planner · aspiring Technical PM',
     taglineEn: 'Planner, Builder, Operator.',
-    tagline: 'I do not use tools.\nI build them.',
+    tagline: 'The one who knows the field\nbuilds the tool.',
     subtitle:
       'The person who knows the operational problems best builds the production systems that solve them.',
   },
@@ -26,23 +26,25 @@ export const en = {
     number: '02',
     title: 'About',
     body: [
-      'A non-developer who majored in French, building production systems firsthand in the field of international-affairs operations. I designed scattered department work into a six-floor office simulation staffed by 15 AI agents, mapped those 15 agents to 14 department folders, and wired their state together with file-watching.',
-      'I choose what to automate, design the data structures and architecture, and validate the output. Next, I want to keep building AI products as the person who knows the operations field, as an AI product planner and technical PM.',
+      'A non-developer who majored in French, building production systems firsthand across 12 years in public-sector and university operations. It started in 2024, the day an enrollment surge meant processing 2,200 documents at once. After teaching myself Python to build a tool that finished it in 80 seconds, I wired scattered department work into an office simulation (OIA Rush) staffed by 15 AI agents, syncing each folder\'s state with file-watching.',
+      'I choose what to automate, design the data structures and architecture, and validate the output — the judgments a tool cannot make, which decide the quality of the system. Next, I want to keep building AI products as the person who knows the operations field, as an AI product planner and technical PM.',
     ],
     snapshot: [
-      { k: 'Now', v: 'Yonsei Office of International Affairs · Europe Exchange — Exchange Program Manager' },
-      { k: 'Study', v: 'M.S. candidate, Graduate School of AI Convergence · RAG · ReAct' },
+      { k: 'Now', v: 'Yonsei OIA, Europe Exchange — fastest promotion to Manager among peers (Sep 2025)' },
+      { k: 'Study', v: 'M.S. candidate, Graduate School of AI Convergence (HCI) · RAG · ReAct · society audit committee' },
       { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
-      { k: 'Proof', v: 'ECTS -83% · email 25h→8h · 10K docs across 740+ partners · led Macron lecture' },
+      { k: 'Proof', v: 'ECTS -83% · email 25h→8h · led Macron lecture · Minister of Education commendation' },
     ],
-    careerTitle: 'Experience & Education',
+    careerTitle: 'Experience',
+    eduTitle: 'Education',
     skillsTitle: 'Skills',
     highlight: {
       label: 'Operations Highlight',
       title: 'President Macron Special Lecture',
       year: '2026',
       body:
-        'I led planning and end-to-end operations for President Emmanuel Macron\'s special lecture at Yonsei on April 3, 2026. I coordinated with the Élysée Palace, the French Embassy, Presidential Security, and multiple offices — covered by 169 domestic press hits, an official Élysée YouTube broadcast, and international coverage.',
+        'I orchestrated President Macron\'s special lecture at Yonsei (April 2026) — coordinating the Élysée, the French Embassy, and security into 169 press hits and an official Élysée broadcast.',
+      image: 'shot-macron.png',
     },
     cvTrail: '· Selected work and detailed experience follow below.',
   },
@@ -60,7 +62,7 @@ export const en = {
 
   work: {
     number: '01',
-    title: 'Selected Work',
+    title: 'Work',
     intro: 'Production systems I built firsthand to solve problems I knew from the field.',
     more: 'Read more →',
     less: 'Show less',
@@ -70,20 +72,20 @@ export const en = {
     id: 'oia-building',
     index: '01',
     year: '2026',
-    title: 'OIA Rush',
-    subtitle: 'A virtual 6-floor building with 15 AI secretaries',
-    stack: ['Claude Code', 'Flask', 'GAS', 'Claude API', 'D3.js'],
+    title: 'OIA Village',
+    subtitle: 'A hillside artisan village where real Claude agents are mirrored as they work, live',
+    stack: ['Claude Code', 'TypeScript', 'Canvas 2D', 'Vite', 'SSE'],
     slides: [
       {
         kind: 'cover',
-        heading: 'OIA Automation Office',
-        sub: 'A virtual 6-floor building with 15 AI secretaries',
+        heading: 'A living agent village',
+        sub: 'A hillside artisan village where real Claude agents are mirrored as they work, live',
         body:
-          'An integrated automation system that links 15 scattered work folders via file-system events, where 15 AI personas — one planted in each folder — carry out their own work. A one-year record of moving from executor to conductor.',
+          'I planted 15 AI personas across scattered work folders, then made a living-sim where a real Claude Code agent\'s activity (Edit, Read, session start/end) is mirrored on a hillside village in real time. No coins, no shop — just watching the agents work is the experience. A one-year record of moving from executor to conductor.',
         imageSrc: null,
-        imageCaption: 'OIA Rush — 6-floor building simulation',
-        imageHint: 'Render of the 6-floor building (characters, elevator, Uboo visible)',
-        videoSrc: 'oia-rush.webm',
+        imageCaption: 'OIA Village — a hillside artisan village',
+        imageHint: 'Demo video of the hillside village (cottages, artisans, the cat Uboo visible)',
+        videoSrc: 'oia-village-demo.webm',
       },
       {
         kind: 'section',
@@ -124,27 +126,26 @@ export const en = {
       {
         kind: 'section',
         tag: 'APPROACH · III',
-        heading: 'Crown me Honorary Landlord of OIA.',
+        heading: 'Crown me Honorary Village Head of OIA.',
         body: [
-          'Using Claude Code\'s sub-agents and a structured CLAUDE.md persona system, I raised a virtual 6-floor building. 15 department folders mapped to their own floors, each staffed by a dedicated secretary.',
-          'I translated abstract events into something you can see, and something cute — wanting to treat AI not as a tool but as a "teammate."',
+          'Using Claude Code\'s sub-agents and a structured CLAUDE.md persona system, I raised a hillside artisan village. 15 department folders each map to a cottage, each home to a dedicated artisan.',
+          'Edit triggers typing, Read flips through binders, and ending a session turns the lights off for the night. I translated abstract agent activity into a village scene that even shifts through dawn, day, dusk, and night.',
         ],
-        videoSrc: 'oia-rush.webm#t=10,19',
         imageSrc: null,
         imageCaption: '',
-        imageHint: 'Close-up render of the 6F suite — Seo-Ah\'s desk, cat wheel, cat tower, Uboo',
+        imageHint: 'Close-up render of Seo-Ah\'s cottage — the cat Uboo visible, painterly tone',
       },
       {
         kind: 'section',
         tag: 'APPROACH · IV',
         heading: 'One afternoon. D-2 before a deadline.',
         body: [
-          '3 PM. Léa reviews an MoU draft, Mail sorts 154 emails, Nomi handles 8 nominations, and Solène updates the exchange balance. Uboo runs on the cat wheel up top.',
+          '3 PM. In her cottage, Léa reviews an MoU draft, Mail sorts 154 emails, Nomi handles 8 nominations, and Solène updates the exchange balance. The cat Uboo wanders the village as dusk falls.',
           'I just ask Céline: "What are today\'s negotiation points with our partners?" Where I once opened every email and dug through folders, now I only decide `what, to whom, in what order` to ask.',
         ],
         imageSrc: null,
         imageCaption: '',
-        imageHint: 'Screenshot of the building at full capacity, with all secretaries working and Uboo in the elevator',
+        imageHint: 'Screenshot of the whole village with all artisans working and Uboo crossing the hill',
       },
       {
         kind: 'section',
@@ -166,7 +167,7 @@ export const en = {
           {
             h: 'Honestly — at first, it actually took twice as long.',
             p:
-              'Because I had to design the MCP while juggling work and graduate school. But once the OIA Building stood, I was pulled out of the inefficiency swamp and now reign over it all as the landlord.',
+              'Because I had to design the MCP while juggling work and graduate school. But once the OIA Village stood, I was pulled out of the inefficiency swamp and now look over it all as its village head.',
           },
           {
             h: 'What having time really means',
@@ -211,7 +212,7 @@ export const en = {
       {
         kind: 'cover',
         heading: 'OIA University Finder',
-        sub: '265 partner universities, navigable in seconds — a D3.js interactive dashboard.',
+        sub: '262 partner universities, navigable in seconds — a D3.js interactive dashboard.',
         body:
           'A tool I built to convert students\' repetitive FAQs into self-service: filter by criteria, favorite universities, export CSV.',
         imageSrc: null,
@@ -234,7 +235,8 @@ export const en = {
         tag: 'APPROACH',
         heading: 'A tool where students filter for themselves.',
         body: [
-          'I built a dashboard where students filter by their own criteria, save favorites, and download a CSV to share with parents or advisors. With D3.js + React, multi-dimensional filters — region, country, TOEFL tier, quota — apply simultaneously. 265 universities of data stream live from Google Sheets, removing the update burden. Favorites persist in LocalStorage; CSV export is built in.',
+          'I built a dashboard where students filter by their own criteria, save favorites, and download a CSV to share with parents or advisors. With D3.js + React, multi-dimensional filters — region, country, TOEFL tier, quota — apply simultaneously. 262 universities of data stream live from Google Sheets, removing the update burden. Favorites persist in LocalStorage; CSV export is built in.',
+          'The same partner data also powers an internal dashboard that links student review scores and satisfaction to contract-renewal (3- vs 5-year) decisions — connecting student-facing discovery and department decision-making on one dataset.',
         ],
         imageSrc: null,
         imageCaption: 'Filter panel and results list',
@@ -259,6 +261,7 @@ export const en = {
     buildingFloorMap: [null, null, null, null] as const,
     showBuilding: false,
     link: 'https://oia.yonsei.ac.kr/univfinder',
+    image: 'shot-univfinder.png',
   },
 
   oiaWebsite: {
@@ -274,7 +277,7 @@ export const en = {
         heading: 'OIA Website Redesign',
         sub: 'Not a planning deck — a deployed prototype as the baseline.',
         body:
-          'To modernize the legacy (ASP) official site oia.yonsei.ac.kr, I — as the planner — built a fully working React mockup and presented it alongside a development requirements document. Deliverable: yonsei-oia.netlify.app',
+          'As the planner, I rebuilt the legacy (ASP) official site oia.yonsei.ac.kr as a working React mockup, presented with a development requirements document.',
         imageSrc: null,
         imageCaption: 'Hero of yonsei-oia.netlify.app',
         imageHint: 'Screenshot of the mockup site\'s Hero + main statistics section',
@@ -350,69 +353,124 @@ export const en = {
     ],
     showBuilding: false,
     link: 'https://yonsei-oia.netlify.app',
+    image: 'shot-oia-website.png',
   },
 
   lab: {
     number: '03',
-    title: 'Lab',
-    intro: 'The small tools I built in the field before any of them grew into featured work.',
+    title: 'LAB',
+    intro: '',
     tools: [
       {
         title: 'ECTS Credit Conversion Automation',
+        image: 'shot-lab-ects.png',
         year: '2025–2026',
         stack: ['GAS', 'Claude API', 'python-docx'],
         body: 'Automated converting European (ECTS) transcripts into Yonsei credits. Cut processing time by 83% across 200+ cases per semester.',
       },
       {
         title: 'Partner University Database',
+        image: 'shot-lab-partner-db.png',
         year: '2026',
         stack: ['Google Sheets', 'openpyxl', 'Claude Code'],
         body: 'Standardized worldwide agreement data into a 27-column schema with dropdown validation. Designed to extend to admin embedding and an internal dashboard.',
       },
       {
         title: 'Email Triage System',
+        image: 'shot-lab-email-triage.png',
         year: '2025',
         stack: ['GAS', 'Claude API'],
         body: 'Auto-classifies and summarizes 100+ daily emails mixed in Korean, English, and French. Cut weekly email handling from 25 hours to 8.',
       },
       {
-        title: 'FAQ Chatbot',
+        title: 'RAG-based Exchange Review Analysis',
+        image: 'shot-lab-e-report.png',
         year: '2025',
-        stack: ['Claude API'],
-        body: 'Turned recurring exchange-program FAQs into self-service, absorbing repetitive student inquiries into a tool.',
+        stack: ['RAG', 'Embeddings', 'Python'],
+        body: 'Built a searchable RAG system over ~13,000 exchange-student review reports, using a pre-deployment user survey (housing, cost of living, and more) to set preprocessing priorities for the unstructured reviews.',
       },
       {
         title: 'Nomination GAS Dashboard',
+        image: 'shot-lab-nomination.png',
         year: '2025',
         stack: ['GAS', 'Google Sheets'],
         body: 'Unified nomination status scattered across sheets and email into one view, automating per-case tracking and gap prevention.',
+      },
+      {
+        title: 'Administrative Document Extraction & Verification',
+        image: 'shot-lab-doc-extract.png',
+        year: '2026',
+        stack: ['Python', 'Claude API'],
+        body: 'A local tool that parses repetitive administrative documents with an LLM, auto-extracts key fields, and routes uncertain cases to human review.',
+      },
+      {
+        title: 'Student Document Batch Automation',
+        image: 'shot-lab-doc-batch.png',
+        year: '2024',
+        stack: ['Python'],
+        body: 'Batch-fills names and fields across certificate templates and saves a file per student — 2,200 documents in under 80 seconds.',
+      },
+      {
+        title: 'Certificate Issuance System',
+        image: 'shot-lab-certificate.png',
+        year: '2025',
+        stack: ['Python', 'Cloudflare Tunnel'],
+        body: 'Automated certificate generation and issuance, deployed live via Cloudflare Tunnel.',
+      },
+      {
+        title: 'OIA Brochure Multi-Agent Pipeline',
+        image: 'shot-lab-brochure.png',
+        year: '2026',
+        stack: ['Claude API', 'Python'],
+        body: 'A pipeline where multiple AI agents collaborate to produce OIA promotional brochures.',
       },
     ],
   },
 
   experience: {
-    roles: [
-      {
-        org: 'Yonsei University, Office of International Affairs',
-        position: 'Exchange Program Manager',
-        period: 'Nov 2025 – Present',
-        bullets: [
-          'Lead end-to-end operations for Yonsei\'s outbound exchange program',
-          'Led overall planning of the French President\'s special lecture at Yonsei',
-          'Outbound program automation initiative: Flask · GAS · React · D3.js · Claude Code',
-          '2025 EAIE conference and partner-university visits (Sweden, Norway, France) — secured new agreements',
-        ],
-      },
-      {
-        org: 'Yonsei University, Office of International Affairs',
-        position: 'YISS/WAY Program Coordinator',
-        period: 'Jan 2024 – Oct 2025',
-        bullets: [
-          'Planned the 40th anniversary of Yonsei International Summer School (Suno AI theme song, social accounts 110K+ views)',
-          'Ran short-term international programs — invoicing, email, and registration validation automation',
-        ],
-      },
-    ],
+    affiliation: {
+      org: 'Yonsei University',
+      period: 'Mar 2016 – Present',
+      divisions: [
+        {
+          name: 'Office of International Affairs — International Team',
+          period: 'Jan 2024 – Present',
+          roles: [
+            {
+              position: 'Exchange Program Manager',
+              period: 'Sep 2025 – Present',
+              bullets: [
+                'Lead end-to-end operations for Yonsei\'s outbound exchange program',
+                'Led overall planning of the French President\'s special lecture at Yonsei',
+                'Outbound program automation initiative: Flask · GAS · React · D3.js · Claude Code',
+                '2025 EAIE conference and partner-university visits (Sweden, Norway, France) — secured new agreements',
+              ],
+            },
+            {
+              position: 'YISS/WAY Program Coordinator',
+              period: 'Jan 2024 – Oct 2025',
+              bullets: [
+                'Planned the 40th anniversary of Yonsei International Summer School (Suno AI theme song, social accounts 110K+ views)',
+                'Ran short-term international programs — invoicing, email, and registration validation automation',
+              ],
+            },
+          ],
+        },
+        {
+          name: 'Graduate Institute of Theology (GIT) · Underwood International College',
+          period: 'Mar 2016 – Dec 2023',
+          roles: [
+            {
+              position: 'Administrative Office Coordinator — international student recruitment',
+              period: '',
+              bullets: [
+                'Ran recruitment for GIT\'s English-track M.A./Ph.D. programs — official Facebook channel reaching ~980K cumulative views; foreign-track applications up ~267% from 2018 to 2023 (Minister of Education commendation, Dec 2023)',
+              ],
+            },
+          ],
+        },
+      ],
+    },
     education: [
       {
         school: 'Yonsei Graduate School of AI Convergence',

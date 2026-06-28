@@ -12,7 +12,7 @@ describe('HeroChapter', () => {
     );
     const accent = container.querySelector('.hero-headline-accent');
     expect(accent).not.toBeNull();
-    expect(accent?.textContent).toBe('만들어 씁니다.');
+    expect(accent?.textContent).toBe('도구를 만듭니다.');
   });
 
   it('renders four stat values including the ECTS metric', () => {

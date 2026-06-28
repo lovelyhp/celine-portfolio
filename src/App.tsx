@@ -5,6 +5,7 @@ import { WorkChapter } from './sections/Work';
 import { AboutChapter } from './sections/About';
 import { LabChapter } from './sections/Lab';
 import { ContactChapter } from './sections/Contact';
+import { LightboxProvider } from './components/Lightbox';
 import './components/Deck.css';
 
 const SECTION_IDS = ['hero', 'work', 'about', 'lab', 'contact'] as const;
@@ -123,7 +124,9 @@ function Shell() {
 function App() {
   return (
     <LangProvider>
-      <Shell />
+      <LightboxProvider>
+        <Shell />
+      </LightboxProvider>
     </LangProvider>
   );
 }

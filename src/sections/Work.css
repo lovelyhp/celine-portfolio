@@ -18,6 +18,7 @@
 }
 
 /* ── ProjectCard ─────────────────────────────────── */
+.project-card-media { margin-bottom: 0.3rem; }
 .project-card {
   padding: 1.4rem;
   border: 1px solid var(--paper-line);
@@ -58,6 +59,13 @@
   line-height: 1.7;
   margin: 0;
 }
+.project-card-summary .inline-link {
+  color: var(--amber-deep);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s ease;
+}
+.project-card-summary .inline-link:hover { opacity: 0.7; }
 .project-card-stack {
   display: flex;
   flex-wrap: wrap;

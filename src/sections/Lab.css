@@ -16,6 +16,7 @@
   flex-direction: column;
   gap: 0.6rem;
 }
+.lab-card-media { margin-bottom: 0.2rem; }
 .lab-card-year { color: var(--text-on-light-faint); font-size: var(--fs-small); }
 .lab-card-title { font-size: var(--fs-h3); }
 .lab-card-body { color: var(--text-on-light-muted); font-size: var(--fs-small); flex: 1; }

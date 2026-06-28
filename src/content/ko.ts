@@ -14,7 +14,7 @@ export const ko = {
     nameRoman: 'Seo-Ah (Céline) Choi',
     role: 'AI 기획자 · 기술 PM 지향',
     taglineEn: 'Planner, Builder, Operator.',
-    tagline: '도구를 쓰지 않습니다.\n만들어 씁니다.',
+    tagline: '현장을 아는 사람이\n도구를 만듭니다.',
     subtitle:
       '운영 현장의 문제를 가장 잘 아는 사람이, 그 문제를 푸는 프로덕션 시스템을 직접 만듭니다.',
   },
@@ -37,23 +37,25 @@ export const ko = {
     number: '02',
     title: 'About',
     body: [
-      '프랑스어를 전공한 비개발자가, 국제 업무 운영 현장에서 직접 프로덕션 시스템을 만듭니다. 흩어져 있던 부서 업무를 15개 AI 에이전트가 상주하는 6층 사무실 시뮬레이션으로 설계하고, 15개 에이전트를 14개 부서 폴더에 매핑한 뒤 file-watching으로 각 폴더의 상태를 연동했습니다.',
-      '무엇을 자동화할지 고르고, 데이터 구조와 아키텍처를 설계하고, 출력을 검증하는 판단을 내립니다. 다음 목표는 운영 현장을 아는 사람이 만드는 AI 프로덕트를 AI 기획자·기술 PM으로서 이어가는 것입니다.',
+      '프랑스어를 전공한 비개발자가, 공기업과 대학의 운영 현장에서 12년간 일하며 직접 프로덕션 시스템을 만듭니다. 시작은 2024년, 입학 급증으로 한 번에 2,200건의 서류를 처리해야 했던 날이었습니다. Python을 독학해 80초 만에 끝내는 도구를 만든 뒤로, 흩어져 있던 부서 업무를 15개 AI 에이전트가 상주하는 사무실 시뮬레이션(OIA Rush)으로 묶고 file-watching으로 각 폴더의 상태를 연동했습니다.',
+      '무엇을 자동화할지 고르고, 데이터 구조와 아키텍처를 설계하고, 출력을 검증하는 판단을 내립니다. 도구가 대신 못 하는 이 판단이 시스템의 품질을 결정합니다. 다음 목표는 운영 현장을 아는 사람이 만드는 AI 프로덕트를 AI 기획자·기술 PM으로서 이어가는 것입니다.',
     ],
     snapshot: [
-      { k: 'Now', v: '연세대학교 국제처 · 유럽 교환 담당 (Exchange Program Manager)' },
-      { k: 'Study', v: 'AI융합대학원 석사 재학 · RAG · ReAct' },
+      { k: 'Now', v: '연세대학교 국제처 유럽 교환 담당 · 동기 중 최단기 과장 승진(2025.09)' },
+      { k: 'Study', v: 'AI융합대학원 석사 재학(HCI) · RAG · ReAct · 학회 감사위원' },
       { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
-      { k: 'Proof', v: 'ECTS -83% · 이메일 25h→8h · 740+ 협정교 1만 건 분석 · 마크롱 특강 총괄' },
+      { k: 'Proof', v: 'ECTS -83% · 이메일 25h→8h · 마크롱 특강 총괄 · 교육부 장관 표창' },
     ],
-    careerTitle: '경력 · 학력',
+    careerTitle: 'Experience',
+    eduTitle: 'Education',
     skillsTitle: 'Skills',
     highlight: {
       label: '운영 하이라이트',
       title: '마크롱 대통령 특강 총괄',
       year: '2026',
       body:
-        '2026년 4월 3일 에마뉘엘 마크롱 프랑스 대통령의 연세대학교 특별강연 기획·실무를 총괄했습니다. 엘리제궁·주한프랑스대사관·경호처·교내외 부서와 협의했고, 국내 언론 169건과 엘리제궁 공식 유튜브 방영, 프랑스 외신 보도로 이어졌습니다.',
+        '2026년 4월 마크롱 프랑스 대통령의 연세대 특별강연 기획·운영을 총괄. 다자 이해관계자를 조율해 국내 언론 169건과 엘리제궁 공식 유튜브 방영으로 이어졌습니다.',
+      image: 'shot-macron.png',
     },
     cvTrail: '· 아래에서 대표 작업과 상세 경력을 볼 수 있습니다.',
   },
@@ -71,7 +73,7 @@ export const ko = {
 
   work: {
     number: '01',
-    title: '주요 작업',
+    title: 'Work',
     intro: '운영 현장의 문제를 직접 만든 프로덕션 시스템으로 풀어낸 대표 작업들.',
     more: '자세히 보기 →',
     less: '접기',
@@ -82,20 +84,20 @@ export const ko = {
     id: 'oia-building',
     index: '01',
     year: '2026',
-    title: 'OIA Rush',
-    subtitle: '15명의 AI 비서가 근무하는 가상의 6층 빌딩',
-    stack: ['Claude Code', 'Flask', 'GAS', 'Claude API', 'D3.js'],
+    title: 'OIA Village',
+    subtitle: '실제 Claude 에이전트가 일하는 모습이 실시간으로 비치는 언덕 위 공방 마을',
+    stack: ['Claude Code', 'TypeScript', 'Canvas 2D', 'Vite', 'SSE'],
     slides: [
       {
         kind: 'cover',
-        heading: 'OIA 자동화 사무실',
-        sub: '15명의 AI 비서가 근무하는 가상의 6층 빌딩',
+        heading: '살아있는 에이전트 마을',
+        sub: '실제 Claude 에이전트가 일하는 모습이 실시간으로 비치는 언덕 위 공방 마을',
         body:
-          '현 근무지의 분산된 15개 업무 폴더를 파일 시스템 이벤트로 연결해, 각 폴더에 심어둔 15명의 AI 페르소나들이 자신의 업무를 수행하는 통합 자동화 시스템. 실무자에서 지휘자로 역할을 바꾼 지난 1년간의 기록.',
+          '분산된 업무 폴더에 15명의 AI 페르소나를 심고, Claude Code 에이전트가 실제로 일할 때(Edit·Read·세션 시작/종료)의 활동이 언덕 위 마을에 실시간으로 비치게 만든 리빙심. 코인도 상점도 없이, 일하는 에이전트들을 들여다보는 것 자체가 경험입니다. 실무자에서 지휘자로 역할을 바꾼 지난 1년의 기록.',
         imageSrc: null,
-        imageCaption: 'OIA Rush — 6층 빌딩 시뮬레이션',
-        imageHint: 'FLOOR_PLAN의 6층 빌딩 렌더 이미지 (캐릭터·엘리베이터·유부까지 보이는 메인 비주얼)',
-        videoSrc: 'oia-rush.webm',
+        imageCaption: 'OIA Village — 언덕 위 공방 마을',
+        imageHint: '언덕 위 공방 마을 데모 영상 (오두막·장인·길고양이 유부가 보이는 메인 비주얼)',
+        videoSrc: 'oia-village-demo.webm',
       },
       {
         kind: 'section',
@@ -136,27 +138,26 @@ export const ko = {
       {
         kind: 'section',
         tag: 'APPROACH · III',
-        heading: '시켜줘요, OIA 명예 건물주.',
+        heading: '시켜줘요, OIA 명예 촌장.',
         body: [
-          'Claude Code의 서브에이전트, 조직적인 CLAUDE.md 페르소나로 가상의 6층 빌딩을 세웠습니다. 15개 부서 폴더를 층별로 매핑하고, 각 부서에 담당 비서를 배치했습니다.',
-          '추상적 이벤트들을 눈에 보이는 귀여움으로 탄생시켰습니다. AI를 도구가 아니라 "팀원"으로 대하고 싶은 마음을 담았습니다.',
+          'Claude Code의 서브에이전트와 CLAUDE.md 페르소나로 언덕 위 공방 마을을 세웠습니다. 15개 부서 폴더를 마을의 오두막에 하나씩 매핑하고, 각 오두막에 담당 장인을 배치했습니다.',
+          'Edit을 쓰면 타이핑하고, Read를 쓰면 바인더를 뒤적이고, 세션이 끝나면 불을 끄고 퇴근합니다. 추상적인 에이전트 활동을, 시간대(새벽·낮·황혼·밤)까지 흐르는 마을 풍경으로 옮겼습니다.',
         ],
-        videoSrc: 'oia-rush.webm#t=10,19',
         imageSrc: null,
         imageCaption: '',
-        imageHint: '6F 대표실 렌더 — 서아 책상, 캣휠, 캣타워, 유부가 보이는 클로즈업',
+        imageHint: '서아의 오두막 클로즈업 — 길고양이 유부가 보이는 회화풍 렌더',
       },
       {
         kind: 'section',
         tag: 'APPROACH · IV',
         heading: '어느 날 오후, 서류마감 D-2.',
         body: [
-          '오후 3시. Léa는 MoU 초안을, Mail은 154통의 메일을, Nomi는 노미네이션 8건을, Solène는 교환 밸런스를 처리합니다. 유부는 꼭대기 층에서 캣휠을 탑니다.',
+          '오후 3시. Léa는 오두막에서 MoU 초안을, Mail은 154통의 메일을, Nomi는 노미네이션 8건을, Solène는 교환 밸런스를 처리합니다. 길고양이 유부는 황혼이 지는 마을을 어슬렁거립니다.',
           '저는 Céline에게 묻기만 하면 됩니다. "오늘 파트너 협상 포인트는 뭐야?" 예전이라면 모든 메일과 폴더를 뒤졌을 일을, 지금은 `무엇을, 누구에게, 어떤 순서로` 물을지만 결정합니다.',
         ],
         imageSrc: null,
         imageCaption: '',
-        imageHint: '전 층에 비서들이 working 상태, 유부가 엘리베이터에서 이동 중인 상태의 스크린샷',
+        imageHint: '마을 전체의 장인들이 working 상태, 유부가 언덕을 가로지르는 스크린샷',
       },
       {
         kind: 'section',
@@ -178,7 +179,7 @@ export const ko = {
           {
             h: '솔직히 말하면, 처음엔 오히려 시간이 두 배 걸렸습니다.',
             p:
-              'MCP를 설계하면서 업무와 대학원을 병행해야 했기 때문입니다. 그러나 OIA 빌딩이 세워지자, 저는 비효율의 늪에서 벗어나 이 모든 것을 다스리는 건물주가 되었습니다.',
+              'MCP를 설계하면서 업무와 대학원을 병행해야 했기 때문입니다. 그러나 OIA 마을이 세워지자, 저는 비효율의 늪에서 벗어나 이 마을을 내려다보는 촌장이 되었습니다.',
           },
           {
             h: '시간이 생겼다는 것의 진짜 의미',
@@ -224,7 +225,7 @@ export const ko = {
       {
         kind: 'cover',
         heading: 'OIA University Finder',
-        sub: '265개 해외대학을 직관적으로 — D3.js 기반 인터랙티브 대시보드',
+        sub: '262개 해외대학을 직관적으로 — D3.js 기반 인터랙티브 대시보드',
         body:
           '학생들의 반복 FAQ를 도구로 전환했습니다. 자기 조건으로 필터링·즐겨찾기·CSV 내보내기가 가능한 대시보드.',
         imageSrc: null,
@@ -247,7 +248,8 @@ export const ko = {
         tag: 'APPROACH',
         heading: '학생이 직접 필터링할 수 있는 도구.',
         body: [
-          '자기 조건으로 필터링하고, 즐겨찾기하고, CSV로 내려받아 부모님·지도교수와 공유할 대시보드를 만들었습니다. D3.js + React로 지역·국가·TOEFL 점수·선발 인원을 다차원 필터로 동시 적용, 265개 대학 데이터를 Google Sheets에서 실시간으로 로드해 업데이트 부담을 없애고 즐겨찾기 및 CSV 내보내기 기능을 지원합니다.',
+          '자기 조건으로 필터링하고, 즐겨찾기하고, CSV로 내려받아 부모님·지도교수와 공유할 대시보드를 만들었습니다. D3.js + React로 지역·국가·TOEFL 점수·선발 인원을 다차원 필터로 동시 적용, 262개 대학 데이터를 Google Sheets에서 실시간으로 로드해 업데이트 부담을 없애고 즐겨찾기 및 CSV 내보내기 기능을 지원합니다.',
+          '같은 협정교 데이터는 내부적으로 학생 후기 점수·만족도와 계약 갱신(3·5년) 판단을 잇는 운영 대시보드로도 확장해, 학생용 탐색과 부서 의사결정을 하나의 데이터로 연결했습니다.',
         ],
         imageSrc: null,
         imageCaption: '필터 패널과 결과 리스트',
@@ -272,6 +274,7 @@ export const ko = {
     buildingFloorMap: [null, null, null, null] as const,
     showBuilding: false,
     link: 'https://oia.yonsei.ac.kr/univfinder',
+    image: 'shot-univfinder.png',
   },
 
   // ── Project 3 — OIA Website Redesign ───────────────
@@ -288,7 +291,7 @@ export const ko = {
         heading: 'OIA Website Redesign',
         sub: '기획서가 아니라, 실제 배포된 프로토타입을 기준선으로.',
         body:
-          '레거시(ASP) 공식 사이트 oia.yonsei.ac.kr를 현대적 구조로 개편하기 위해, 기획자가 직접 작동하는 React 목업을 만들고 개발 요건 정의서와 함께 제시한 프로젝트. 산출물: yonsei-oia.netlify.app',
+          '레거시(ASP) 공식 사이트 oia.yonsei.ac.kr를 현대적 구조로 개편하기 위해, 기획자가 직접 작동하는 React 목업을 만들고 개발 요건 정의서와 함께 제시한 프로젝트.',
         imageSrc: null,
         imageCaption: 'yonsei-oia.netlify.app 메인 히어로',
         imageHint: '목업 사이트의 Hero + 메인 통계 영역 스크린샷',
@@ -364,15 +367,17 @@ export const ko = {
     ],
     showBuilding: false,
     link: 'https://yonsei-oia.netlify.app',
+    image: 'shot-oia-website.png',
   },
 
   lab: {
     number: '03',
-    title: '실험실',
-    intro: '대표 작업으로 자라기 전, 현장에서 만든 작은 도구들.',
+    title: 'LAB',
+    intro: '',
     tools: [
       {
         title: 'ECTS 성적 환산 자동화',
+        image: 'shot-lab-ects.png',
         year: '2025–2026',
         stack: ['GAS', 'Claude API', 'python-docx'],
         body:
@@ -380,6 +385,7 @@ export const ko = {
       },
       {
         title: '협정교 DB 구축',
+        image: 'shot-lab-partner-db.png',
         year: '2026',
         stack: ['Google Sheets', 'openpyxl', 'Claude Code'],
         body:
@@ -387,51 +393,107 @@ export const ko = {
       },
       {
         title: '이메일 트리아지 시스템',
+        image: 'shot-lab-email-triage.png',
         year: '2025',
         stack: ['GAS', 'Claude API'],
         body:
           '하루 100통 넘게 쏟아지는 한·영·불 혼합 메일을 자동 분류·요약. 주간 이메일 처리 시간을 25시간에서 8시간으로 줄였습니다.',
       },
       {
-        title: 'FAQ 챗봇',
+        title: 'RAG 기반 경험보고서 후기 분석 시스템',
+        image: 'shot-lab-e-report.png',
         year: '2025',
-        stack: ['Claude API'],
+        stack: ['RAG', 'Embeddings', 'Python'],
         body:
-          '학생들이 매년 반복하던 파견 관련 FAQ를 셀프서비스로 전환. 같은 질문에 반복 응대하던 업무를 도구로 흡수했습니다.',
+          '교환학생 경험보고서 약 1만 3천 건을 검색 가능한 RAG 시스템으로 구축. 사전 사용자 설문으로 기숙사·물가 등 검색 우선순위를 정해 비정형 후기를 전처리·분석했습니다.',
       },
       {
         title: '노미네이션 통합 GAS 대시보드',
+        image: 'shot-lab-nomination.png',
         year: '2025',
         stack: ['GAS', 'Google Sheets'],
         body:
           '여러 시트·메일에 흩어진 노미네이션 처리 상태를 한 화면으로 통합. 건별 상태 추적과 누락 방지를 자동화했습니다.',
       },
+      {
+        title: '행정서류 자동 추출·검증 시스템',
+        image: 'shot-lab-doc-extract.png',
+        year: '2026',
+        stack: ['Python', 'Claude API'],
+        body:
+          '단순 반복적인 행정 서류를 LLM으로 파싱해 핵심 항목을 자동 추출하고, 불확실한 건은 사람 검토로 넘기는 로컬 도구.',
+      },
+      {
+        title: '학생 서류 일괄 자동화',
+        image: 'shot-lab-doc-batch.png',
+        year: '2024',
+        stack: ['Python'],
+        body:
+          '인증서·문서 템플릿의 이름 등 항목을 일괄 치환해 학생별 파일로 저장. 한 번에 2,200건을 80초 안에 처리했습니다.',
+      },
+      {
+        title: '증명서 발급 시스템',
+        image: 'shot-lab-certificate.png',
+        year: '2025',
+        stack: ['Python', 'Cloudflare Tunnel'],
+        body:
+          '증명서 생성·발급을 자동화하고 Cloudflare Tunnel로 라이브 배포했습니다.',
+      },
+      {
+        title: 'OIA 브로슈어 멀티에이전트 파이프라인',
+        image: 'shot-lab-brochure.png',
+        year: '2026',
+        stack: ['Claude API', 'Python'],
+        body:
+          '여러 AI 에이전트가 협업해 OIA 홍보 브로슈어를 제작하는 파이프라인.',
+      },
     ],
   },
 
   experience: {
-    roles: [
-      {
-        org: '연세대학교 국제처',
-        position: 'Exchange Program Manager',
-        period: '2025.11 – 현재',
-        bullets: [
-          '연세대학교 교환학생 해외파견 프로그램 운영 총괄',
-          '프랑스 대통령 연세대 특별강연 행사 총괄 기획',
-          '해외파견 프로그램 자동화 이니셔티브: Flask·GAS·React·D3.js·Claude Code',
-          '2025년 EAIE 컨퍼런스 및 유럽 파트너 대학 방문(스웨덴, 노르웨이, 프랑스) - 신규 협정 체결',
-        ],
-      },
-      {
-        org: '연세대학교 국제처',
-        position: 'YISS/WAY Program Coordinator',
-        period: '2024.01 – 2025.10',
-        bullets: [
-          '국제하계대학 40주년 기념행사 기획 (Suno AI 테마송, SNS 110K+뷰)',
-          '국제화 단기 프로그램 실무 총괄 - 인보이스·이메일·수강신청 검증 자동화',
-        ],
-      },
-    ],
+    affiliation: {
+      org: '연세대학교',
+      period: '2016.03 – 현재',
+      divisions: [
+        {
+          name: '국제처 국제팀',
+          period: '2024.01 – 현재',
+          roles: [
+            {
+              position: 'Exchange Program Manager',
+              period: '2025.09 – 현재',
+              bullets: [
+                '연세대학교 교환학생 해외파견 프로그램 운영 총괄',
+                '프랑스 대통령 연세대 특별강연 행사 총괄 기획',
+                '해외파견 프로그램 자동화 이니셔티브: Flask·GAS·React·D3.js·Claude Code',
+                '2025년 EAIE 컨퍼런스 및 유럽 파트너 대학 방문(스웨덴, 노르웨이, 프랑스) - 신규 협정 체결',
+              ],
+            },
+            {
+              position: 'YISS/WAY Program Coordinator',
+              period: '2024.01 – 2025.10',
+              bullets: [
+                '국제하계대학 40주년 기념행사 기획 (Suno AI 테마송, SNS 110K+뷰)',
+                '국제화 단기 프로그램 실무 총괄 - 인보이스·이메일·수강신청 검증 자동화',
+              ],
+            },
+          ],
+        },
+        {
+          name: '연합신학대학원(GIT) · 언더우드국제대학',
+          period: '2016.03 – 2023.12',
+          roles: [
+            {
+              position: 'Administrative Office Coordinator — 외국인 유학생 유치',
+              period: '',
+              bullets: [
+                'GIT 외국인 영어트랙 석·박사 모집·유치 운영 — 공식 Facebook 채널 누적 약 98만 뷰, 정원외 외국인전형 지원 2018→2023 약 267% 증가 (교육부 장관 표창, 2023.12)',
+              ],
+            },
+          ],
+        },
+      ],
+    },
     education: [
       {
         school: '연세대학교 인공지능융합대학원 석사과정 재학중',

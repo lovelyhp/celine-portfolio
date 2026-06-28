@@ -116,7 +116,7 @@ function CaseSlideRender({ slide }: { slide: CaseSlide }) {
     return (
       <>
         {slide.videoSrc && (
-          <div className="case-media case-media--portrait">
+          <div className="case-media case-media--wide">
             <video src={`/videos/${slide.videoSrc}`} autoPlay muted loop playsInline />
           </div>
         )}

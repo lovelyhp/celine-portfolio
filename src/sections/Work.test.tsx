@@ -9,7 +9,7 @@ const renderWork = () =>
 describe('WorkChapter', () => {
   it('shows the featured project title and section number', () => {
     const { container } = renderWork();
-    expect(screen.getByText('OIA Rush')).toBeInTheDocument();
+    expect(screen.getByText('OIA Village')).toBeInTheDocument();
     const head = container.querySelector('.work-head') as HTMLElement;
     expect(within(head).getByText('01')).toBeInTheDocument();
   });
