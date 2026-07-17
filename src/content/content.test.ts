@@ -9,9 +9,10 @@ describe('content schema', () => {
     }
   });
 
-  it('groups work with section number 01 and two card links', () => {
+  it('orders about before work (about 01, work 02) with two card links', () => {
     for (const c of [ko, en]) {
-      expect(c.work.number).toBe('01');
+      expect(c.about.number).toBe('01');
+      expect(c.work.number).toBe('02');
       expect(c.univFinder.link).toMatch(/^https?:\/\//);
       expect(c.oiaWebsite.link).toMatch(/^https?:\/\//);
     }

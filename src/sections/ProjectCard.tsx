@@ -1,4 +1,5 @@
 import { Fragment, ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { Shot } from '../components/Shot';
 
 const OIA_DOMAIN = 'oia.yonsei.ac.kr';
@@ -28,31 +29,44 @@ export interface ProjectCardProps {
   link: string;
   linkLabel?: string;
   image?: string;
+  /** 내부 케이스 스터디 상세 라우트. 있으면 타이틀·"Case Study" 링크가 이 경로로 간다. */
+  to?: string;
 }
 
 export function ProjectCard({
-  index, year, title, subtitle, summary, stack, link, linkLabel = 'Live ↗', image,
+  index, year, title, subtitle, summary, stack, link, linkLabel = 'Live ↗', image, to,
 }: ProjectCardProps) {
   return (
     <article className="project-card">
       {image && (
         <div className="project-card-media">
-          <Shot src={image} alt={title} ratio="16 / 8.45" fit="fill" href={link} />
+          {/* 원본 스크린샷 비율(≈1.9~2.0)에 맞춘 낮은 프레임 + cover — fill 왜곡 방지 */}
+          <Shot src={image} alt={title} ratio="16 / 8.4" fit="cover" href={link} />
         </div>
       )}
-      <div className="project-card-meta">
-        <span className="project-card-index font-num">{index}</span>
-        <span className="project-card-year font-num">{year}</span>
+      <div className="project-card-meta font-num">
+        <span className="project-card-index">{index}</span>
+        <span aria-hidden="true">·</span>
+        <span className="project-card-year">{year}</span>
       </div>
-      <h3 className="project-card-title font-display">{title}</h3>
-      <p className="project-card-subtitle font-serif-italic">{subtitle}</p>
+      <h3 className="project-card-title font-serif">
+        {to ? <Link to={to}>{title}</Link> : title}
+      </h3>
+      <p className="project-card-subtitle">{subtitle}</p>
       <p className="project-card-summary">{linkifyOia(summary)}</p>
       <div className="project-card-stack">
         {stack.map((s) => <span key={s} className="chip">{s}</span>)}
       </div>
-      <a className="project-card-link" href={link} target="_blank" rel="noreferrer">
-        {linkLabel}
-      </a>
+      <div className="project-card-links">
+        {to && (
+          <Link className="project-card-link" to={to}>
+            Case Study →
+          </Link>
+        )}
+        <a className="project-card-link project-card-link--live" href={link} target="_blank" rel="noreferrer">
+          {linkLabel}
+        </a>
+      </div>
     </article>
   );
 }

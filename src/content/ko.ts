@@ -12,7 +12,7 @@
 export const ko = {
   meta: {
     nameRoman: 'Seo-Ah (Céline) Choi',
-    role: 'AI 기획자 · 기술 PM 지향',
+    role: 'AI 기획자 · 기술 PM',
     taglineEn: 'Planner, Builder, Operator.',
     tagline: '현장을 아는 사람이\n도구를 만듭니다.',
     subtitle:
@@ -34,21 +34,26 @@ export const ko = {
     hint: '↓ Selected Work',
   },
   about: {
-    number: '02',
+    number: '01',
     title: 'About',
     body: [
       '프랑스어를 전공한 비개발자가, 공기업과 대학의 운영 현장에서 12년간 일하며 직접 프로덕션 시스템을 만듭니다. 시작은 2024년, 입학 급증으로 한 번에 2,200건의 서류를 처리해야 했던 날이었습니다. Python을 독학해 80초 만에 끝내는 도구를 만든 뒤로, 흩어져 있던 부서 업무를 15개 AI 에이전트가 상주하는 사무실 시뮬레이션(OIA Rush)으로 묶고 file-watching으로 각 폴더의 상태를 연동했습니다.',
       '무엇을 자동화할지 고르고, 데이터 구조와 아키텍처를 설계하고, 출력을 검증하는 판단을 내립니다. 도구가 대신 못 하는 이 판단이 시스템의 품질을 결정합니다. 다음 목표는 운영 현장을 아는 사람이 만드는 AI 프로덕트를 AI 기획자·기술 PM으로서 이어가는 것입니다.',
     ],
     snapshot: [
-      { k: 'Now', v: '연세대학교 국제처 유럽 교환 담당 · 동기 중 최단기 과장 승진(2025.09)' },
-      { k: 'Study', v: 'AI융합대학원 석사 재학(HCI) · RAG · ReAct · 학회 감사위원' },
+      { k: 'Now', v: '연세대학교 국제처 해외파견(교환·방문학생) 프로그램 총괄·2024~2025 우수업적직원상 수상' },
+      { k: 'Study', v: '연세대학교 인공지능융합대학원 인공지능컴퓨팅 석사과정 재학' },
       { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
       { k: 'Proof', v: 'ECTS -83% · 이메일 25h→8h · 마크롱 특강 총괄 · 교육부 장관 표창' },
     ],
     careerTitle: 'Experience',
     eduTitle: 'Education',
     skillsTitle: 'Skills',
+    philosophy: {
+      label: 'Operational Philosophy',
+      quote:
+        '업무 현장의 페인포인트를 가장 잘 아는 사람이 직접 프로덕션 도구를 만듭니다. 비개발자·인문학 배경은 약점이 아니라 그 강점의 출발점입니다.',
+    },
     highlight: {
       label: '운영 하이라이트',
       title: '마크롱 대통령 특강 총괄',
@@ -57,7 +62,6 @@ export const ko = {
         '2026년 4월 마크롱 프랑스 대통령의 연세대 특별강연 기획·운영을 총괄. 다자 이해관계자를 조율해 국내 언론 169건과 엘리제궁 공식 유튜브 방영으로 이어졌습니다.',
       image: 'shot-macron.png',
     },
-    cvTrail: '· 아래에서 대표 작업과 상세 경력을 볼 수 있습니다.',
   },
 
   method: {
@@ -72,7 +76,7 @@ export const ko = {
   },
 
   work: {
-    number: '01',
+    number: '02',
     title: 'Work',
     intro: '운영 현장의 문제를 직접 만든 프로덕션 시스템으로 풀어낸 대표 작업들.',
     more: '자세히 보기 →',
@@ -533,8 +537,10 @@ export const ko = {
   contact: {
     number: '04',
     title: 'Contact',
+    eyebrow: '빌더를 찾고 계신가요?',
     heading: '새로운 무대를 찾습니다.',
     sub: '제 작은 실험실을 더 큰 무대에서 펼치고 싶습니다.',
+    cta: '메일 보내기',
     email: 'sachoi.pro@gmail.com',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',

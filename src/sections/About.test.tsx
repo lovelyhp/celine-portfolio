@@ -27,10 +27,9 @@ describe('AboutChapter', () => {
     expect(flow?.textContent).toContain('배포·운영');
   });
 
-  it('links to the CV pdf', () => {
+  it('does not render the removed CV trail line', () => {
     const { container } = renderAbout();
-    const link = container.querySelector('a.about-cv-link');
-    expect(link?.getAttribute('href')).toBe('/CV_SeoAh_Choi_EN.pdf');
+    expect(container.querySelector('.about-cv')).toBeNull();
   });
 
   it('renders the Macron operations highlight', () => {
@@ -46,8 +45,20 @@ describe('AboutChapter', () => {
     expect(details.length).toBeGreaterThanOrEqual(2);
   });
 
-  it('renders the three skill groups', () => {
+  it('renders the operational philosophy quote card', () => {
     const { container } = renderAbout();
-    expect(container.querySelectorAll('.about-skill-group').length).toBe(3);
+    const quote = container.querySelector('.about-philosophy-quote');
+    expect(quote?.textContent).toContain('페인포인트');
+  });
+
+  it('renders the three skill groups as bento panels', () => {
+    const { container } = renderAbout();
+    expect(container.querySelectorAll('.about-bento-panel').length).toBe(3);
+  });
+
+  it('renders the illustration portrait in the sticky head', () => {
+    const { container } = renderAbout();
+    const img = container.querySelector('.about-portrait img');
+    expect(img?.getAttribute('src')).toBe('/images/seo-ah-portrait.png');
   });
 });

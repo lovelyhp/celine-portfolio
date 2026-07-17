@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(11, 18, 32, 0.82);
+  background: var(--scrim);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   display: grid;
@@ -24,20 +24,20 @@
   max-width: 100%;
   max-height: 82vh;
   object-fit: contain;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-card);
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
 }
 .lightbox-fig figcaption {
-  margin-top: 0.85rem;
+  margin-top: 0.875rem;
   text-align: center;
-  color: rgba(250, 250, 248, 0.82);
-  font-family: var(--font-serif-en);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: var(--fs-small);
 }
 .lightbox-close {
   position: fixed;
-  top: 0.85rem;
+  top: 0.875rem;
   right: 1.25rem;
   color: #fff;
   font-size: 2.1rem;

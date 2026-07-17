@@ -12,6 +12,9 @@ export function AboutChapter() {
           <span className="font-serif-italic">{t.about.title}</span>
         </div>
         <h2 className="about-heading font-display">{t.about.title}</h2>
+        <div className="about-portrait">
+          <img src="/images/seo-ah-portrait.png" alt="Seo-Ah (Céline) Choi portrait" loading="lazy" />
+        </div>
       </div>
 
       <div className="about-body">
@@ -39,13 +42,6 @@ export function AboutChapter() {
             ))}
           </p>
         </div>
-
-        <p className="about-cv">
-          <a className="about-cv-link" href={t.contact.cvUrl} target="_blank" rel="noreferrer">
-            Curriculum Vitae →
-          </a>{' '}
-          {t.about.cvTrail}
-        </p>
 
         <div className="about-highlight">
           {(t.about.highlight as any).image && (
@@ -111,14 +107,23 @@ export function AboutChapter() {
           ))}
         </div>
 
+        <blockquote className="about-philosophy">
+          <span className="about-philosophy-label">{t.about.philosophy.label}</span>
+          <p className="about-philosophy-quote font-serif-italic">
+            &ldquo;{t.about.philosophy.quote}&rdquo;
+          </p>
+        </blockquote>
+
         <div className="about-skills">
           <h3 className="about-block-h font-serif-italic">{t.about.skillsTitle}</h3>
-          {t.skills.groups.map((g, i) => (
-            <div key={i} className="about-skill-group">
-              <h4 className="about-skill-head">{g.heading}</h4>
-              <p className="about-skill-items">{g.items}</p>
-            </div>
-          ))}
+          <div className="about-bento">
+            {t.skills.groups.map((g, i) => (
+              <div key={i} className="about-bento-panel">
+                <span className="about-bento-label">{g.heading}</span>
+                <p className="about-bento-items">{g.items}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

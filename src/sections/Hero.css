@@ -10,47 +10,51 @@
 .hero-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.25rem;
   margin-bottom: clamp(2rem, 5vh, 3.5rem);
 }
 .hero-name {
-  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
-  color: var(--text-on-light);
-  letter-spacing: -0.01em;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  color: var(--text);
 }
 .hero-eyebrow {
-  font-size: 0.92rem;
-  color: var(--amber-deep);
-  letter-spacing: 0.01em;
+  font-size: var(--fs-caption);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .hero-headline-en {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  color: var(--text-on-light-muted);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  margin-bottom: 0.6rem;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
 }
 .hero-headline-ko {
-  font-size: clamp(2.75rem, 8.5vw, 6.5rem);
-  color: var(--text-on-light);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   word-break: keep-all;
   margin-bottom: clamp(1.5rem, 3vh, 2rem);
 }
 .hero-headline-ko.is-en {
-  font-size: clamp(2.3rem, 7vw, 5.4rem);
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
 }
-.hero-headline-accent { color: var(--amber-deep); }
+/* 목업(portfolio_home): 마지막 줄 앰버 강조 — 텍스트용 앰버로 대비 확보 */
+.hero-headline-accent { color: var(--amber-ink); }
 
 .hero-sub {
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-  color: var(--text-on-light-muted);
+  font-size: var(--fs-body-lg);
+  color: var(--text-muted);
   max-width: 52ch;
   line-height: 1.6;
   word-break: keep-all;
-  margin-bottom: clamp(2.25rem, 5vh, 3.5rem);
+  margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
 }
 
 .hero-stats {
@@ -58,28 +62,33 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(1rem, 2.5vw, 2.5rem);
   padding-top: 1.5rem;
-  border-top: 1px solid var(--paper-line);
+  border-top: 1px solid var(--outline);
   width: 100%;
   max-width: 760px;
 }
+/* 목업: 스탯 값은 디스플레이 세리프 톤 */
 .hero-stat-value {
-  font-size: clamp(1.4rem, 2.2vw, 1.95rem);
-  color: var(--text-on-light);
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
   white-space: nowrap;
 }
-.hero-stat.is-accent .hero-stat-value { color: var(--amber-deep); }
+.hero-stat.is-accent .hero-stat-value { color: var(--amber-ink); }
 .hero-stat-label {
-  font-size: 0.78rem;
-  color: var(--text-on-light-faint);
-  margin-top: 0.35rem;
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--text-faint);
+  margin-top: 0.5rem;
   letter-spacing: 0.02em;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .hero-hint {
-  margin-top: clamp(1.75rem, 4vh, 2.5rem);
+  margin-top: clamp(2rem, 4vh, 2.5rem);
   font-size: 0.95rem;
-  color: var(--text-on-light-faint);
+  color: var(--text-faint);
 }
 
 @media (max-width: 640px) {

@@ -1,14 +1,14 @@
 .building-diagram {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-sans-ko);
-  color: var(--text-on-light);
+  font-family: var(--font-sans);
+  color: var(--text);
 }
 .building-diagram__roof {
-  font-family: var(--font-serif-en);
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: 0.85rem;
-  color: var(--amber-deep);
+  color: var(--text-muted);
   text-align: center;
   letter-spacing: 0.08em;
   padding: 0.4rem 0;
@@ -16,9 +16,9 @@
 .building-diagram__body {
   display: flex;
   flex-direction: column;
-  border: 1.5px solid var(--paper-line);
-  border-radius: 6px 6px 0 0;
-  background: rgba(20, 23, 31, 0.02);
+  border: 1px solid var(--outline-strong);
+  border-radius: var(--radius-btn) var(--radius-btn) 0 0;
+  background: var(--surface-card);
   flex: 1;
 }
 .building-diagram__floor {
@@ -27,26 +27,27 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0 0.75rem;
-  border-bottom: 1px solid var(--paper-line);
-  font-size: 0.72rem;
-  color: var(--text-on-light-muted);
+  border-bottom: 1px solid var(--outline);
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
   transition: background 0.25s ease, color 0.25s ease;
   min-height: 2.2rem;
 }
 .building-diagram__floor:last-child { border-bottom: none; }
+/* 층 하이라이트 = 활성 상태 → 앰버 허용 */
 .building-diagram__floor[data-highlighted="true"] {
-  background: rgba(251, 191, 36, 0.14);
-  color: var(--amber-deep);
-  box-shadow: inset 3px 0 0 var(--amber-deep);
+  background: var(--amber-soft);
+  color: var(--amber-ink);
+  box-shadow: inset 3px 0 0 var(--amber);
 }
 .building-diagram__floor-num {
   font-weight: 700;
   letter-spacing: 0.04em;
-  font-family: var(--font-serif-en);
+  font-variant-numeric: tabular-nums;
 }
 .building-diagram__floor-label {
   font-size: 0.7rem;
-  opacity: 0.85;
+  opacity: 0.9;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -61,11 +62,11 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(20, 23, 31, 0.15);
+  background: var(--outline);
   display: inline-block;
 }
 .building-diagram__lights span.on { background: var(--amber); }
-.building-diagram__lights span.off { background: rgba(20, 23, 31, 0.12); }
+.building-diagram__lights span.off { background: var(--outline); }
 
 /* Sizes */
 .building-diagram--mini { width: 80px; }
@@ -82,13 +83,3 @@
 .building-diagram--large .building-diagram__roof { font-size: 0.95rem; padding: 0.55rem 0; }
 .building-diagram--large .building-diagram__floor { min-height: 2.8rem; font-size: 0.82rem; }
 .building-diagram--large .building-diagram__floor-label { font-size: 0.78rem; }
-
-/* Warm background variant (used in About 등) */
-.chapter--warm .building-diagram { color: var(--text-on-light); }
-.chapter--warm .building-diagram__body { border-color: var(--paper-line); }
-.chapter--warm .building-diagram__floor { color: var(--text-on-light-muted); border-bottom-color: var(--paper-line); }
-.chapter--warm .building-diagram__roof { color: var(--amber-deep); }
-.chapter--warm .building-diagram__floor[data-highlighted="true"] {
-  background: rgba(251, 191, 36, 0.15);
-  color: var(--amber-deep);
-}

@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom';
 import { useLang } from '../context/LangContext';
-import { CaseStudy, CaseSlide } from './CaseStudy';
+import { CaseSlide } from './CaseStudy';
 import { ProjectCard } from './ProjectCard';
 import './Work.css';
 
 export function WorkChapter() {
   const { t } = useLang();
   const featured = t.oiaBuilding;
+  const cover = featured.slides[0] as Extract<CaseSlide, { kind: 'cover' }>;
   const cards = [t.univFinder, t.oiaWebsite];
 
   return (
@@ -18,24 +20,31 @@ export function WorkChapter() {
         <p className="work-intro">{t.work.intro}</p>
       </div>
 
-      <div className="work-featured">
-        <CaseStudy
-          index={featured.index}
-          year={featured.year}
-          title={featured.title}
-          subtitle={featured.subtitle}
-          stack={featured.stack}
-          slides={featured.slides as CaseSlide[]}
-          showBuilding={false}
-          collapsible
-          expandLabel={t.work.more}
-          collapseLabel={t.work.less}
-        />
+      {/* Featured band — full-bleed slate strip (portfolio_home mockup) */}
+      <div className="work-featured-band">
+        <div className="work-featured">
+          <div className="work-featured-media">
+            {cover.videoSrc && (
+              <video src={`/videos/${cover.videoSrc}`} autoPlay muted loop playsInline />
+            )}
+          </div>
+          <div className="work-featured-text">
+            <span className="work-featured-label">Case Study · {featured.year}</span>
+            <h2 className="work-featured-title font-serif">{featured.title}</h2>
+            <p className="work-featured-sub">{featured.subtitle}</p>
+            <div className="work-featured-stack">
+              {featured.stack.map((s) => <span key={s} className="chip">{s}</span>)}
+            </div>
+            <Link className="work-featured-cta" to={`/work/${featured.id}`}>
+              {t.work.more}
+            </Link>
+          </div>
+        </div>
       </div>
 
       <ol className="work-list">
         {cards.map((c) => {
-          const cover = c.slides[0] as Extract<CaseSlide, { kind: 'cover' }>;
+          const cardCover = c.slides[0] as Extract<CaseSlide, { kind: 'cover' }>;
           return (
             <li key={c.id}>
               <ProjectCard
@@ -43,10 +52,11 @@ export function WorkChapter() {
                 year={c.year}
                 title={c.title}
                 subtitle={c.subtitle}
-                summary={cover.body}
+                summary={cardCover.body}
                 stack={c.stack}
                 link={(c as any).link}
                 image={(c as any).image}
+                to={`/work/${c.id}`}
               />
             </li>
           );

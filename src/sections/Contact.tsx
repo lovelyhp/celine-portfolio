@@ -5,16 +5,21 @@ export function ContactChapter() {
   const { t } = useLang();
   return (
     <div className="chapter-inner contact-inner">
-      <div className="section-label">
+      <div className="section-label contact-label">
         <span>{t.contact.number}</span>
         <span className="font-serif-italic">Contact</span>
       </div>
+      <p className="contact-eyebrow font-serif-italic">{t.contact.eyebrow}</p>
       <h2 className="contact-heading font-display">
         {t.contact.heading}
       </h2>
       <p className="contact-sub font-serif-italic">
         {t.contact.sub}
       </p>
+
+      <a className="contact-cta" href={`mailto:${t.contact.email}`}>
+        {t.contact.cta}
+      </a>
 
       <div className="contact-links">
         <a className="contact-link" href={`mailto:${t.contact.email}`}>
@@ -30,8 +35,6 @@ export function ContactChapter() {
           <span className="contact-link-value font-num">{t.contact.cvValue}</span>
         </a>
       </div>
-
-      <footer className="contact-footer">{t.footer.copyright}</footer>
     </div>
   );
 }

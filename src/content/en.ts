@@ -1,7 +1,7 @@
 export const en = {
   meta: {
     nameRoman: 'Seo-Ah (Céline) Choi',
-    role: 'AI Planner · aspiring Technical PM',
+    role: 'AI Planner · Technical PM',
     taglineEn: 'Planner, Builder, Operator.',
     tagline: 'The one who knows the field\nbuilds the tool.',
     subtitle:
@@ -23,21 +23,26 @@ export const en = {
     hint: '↓ Selected Work',
   },
   about: {
-    number: '02',
+    number: '01',
     title: 'About',
     body: [
       'A non-developer who majored in French, building production systems firsthand across 12 years in public-sector and university operations. It started in 2024, the day an enrollment surge meant processing 2,200 documents at once. After teaching myself Python to build a tool that finished it in 80 seconds, I wired scattered department work into an office simulation (OIA Rush) staffed by 15 AI agents, syncing each folder\'s state with file-watching.',
       'I choose what to automate, design the data structures and architecture, and validate the output — the judgments a tool cannot make, which decide the quality of the system. Next, I want to keep building AI products as the person who knows the operations field, as an AI product planner and technical PM.',
     ],
     snapshot: [
-      { k: 'Now', v: 'Yonsei OIA, Europe Exchange — fastest promotion to Manager among peers (Sep 2025)' },
-      { k: 'Study', v: 'M.S. candidate, Graduate School of AI Convergence (HCI) · RAG · ReAct · society audit committee' },
+      { k: 'Now', v: 'Leads Yonsei OIA outbound (exchange & visiting student) programs · Outstanding Performance Staff Award, 2024–2025' },
+      { k: 'Study', v: 'M.S. candidate in AI Computing, Yonsei Graduate School of AI Convergence' },
       { k: 'Build', v: 'Claude Code · Flask · GAS · React · TypeScript · D3.js' },
       { k: 'Proof', v: 'ECTS -83% · email 25h→8h · led Macron lecture · Minister of Education commendation' },
     ],
     careerTitle: 'Experience',
     eduTitle: 'Education',
     skillsTitle: 'Skills',
+    philosophy: {
+      label: 'Operational Philosophy',
+      quote:
+        "The person who knows the field's pain points best builds the production tools directly. A non-CS, humanities background is not a weakness but the starting point of that strength.",
+    },
     highlight: {
       label: 'Operations Highlight',
       title: 'President Macron Special Lecture',
@@ -46,7 +51,6 @@ export const en = {
         'I orchestrated President Macron\'s special lecture at Yonsei (April 2026) — coordinating the Élysée, the French Embassy, and security into 169 press hits and an official Élysée broadcast.',
       image: 'shot-macron.png',
     },
-    cvTrail: '· Selected work and detailed experience follow below.',
   },
 
   method: {
@@ -61,7 +65,7 @@ export const en = {
   },
 
   work: {
-    number: '01',
+    number: '02',
     title: 'Work',
     intro: 'Production systems I built firsthand to solve problems I knew from the field.',
     more: 'Read more →',
@@ -510,8 +514,10 @@ export const en = {
   contact: {
     number: '04',
     title: 'Contact',
+    eyebrow: 'Looking for a builder?',
     heading: 'Looking for a new stage.',
     sub: 'A place to run my small laboratory at a far larger scale.',
+    cta: 'Get in touch',
     email: 'sachoi.pro@gmail.com',
     linkedin: 'linkedin.com/in/seoah-choi',
     linkedinUrl: 'https://linkedin.com/in/seoah-choi',

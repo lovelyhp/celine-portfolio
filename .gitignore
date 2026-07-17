@@ -5,3 +5,6 @@ dist
 .env
 .env.local
 .superpowers/
+
+# design mockup reference (local only)
+stitch_portfolio_ui_ux_redesign/

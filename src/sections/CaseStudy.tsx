@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { BuildingDiagram } from '../components/BuildingDiagram';
 import './CaseStudy.css';
 
@@ -8,172 +7,151 @@ export type CaseSlide =
   | { kind: 'result'; tag: string; heading: string; body: Array<{ h: string; p: string }>; imageSrc?: string | null; imageCaption?: string; imageHint?: string }
   | { kind: 'scenes'; tag: string; heading: string; scenes: string[]; closing: { h: string; p: string }; imageSrc?: string | null; imageCaption?: string };
 
-export interface CaseStudyProps {
+export interface CaseStudyData {
+  id: string;
   index: string;
   year: string;
   title: string;
   subtitle: string;
   stack: string[];
   slides: CaseSlide[];
-  /** 0~5 사이의 층 인덱스 배열. 각 슬라이드와 1:1로 매핑되어 sticky 빌딩에서 highlight됨. */
-  buildingFloorMap?: Array<0 | 1 | 2 | 3 | 4 | 5 | null>;
-  /** true이면 좌측 sticky sidebar에 BuildingDiagram을 표시. false면 메타 정보만. */
+  link?: string;
   showBuilding?: boolean;
-  /** true이면 cover 외 슬라이드를 토글 뒤로 접는다(대표작용). */
-  collapsible?: boolean;
-  expandLabel?: string;
-  collapseLabel?: string;
 }
 
-export function CaseStudy({
-  index, year, title, subtitle, stack, slides,
-  buildingFloorMap, showBuilding = true, collapsible = false,
-  expandLabel = '자세히 보기 →', collapseLabel = '접기',
-}: CaseStudyProps) {
-  const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const [activeIdx, setActiveIdx] = useState(0);
-  const [expanded, setExpanded] = useState(!collapsible);
-
-  useEffect(() => {
-    const targets = slideRefs.current.filter(Boolean) as HTMLDivElement[];
-    if (targets.length === 0) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const inView = entries.filter((e) => e.isIntersecting);
-        if (inView.length === 0) return;
-        const best = inView.reduce((acc, cur) =>
-          cur.intersectionRatio > acc.intersectionRatio ? cur : acc
-        );
-        const idx = targets.indexOf(best.target as HTMLDivElement);
-        if (idx >= 0) setActiveIdx(idx);
-      },
-      { rootMargin: '-40% 0px -40% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] }
-    );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
-  }, [slides.length, expanded]);
-
-  const activeFloor = buildingFloorMap?.[activeIdx] ?? undefined;
+/** 케이스 스터디 상세 페이지 본문 (project_detail 목업 레이아웃) */
+export function CaseStudyDetail({ data }: { data: CaseStudyData }) {
+  const cover = data.slides[0] as Extract<CaseSlide, { kind: 'cover' }>;
+  const rest = data.slides.slice(1);
+  const showBuilding = data.showBuilding !== false;
 
   return (
-    <div className="chapter-inner case-inner">
-      <aside className="case-aside">
-        <div className="case-meta">
-          <div className="section-label">
-            <span>{index}</span>
-            <span className="font-serif-italic">Case Study · {year}</span>
+    <article className="case-detail">
+      {/* Header block */}
+      <div className="case-head chapter-inner">
+        <span className="case-head-label">Case Study · {data.year}</span>
+        <h1 className="case-head-title font-serif">{data.title}</h1>
+        <div className="case-head-grid">
+          <div className="case-head-intro">
+            <p className="case-head-lede">{cover.sub}</p>
+            <p className="case-head-body">{cover.body}</p>
           </div>
-          <h2 className="case-title font-display">{title}</h2>
-          <p className="case-subtitle">{subtitle}</p>
-          <div className="case-stack">
-            {stack.map((s) => <span key={s} className="chip">{s}</span>)}
-          </div>
+          <aside className="case-head-meta">
+            <div className="case-stack">
+              {data.stack.map((s) => <span key={s} className="chip">{s}</span>)}
+            </div>
+            {data.link && (
+              <a className="case-live-link" href={data.link} target="_blank" rel="noreferrer">
+                Live ↗
+              </a>
+            )}
+            {showBuilding && (
+              <div className="case-building">
+                <BuildingDiagram size="standard" />
+              </div>
+            )}
+          </aside>
         </div>
-        {showBuilding && (
-          <div className="case-building">
-            <BuildingDiagram size="standard" highlight={activeFloor as any} />
-          </div>
-        )}
-      </aside>
+      </div>
 
-      <div className="case-content">
-        {(collapsible ? slides.slice(0, 1) : slides).map((slide, i) => (
-          <div
-            key={i}
-            ref={(el) => { slideRefs.current[i] = el; }}
-            className={`case-slide case-slide--${slide.kind}`}
-          >
-            <CaseSlideRender slide={slide} />
+      {/* Cover media band */}
+      {(cover.videoSrc || cover.imageSrc) && (
+        <div className="case-media-band">
+          <div className="case-media-frame">
+            {cover.videoSrc ? (
+              <video src={`/videos/${cover.videoSrc}`} autoPlay muted loop playsInline />
+            ) : (
+              <img src={`/images/${cover.imageSrc}`} alt={cover.imageCaption ?? data.title} />
+            )}
           </div>
-        ))}
+          {cover.imageCaption && <p className="case-media-caption">{cover.imageCaption}</p>}
+        </div>
+      )}
 
-        {collapsible && (
-          <button
-            className="case-expand-btn font-serif-italic"
-            aria-expanded={expanded}
-            onClick={() => setExpanded((v) => !v)}
-          >
-            {expanded ? collapseLabel : expandLabel}
-          </button>
-        )}
-
-        {collapsible && expanded && slides.slice(1).map((slide, i) => (
-          <div
-            key={i + 1}
-            ref={(el) => { slideRefs.current[i + 1] = el; }}
-            className={`case-slide case-slide--${slide.kind}`}
-          >
-            <CaseSlideRender slide={slide} />
-          </div>
+      {/* Slide rows */}
+      <div className="case-rows chapter-inner">
+        {rest.map((slide, i) => (
+          <CaseSlideRow key={i} slide={slide} />
         ))}
       </div>
-    </div>
+    </article>
   );
 }
 
-function CaseSlideRender({ slide }: { slide: CaseSlide }) {
-  if (slide.kind === 'cover') {
+function SlideFigure({ slide }: { slide: Extract<CaseSlide, { kind: 'section' }> }) {
+  if (slide.videoSrc) {
     return (
-      <>
-        {slide.videoSrc && (
-          <div className="case-media case-media--wide">
-            <video src={`/videos/${slide.videoSrc}`} autoPlay muted loop playsInline />
-          </div>
-        )}
-        <h3 className="case-heading font-display">{slide.heading}</h3>
-        <p className="case-lede font-serif-italic">{slide.sub}</p>
-        <p className="case-body">{slide.body}</p>
-      </>
+      <figure className="case-figure case-figure--video">
+        <video src={`/videos/${slide.videoSrc}`} autoPlay muted loop playsInline />
+        {slide.imageCaption && <figcaption>{slide.imageCaption}</figcaption>}
+      </figure>
     );
   }
+  if (slide.imageSrc) {
+    return (
+      <figure className="case-figure">
+        <img src={`/images/${slide.imageSrc}`} alt={slide.imageCaption ?? ''} />
+        {slide.imageCaption && <figcaption>{slide.imageCaption}</figcaption>}
+      </figure>
+    );
+  }
+  return null;
+}
+
+function CaseSlideRow({ slide }: { slide: CaseSlide }) {
   if (slide.kind === 'section') {
     return (
-      <>
-        <div className="case-tag font-serif-italic">{slide.tag}</div>
-        <h3 className="case-heading font-display">{slide.heading}</h3>
-        {slide.body.map((p, i) => <p key={i} className="case-body">{p}</p>)}
-        {slide.videoSrc ? (
-          <figure className="case-figure case-figure--video">
-            <video src={`/videos/${slide.videoSrc}`} autoPlay muted loop playsInline />
-            {slide.imageCaption && <figcaption>{slide.imageCaption}</figcaption>}
-          </figure>
-        ) : slide.imageSrc ? (
-          <figure className="case-figure">
-            <img src={`/images/${slide.imageSrc}`} alt={slide.imageCaption ?? ''} />
-            {slide.imageCaption && <figcaption>{slide.imageCaption}</figcaption>}
-          </figure>
-        ) : null}
-      </>
+      <div className="case-row">
+        <div className="case-row-side">
+          <div className="case-tag">{slide.tag}</div>
+          <h2 className="case-heading font-serif">{slide.heading}</h2>
+        </div>
+        <div className="case-row-main">
+          {slide.body.map((p, i) => <p key={i} className="case-body">{p}</p>)}
+          <SlideFigure slide={slide} />
+        </div>
+      </div>
     );
   }
+
   if (slide.kind === 'result') {
+    // Impact panel — 라이트/다크 공통 딥네이비 (mockup: The Impact of Visibility)
     return (
-      <>
-        <div className="case-tag font-serif-italic">{slide.tag}</div>
-        <h3 className="case-heading font-display">{slide.heading}</h3>
-        <div className="case-result-grid">
+      <div className="case-impact">
+        <div className="case-tag case-tag--on-navy">{slide.tag}</div>
+        <h2 className="case-impact-heading font-serif">{slide.heading}</h2>
+        <div className="case-impact-grid">
           {slide.body.map((item, i) => (
-            <div key={i} className="case-result-item">
-              {item.h && <h4 className="case-result-h">{item.h}</h4>}
+            <div key={i} className="case-impact-item">
+              {item.h && <h3 className="case-impact-h">{item.h}</h3>}
               <p>{item.p}</p>
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   }
-  // scenes
-  return (
-    <>
-      <div className="case-tag font-serif-italic">{slide.tag}</div>
-      <h3 className="case-heading font-display">{slide.heading}</h3>
-      <ul className="case-scenes">
-        {slide.scenes.map((s, i) => <li key={i}>{s}</li>)}
-      </ul>
-      <div className="case-closing">
-        <h4>{slide.closing.h}</h4>
-        <p>{slide.closing.p}</p>
+
+  if (slide.kind === 'scenes') {
+    return (
+      <div className="case-row">
+        <div className="case-row-side">
+          <div className="case-tag">{slide.tag}</div>
+          <h2 className="case-heading font-serif">{slide.heading}</h2>
+        </div>
+        <div className="case-row-main">
+          <ul className="case-scenes">
+            {slide.scenes.map((s, i) => <li key={i}>{s}</li>)}
+          </ul>
+          <div className="case-closing">
+            <h3>{slide.closing.h}</h3>
+            <p>{slide.closing.p}</p>
+          </div>
+        </div>
       </div>
-    </>
-  );
+    );
+  }
+
+  // 추가 cover 슬라이드는 상세 본문에서 쓰지 않는다
+  return null;
 }
